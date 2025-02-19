@@ -8,4 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-- Rafael Corchuelo (corchu@us.es)
+- Manuel Jesus Sanchez Garcia (mansangar13@alum.us.es)
+- Daniel Jimenez Diaz (danjimdia1@alum.us.es)
+- Manuel Perez Velez (manpervel2@alum.us.es)
+- Manuel Roberto Lopez Pavia (manloppav@alum.us.es)
+- Maria Barrancos Marquez (marbarmar16@alum.us.es)
