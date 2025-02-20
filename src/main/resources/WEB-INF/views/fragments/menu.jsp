@@ -24,6 +24,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.mansangar13" action="https://github.com/mansangar13"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.manpervel2" action="https://github.com/manpervel2"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.manloppav" action="https://github.com/manloppav"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link.marbarmar16" action="https://github.com/meryknows"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
