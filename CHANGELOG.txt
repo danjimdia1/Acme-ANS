@@ -8,4 +8,4 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-D01 This id the firsh version of Acme ANS
+D01 This is the first version of Acme ANS
