@@ -22,7 +22,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<artifactId>Acme-ANS</artifactId>
-	<version>D01</version> 
+	<version>D02</version> 
 	<packaging>war</packaging>
 	
 	<parent>
