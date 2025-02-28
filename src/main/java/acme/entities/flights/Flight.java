@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.flights;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -37,6 +37,7 @@ public class Flight extends AbstractEntity {
 
 	@Mandatory()
 	@ValidNumber(min = 0, max = 1000000.00)
+	@Automapped()
 	private Double				cost;
 
 	@Optional()
