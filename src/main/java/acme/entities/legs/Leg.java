@@ -1,19 +1,22 @@
 
 package acme.entities.legs;
 
+import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.flights.Flight;
 
@@ -43,23 +46,30 @@ public class Leg extends AbstractEntity {
 	private Date				scheduledArrival;
 
 	@Mandatory()
-	@ValidNumber(min = 1, max = 1000, integer = 4, fraction = 0)
-	@Automapped()
-	private Integer				duration;
-
-	@Mandatory()
 	@Valid()
 	@Automapped()
 	private LegStatus			status;
 
 	// Derived attributes -----------------------------------------------------
 
+
+	@Transient()
+	public Double getDuration() {
+		ZonedDateTime departure = this.scheduledDeparture.toInstant().atZone(ZoneId.systemDefault());
+		ZonedDateTime arrival = this.scheduledArrival.toInstant().atZone(ZoneId.systemDefault());
+
+		Duration duration = Duration.between(departure, arrival);
+
+		return (double) duration.toHours();
+	}
+
 	// Relationships ----------------------------------------------------------
+
 
 	@Mandatory()
 	@Valid()
 	@ManyToOne(optional = false)
-	private Flight				flight;
+	private Flight flight;
 
 	// Vamos a dejar comentadas las relaciones para cuando se creen Airport y Aircraft
 
