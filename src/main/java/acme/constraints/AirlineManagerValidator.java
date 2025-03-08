@@ -38,7 +38,13 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 
 			boolean validIdentifier;
 
-			validIdentifier = airlineManager.getIdentifier().matches("^" + initials + "\\d{6}");
+			String identifier = airlineManager.getIdentifier();
+
+			boolean validLength = identifier.length() >= 8 && identifier.length() <= 9;
+			boolean validPattern = identifier.matches("^" + initials + "\\d{6}$");
+
+			validIdentifier = validLength && validPattern;
+
 			super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.identifier.message");
 		}
 
