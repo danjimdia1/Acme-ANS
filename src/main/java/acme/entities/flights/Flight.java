@@ -6,10 +6,11 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.realms.AirlineManager;
 import lombok.Getter;
@@ -27,18 +28,19 @@ public class Flight extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory()
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped()
 	private String				tag;
 
 	@Mandatory()
+	@Valid()
 	@Automapped()
-	private Boolean				indication;
+	private FlightSelfTransfer	indication;
 
 	@Mandatory()
-	@ValidNumber(min = 0, max = 1000000.00)
+	@ValidMoney(min = 0.00, max = 1000000.00)
 	@Automapped()
-	private Double				cost;
+	private Money				cost;
 
 	@Optional()
 	@ValidString()
