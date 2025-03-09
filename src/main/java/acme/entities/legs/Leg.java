@@ -18,6 +18,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.entities.airport.Airport;
 import acme.entities.flights.Flight;
 
 public class Leg extends AbstractEntity {
@@ -69,19 +70,17 @@ public class Leg extends AbstractEntity {
 	@Mandatory()
 	@Valid()
 	@ManyToOne(optional = false)
-	private Flight flight;
+	private Flight	flight;
 
-	// Vamos a dejar comentadas las relaciones para cuando se creen Airport y Aircraft
+	@Mandatory()
+	@Valid()
+	@ManyToOne(optional = false)
+	private Airport	departureAirport;
 
-	// @Mandatory()
-	// @Valid()
-	// @ManyToOne(optional = false)
-	// private Airport				departureAirport;
-
-	// @Mandatory()
-	// @Valid()
-	// @ManyToOne(optional = false)
-	// private Flight				arrivalAirport;
+	@Mandatory()
+	@Valid()
+	@ManyToOne(optional = false)
+	private Flight	arrivalAirport;
 
 	// @Mandatory()
 	// @Valid()
