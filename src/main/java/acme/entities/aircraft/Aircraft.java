@@ -31,7 +31,6 @@ public class Aircraft extends AbstractEntity {
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
-	@Max(50)
 	@Automapped
 	private String				model;
 
@@ -42,7 +41,6 @@ public class Aircraft extends AbstractEntity {
 
 	@Mandatory
 	@ValidNumber(min = 1, max = 255, fraction = 0)
-	@Min(1)
 	@Automapped
 	private Integer				capacity;
 
@@ -65,9 +63,9 @@ public class Aircraft extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	/*@Mandatory
+	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
 	private Airline				airline;
-    */
+    
 }
