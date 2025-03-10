@@ -3,6 +3,7 @@ package acme.entities.flights;
 
 import java.beans.Transient;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -54,19 +55,16 @@ public class Flight extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	// private String origin;
-	// private String destination;
-
 
 	@Transient()
 	public Date getScheduledDeparture() {
 		Date result;
 		LegRepository repository;
-		Date wrapper;
+		List<Date> wrapper;
 
 		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findFirstScheduledDeparture(this.getId()).get(0);
-		result = wrapper;
+		wrapper = repository.findFirstScheduledDeparture(this.getId());
+		result = wrapper.get(0);
 
 		return result;
 	}
@@ -75,11 +73,35 @@ public class Flight extends AbstractEntity {
 	public Date getScheduledArrival() {
 		Date result;
 		LegRepository repository;
-		Date wrapper;
+		List<Date> wrapper;
 
 		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLastScheduledArrival(this.getId()).get(0);
-		result = wrapper;
+		wrapper = repository.findLastScheduledArrival(this.getId());
+		result = wrapper.get(0);
+
+		return result;
+	}
+
+	public String getOriginCity() {
+		String result;
+		LegRepository repository;
+		List<String> wrapper;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		wrapper = repository.findFirstOriginCity(this.getId());
+		result = wrapper == null ? "" : wrapper.get(0);
+
+		return result;
+	}
+
+	public String getDestinationCity() {
+		String result;
+		LegRepository repository;
+		List<String> wrapper;
+
+		repository = SpringHelper.getBean(LegRepository.class);
+		wrapper = repository.findLastDestinationCity(this.getId());
+		result = wrapper == null ? "" : wrapper.get(0);
 
 		return result;
 	}
@@ -92,7 +114,7 @@ public class Flight extends AbstractEntity {
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.numberOfLavoyers(this.getId());
-		result = wrapper == null ? 0 : wrapper.intValue();
+		result = wrapper == null ? 0 : wrapper;
 
 		return result;
 	}
