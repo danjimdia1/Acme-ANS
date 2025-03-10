@@ -1,9 +1,6 @@
 
 package acme.entities.legs;
 
-import java.time.Duration;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,8 +15,16 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLeg;
+import acme.entities.aircraft.Aircraft;
+import acme.entities.airport.Airport;
 import acme.entities.flights.Flight;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@ValidLeg
 public class Leg extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -27,8 +32,6 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	// De momento vamos a poner el flight number a mano(no se si es un atributo derivado)
 
 	@Mandatory()
 	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
@@ -55,12 +58,13 @@ public class Leg extends AbstractEntity {
 
 	@Transient()
 	public Double getDuration() {
-		ZonedDateTime departure = this.scheduledDeparture.toInstant().atZone(ZoneId.systemDefault());
-		ZonedDateTime arrival = this.scheduledArrival.toInstant().atZone(ZoneId.systemDefault());
 
-		Duration duration = Duration.between(departure, arrival);
+		long departure = this.getScheduledDeparture().getTime();
+		long arrival = this.getScheduledArrival().getTime();
 
-		return (double) duration.toHours();
+		double durationInHr = (arrival - departure) / 3600000.0; // 3600000 ms = 1 hora
+
+		return durationInHr;
 	}
 
 	// Relationships ----------------------------------------------------------
@@ -69,22 +73,20 @@ public class Leg extends AbstractEntity {
 	@Mandatory()
 	@Valid()
 	@ManyToOne(optional = false)
-	private Flight flight;
+	private Flight		flight;
 
-	// Vamos a dejar comentadas las relaciones para cuando se creen Airport y Aircraft
+	@Mandatory()
+	@Valid()
+	@ManyToOne(optional = false)
+	private Airport		departureAirport;
 
-	// @Mandatory()
-	// @Valid()
-	// @ManyToOne(optional = false)
-	// private Airport				departureAirport;
+	@Mandatory()
+	@Valid()
+	@ManyToOne(optional = false)
+	private Flight		arrivalAirport;
 
-	// @Mandatory()
-	// @Valid()
-	// @ManyToOne(optional = false)
-	// private Flight				arrivalAirport;
-
-	// @Mandatory()
-	// @Valid()
-	// @ManyToOne(optional = false)
-	// private Aircraft				aircraft;
+	@Mandatory()
+	@Valid()
+	@ManyToOne(optional = false)
+	private Aircraft	aircraft;
 }

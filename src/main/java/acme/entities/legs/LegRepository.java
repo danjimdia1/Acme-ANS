@@ -19,4 +19,10 @@ public interface LegRepository extends AbstractRepository {
 
 	@Query("SELECT l.scheduledArrival FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledArrival DESC")
 	List<Date> findLastScheduledArrival(@Param("flightId") int flightId);
+
+	@Query("SELECT l.departureAirport.city FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledDeparture ASC")
+	List<String> findFirstOriginCity(@Param("flightId") int flightId);
+
+	@Query("SELECT l.arrivalAirport.city FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledArrival DESC")
+	List<String> findLastDestinationCity(@Param("flightId") int flightId);
 }
