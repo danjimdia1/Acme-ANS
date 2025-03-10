@@ -12,7 +12,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-//import acme.entities.airline.Airline;
+import acme.entities.airlines.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -51,7 +51,6 @@ public class Aircraft extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@Enumerated(EnumType.STRING)
 	@Automapped
 	private Status				status;
 
@@ -67,5 +66,5 @@ public class Aircraft extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Airline				airline;
-    
+
 }
