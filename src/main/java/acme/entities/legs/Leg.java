@@ -4,6 +4,7 @@ package acme.entities.legs;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,6 +23,7 @@ import acme.entities.flights.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
 @ValidLeg
@@ -83,7 +85,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory()
 	@Valid()
 	@ManyToOne(optional = false)
-	private Flight		arrivalAirport;
+	private Airport		arrivalAirport;
 
 	@Mandatory()
 	@Valid()
