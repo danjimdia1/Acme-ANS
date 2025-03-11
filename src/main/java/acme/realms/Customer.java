@@ -32,7 +32,7 @@ public class Customer extends AbstractRole {
 	private String				identifier;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,16}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				phoneNumber;
 
