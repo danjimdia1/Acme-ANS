@@ -114,7 +114,7 @@ public class Flight extends AbstractEntity {
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.numberOfLavoyers(this.getId());
-		result = wrapper == null ? 0 : wrapper;
+		result = wrapper == null ? 0 : wrapper - 1; // El numero de lavoyers es el total menos 1
 
 		return result;
 	}
