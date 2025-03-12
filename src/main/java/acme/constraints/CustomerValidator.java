@@ -35,7 +35,7 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 
 			if (name != null && !name.isBlank() && surname != null && !surname.isBlank()) {
 				String expectedPrefix = (name.substring(0, 1) + surname.substring(0, 1)).toUpperCase();
-				String actualPrefix = identifier.substring(0, 2);
+				String actualPrefix = identifier.substring(0, 2).toUpperCase();
 
 				boolean validPrefix = expectedPrefix.equals(actualPrefix);
 
