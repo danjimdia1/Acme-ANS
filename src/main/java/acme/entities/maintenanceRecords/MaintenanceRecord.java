@@ -26,7 +26,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "maintenance_records")
+@Table(name = "maintenance_record")
 public class MaintenanceRecord extends AbstractEntity {
 
 	// Serialisation identifier
