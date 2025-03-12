@@ -5,6 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.client.helpers.MomentHelper;
 import acme.entities.legs.Leg;
 
 @Validator
@@ -32,13 +33,8 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				super.state(context, validFlightNumber, "*", "java.validation.leg.flightNumber.message");
 			}
 			{
-				long departure = leg.getScheduledDeparture().getTime();
-				long arrival = leg.getScheduledArrival().getTime();
 
-				long differenceInMs = arrival - departure;
-				long differenceInMn = differenceInMs / 60000;  // 60000 ms = 1 min
-
-				boolean validScheduledArrival = differenceInMn >= 1;
+				boolean validScheduledArrival = MomentHelper.isAfter(leg.getScheduledArrival(), leg.getScheduledDeparture());
 
 				super.state(context, validScheduledArrival, "*", "java.validation.leg.scheduledArrival.message");
 			}
