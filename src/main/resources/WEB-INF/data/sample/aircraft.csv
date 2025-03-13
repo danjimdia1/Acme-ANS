@@ -1,0 +1,32 @@
+key,model,registrationNumber,capacity,cargoWeight,status,details,key:airline
+#Base-Entity
+aircraft-00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+#Probando model
+aircraft-01,L,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-02,Lo,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-03,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-04,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+#Probando resgistrationNumber
+aircraft-05,Lorem ipsum dolor sit ame,L,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-06,Lorem ipsum dolor sit ame,Lo,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-07,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscin",128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-08,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing",128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+#Probando capacity
+aircraft-09,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,1,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-10,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,2,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-11,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,254,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-12,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,255,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+#Probando cargoWeight
+aircraft-13,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"2000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-14,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"2000,01",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-15,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"49999,99",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-16,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"50000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+#Probando Status
+aircraft-17,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",MAINTENANCE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+#Probando Details
+aircraft-18,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,L,airline-01
+aircraft-19,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,Lo,airline-01
+aircraft-20,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-01
+aircraft-21,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",airline-01
+#Probando Airline
+aircraft-22,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,128,"26000,00",ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-02
