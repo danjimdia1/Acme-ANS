@@ -1,5 +1,5 @@
 
-package acme.realms;
+package acme.entities.trackingLogs;
 
 import java.util.Date;
 
@@ -10,24 +10,25 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractRole;
+import org.hibernate.annotations.CreationTimestamp;
+
+import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
-import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidAirlineManager;
-import acme.entities.airlines.Airline;
+import acme.constraints.ValidTrackingLog;
+import acme.entities.claims.Claim;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidAirlineManager
-public class AirlineManager extends AbstractRole {
+@ValidTrackingLog
+public class TrackingLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -35,33 +36,44 @@ public class AirlineManager extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
-	@Mandatory()
-	@ValidString(min = 8, max = 9, pattern = "^[A-Z]{2,3}\\d{6}$")
-	@Column(unique = true)
-	private String				identifier;
+	// Campo para la fecha de creación
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(updatable = false, nullable = false)
+	private Date				creationMoment;
 
-	@Mandatory()
-	@ValidNumber(min = 0, max = 120)
-	@Automapped()
-	private Integer				yearsOfExperience;
-
-	@Mandatory()
+	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				birthDate;
+	private Date				lastUpdateMoment;
 
-	@Optional()
-	@ValidUrl()
-	@Automapped()
-	private String				pictureLink;
+	@Mandatory
+	@ValidString(max = 255)
+	@Automapped
+	private String				step;
+
+	@Mandatory
+	@ValidScore
+	@Automapped
+	private Double				resolutionPercentage;
+
+	@Mandatory
+	@Valid
+	@Automapped
+	private TrackingLogStatus	status;
+
+	@Optional
+	@ValidString(max = 255)
+	@Automapped
+	private String				resolution;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
-	@Mandatory()
-	@Valid()
+	@Mandatory
+	@Valid
 	@ManyToOne(optional = false)
-	private Airline				airline;
+	private Claim				claim;
 
 }
