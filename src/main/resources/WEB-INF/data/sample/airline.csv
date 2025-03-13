@@ -1,4 +1,4 @@
-key,name,iataCode,website,type,foundationMoment,email,phoneNumber
+key,name,IATA,website,type,foundationMoment,email,phoneNumber
 #Base-Entity
 airline-00,Lorem ipsum dolor sit ame,AAA,http://lorem.com/ipsum,STANDARD,2012/07/02 00:00,acme@lorem-ipsum.org,+123456789
 
