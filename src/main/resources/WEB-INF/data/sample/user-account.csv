@@ -55,7 +55,7 @@ user-account-customer-41,true,"UserIdentity{name: 'Duncan', surname: 'Johann', e
 user-account-customer-42,true,"UserIdentity{name: 'Dalia', surname: 'Jensen', email: 'clara@acme.com'}",customer42,customer42
 # Manager Accounts
 user-account-manager-01,true,"UserIdentity{name: 'Jose', surname: 'Manager', email: 'manager1@acme.com'}",manager1,manager1
-user-account-manager-02,true,"UserIdentity{name: 'Mary', surname: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', email: 'manager2@acme.com'}",manager2,manager2
+user-account-manager-02,true,"UserIdentity{name: 'Mary', surname: 'Sancho', email: 'manager2@acme.com'}",manager2,manager2
 user-account-manager-03,true,"UserIdentity{name: 'Manolo', surname: 'Ferran', email: 'manager3@acme.com'}",manager3,manager3
 user-account-manager-04,true,"UserIdentity{name: 'Alberto', surname: 'Hernandez', email: 'manager4@acme.com'}",manager4,manager4
 user-account-manager-05,true,"UserIdentity{name: 'Lucas', surname: 'Estevez', email: 'manager5@acme.com'}",manager5,manager5

@@ -1,6 +1,6 @@
 key,key:userAccount,identifier,yearsOfExperience,birthDate,pictureLink,key:airline
 manager-01,user-account-manager-01,JM111111,60,2012/07/02 0:00,http://lorem.com/ipsum,airline-01
-manager-02,user-account-manager-02,M貸111111,60,2012/07/02 0:00,http://lorem.com/ipsum,airline-01
+manager-02,user-account-manager-02,MS211111,60,2012/07/02 0:00,http://lorem.com/ipsum,airline-01
 manager-03,user-account-manager-03,MF111111,60,2012/07/02 0:00,http://lorem.com/ipsum,airline-01
 #Probar yearsOfExperience
 manager-04,user-account-manager-04,AH111111,0,2012/07/02 0:00,http://lorem.com/ipsum,airline-01
