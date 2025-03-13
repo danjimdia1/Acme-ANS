@@ -51,7 +51,7 @@ public class Review extends AbstractEntity {
 
 	@Optional()
 	@Valid()
-	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 1)
+	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 2)
 	private Double				score;
 
 	@Optional()
