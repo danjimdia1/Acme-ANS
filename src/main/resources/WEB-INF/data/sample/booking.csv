@@ -4,14 +4,14 @@ booking-01,AYCX99RS,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-0
 # LocatorCode - variations
 booking-02,666666,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 booking-03,RZX3P0I,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
-booking-04,洛伦·伊普森3,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
+booking-04,AAA9999,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 booking-05,7Q47YQS8,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 # purchaseMoment - variations
 booking-06,88TS0L6K,2000/01/01 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 booking-07,EH4EUF71,2000/01/01 00:01,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 booking-08,XOEXWOZ8,2022/07/29 23:59,ECONOMY,EUR 40.00,4999,customer-01,flight-01
-booking-09,MCT8Z3WR,2022/07/30 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
-# TravelClass - variations
+booking-09,MCT8Z3WR,2024/12/30 23:59,ECONOMY,EUR 40.00,4999,customer-01,flight-01
+# TravelClass - variations,"","",""
 booking-10,NDJWZBPV,2012/07/02 00:00,BUSINESS,EUR 40.00,4999,customer-01,flight-01
 # Price - variations
 booking-11,Y1P818D8,2012/07/02 00:00,ECONOMY,EUR 0.00,4999,customer-01,flight-01
