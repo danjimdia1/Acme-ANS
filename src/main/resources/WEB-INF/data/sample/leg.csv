@@ -4,7 +4,7 @@ leg-00,AAB1111,2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-01,airp
 #Probando scheduledDeparture y scheduledArrival,"","","","","","","",""
 leg-01,AAB1112,2025/01/01 0:00,2025/01/01 0:01,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
 leg-02,AAB1113,2200/12/31 23:59,2201/01/01 0:00,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
-leg-03,AAB1114,2025/01/2025 0:01,2025/01/2025 0:02,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
+leg-03,AAB1114,2025/01/2025 0:01,2025/01/01 0:02,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
 leg-04,AAB1115,2200/12/31 23:58,2200/12/31 23:59,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
 #Probando status
 leg-05,AAB1116,2113/01/01 0:00,2133/01/01 5:00,DELAYED,flight-00,airport-01,airport-02,aicraft-00
