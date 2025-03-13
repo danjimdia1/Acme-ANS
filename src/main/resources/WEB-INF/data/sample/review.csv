@@ -1,34 +1,32 @@
 key,name,moment,subject,text,score,isRecommended
-#Base-Entity,"","","","","",""
+#Base-Entity
 review-00,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
-#Probando name,"","","","","",""
+#Probando name
 review-01,L,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-02,Lo,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-03,"Lorem ipsum dolor sit amet, consectetur adipiscin",2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-04,"Lorem ipsum dolor sit amet, consectetur adipiscing",2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
-#Probando Moment,"","","","","",""
+#Probando Moment
 review-05,Lorem ipsum dolor sit ame,2000/01/01 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-06,Lorem ipsum dolor sit ame,2000/01/01 0:01,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-07,Lorem ipsum dolor sit ame,2024/12/31 23:59,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-08,Lorem ipsum dolor sit ame,2025/01/01 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
-#Probando Subject,"","","","","",""
+#Probando Subject
 review-09,Lorem ipsum dolor sit ame,2012/07/02 0:00,L,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-10,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lo,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-11,Lorem ipsum dolor sit ame,2012/07/02 0:00,"Lorem ipsum dolor sit amet, consectetur adipiscin","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
 review-12,Lorem ipsum dolor sit ame,2012/07/02 0:00,"Lorem ipsum dolor sit amet, consectetur adipiscing","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",TRUE
-#Probando Text,"","","","","",""
+#Probando Text
 review-13,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,L,"5,00",TRUE
 review-14,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,Lo,"5,00",TRUE
 review-15,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor","5,00",TRUE
 review-16,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*","5,00",TRUE
-#Probando Score,"","","","","",""
+#Probando Score
 review-17,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","",TRUE
 review-19,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","0,00",TRUE
 review-20,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","0,01",TRUE
 review-21,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","9,99",TRUE
 review-22,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","10,00",TRUE
-#Probando isRecommended,"","","","","",""
+#Probando isRecommended
 review-22,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",""
 review-22,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","5,00",FALSE
-"","","","","","",""
-"","","","","","",""
