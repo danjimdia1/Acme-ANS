@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>315</y>
+      <w>441</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+**Task**
+--
++ type: TaskType {Mandatory, Enumerated(EnumType.STRING), Automapped}
++ description: String {Mandatory, ValidString(min=0, max=255), Automapped}
++ priority: Integer {Mandatory, ValidNumber(min=0, max=10), Automapped}
++ estimatedDuration: Integer {Mandatory, ValidNumber(min=0), Automapped}
+--
++ technician: Technician {Mandatory, Automapped}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>171</y>
+      <w>117</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1233</x>
+      <y>207</y>
+      <w>117</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Registered by ^
+lt=-&gt;
+m1=*
+m2=1
+
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>369</y>
+      <w>423</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes> Belongs to &gt;
+lt=-&gt;
+m1=*
+m2=1
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>315</y>
+      <w>540</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+**MaintenanceRecord**
+--
++ maintenanceMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ status: Status {Mandatory, Enumerated(EnumType.STRING)}
++ nextInspectionDue: Date {Mandatory, Temporal(TIMESTAMP)}
++ estimatedCost: Money {Mandatory, ValidMoney}
++ notes: String {Optional, ValidString(min=0, max=255)}
+--
++ technician: Technician {Mandatory, Automapped}
++ aircraft: Aircraft {Mandatory, Automapped}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1179</x>
+      <y>585</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1233</x>
+      <y>486</y>
+      <w>90</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>Records v
+lt=&lt;-
+m1=1
+m2=  *
+
+</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

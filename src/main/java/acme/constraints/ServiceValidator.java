@@ -1,12 +1,14 @@
 
 package acme.constraints;
 
-import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.client.helpers.MomentHelper;
 import acme.entities.services.Service;
 
 @Validator
@@ -19,32 +21,25 @@ public class ServiceValidator extends AbstractValidator<ValidService, Service> {
 
 	@Override
 	public boolean isValid(final Service service, final ConstraintValidatorContext context) {
+		boolean result;
 		assert context != null;
-
-		boolean result = true;
-
-		if (service == null) {
+		if (service == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-			return false;
-		}
+		else {
+			Date currentMoment = MomentHelper.getCurrentMoment();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(currentMoment);
+			Integer currentYear = calendar.get(Calendar.YEAR);
+			String last2DigitsYear = String.valueOf(currentYear).substring(2);
 
-		String promotionCode = service.getPromotionCode();
-		if (promotionCode != null && !promotionCode.isBlank()) {
-			String[] parts = promotionCode.split("-");
-			if (parts.length == 2) {
-				String lastTwoDigits = parts[1];
-				int currentYearLastTwoDigits = Year.now().getValue() % 100;
-
-				boolean validYear = lastTwoDigits.equals(String.format("%02d", currentYearLastTwoDigits));
-
-				if (!validYear) {
-					super.state(context, false, "promotionCode", "java.validation.service.promotionCode.invalidYear");
-					result = false;
-				}
+			if (service.getPromotionCode() != null && service.getPromotionCode().length() >= 2) {
+				String last2DigirsCode = service.getPromotionCode().substring(service.getPromotionCode().length() - 2);
+				super.state(context, last2DigirsCode.equals(last2DigitsYear), "PromotionCode", "acme.validation.promotion-code.not-current-year");
 			}
 		}
 
-		result = result && !super.hasErrors(context);
+		result = !super.hasErrors(context);
 		return result;
+
 	}
 }

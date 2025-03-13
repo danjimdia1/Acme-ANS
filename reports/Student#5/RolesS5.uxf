@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>&lt;&lt;Entity&gt;&gt;
+FlightAssignment
+--
++ duty: Duty {Mandatory, Valid, Automapped}
++ moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ currentStatus: CurrentStatus {Mandatory, Valid, Automapped}
++ remarks: String {Optional, ValidLongText, Automapped}
++ publish: boolean {Mandatory, Valid, Automapped}
+bg=p
+</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>18</y>
+      <w>585</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>**&lt;&lt;Role&gt;&gt;**
+**Technician**
+--
++ licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
++ specialisation: String {Mandatory, Column(length=50), Automapped}
++ annualHealthTestPassed: boolean {Mandatory, Automapped}
++ yearsOfExperience: Integer {Mandatory, Min(0), Max(50), Automapped}
++ certifications: String {Optional, ValidString, Automapped}
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

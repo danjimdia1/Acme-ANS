@@ -1,70 +1,73 @@
 
-package acme.entities.aircraft;
+package acme.entities.claims;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidEmail;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.airlines.Airline;
+import acme.entities.legs.Leg;
+import acme.realms.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Aircraft extends AbstractEntity {
+public class Claim extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Mandatory Attributes -------------------------------------------------------------
-
-	//Atributes
+	// Attributes -------------------------------------------------------------	
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				registrationMoment;
+
+	@Mandatory
+	@ValidEmail
 	@Automapped
-	private String				model;
+	private String				email;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
-	@Column(unique = true)
-	private String				registrationNumber;
-
-	@Mandatory
-	@ValidNumber(min = 1, max = 255)
+	@ValidString(max = 255)
 	@Automapped
-	private Integer				capacity;
-
-	@Mandatory
-	@ValidNumber(min = 2000, max = 50000)
-	@Automapped
-	private Double				cargoWeight;
+	private String				description;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private Status				status;
+	private ClaimType			type;
 
-	@Optional
-	@ValidString()
+	@Mandatory
+	@Valid
 	@Automapped
-	String						details;
+	private Boolean				accepted;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airline				airline;
+	private AssistanceAgent		assistanceAgent;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg					leg;
 
 }

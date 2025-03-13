@@ -1,6 +1,6 @@
 key,key:userAccount,licenseNumber,phoneNumber,specialisation,annualHealthTestPassed,yearsOfExperience,certifications
-technician-01,user-account-technician-01,AB123456,123456789,Engine Maintenance,TRUE,10,Certified Engine Technician
-technician-02,user-account-technician-02,CD654321,987654321,Electrical Systems,FALSE,5,null
-technician-03,user-account-technician-03,EF789012,111222333,Hydraulics,TRUE,8,null
-technician-04,user-account-technician-04,GH345678,444555666,Aviation Safety,FALSE,12,ISO 9001:2015 Certified
-technician-05,user-account-technician-05,IJ901234,777888999,Flight Control Systems,TRUE,15,FAA Approved Technician
+technician-01,user-account-technician-01,AB123456,+123456789,Engine Maintenance,TRUE,10,Certified Engine Technician
+technician-02,user-account-technician-02,CD654321,+987654321,Electrical Systems,FALSE,5,Electrical Safety Certificate
+technician-03,user-account-technician-03,EF789012,+111222333,Hydraulics,TRUE,8,Hydraulics Specialist
+technician-04,user-account-technician-04,GH345678,+444555666,Aviation Safety,FALSE,12,ISO 9001:2015 Certified
+technician-05,user-account-technician-05,IJ901234,+777888999,Flight Control Systems,TRUE,15,FAA Approved Technician
