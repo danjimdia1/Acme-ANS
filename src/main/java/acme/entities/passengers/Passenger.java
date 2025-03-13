@@ -1,26 +1,26 @@
 
-package acme.entities.services;
+package acme.entities.passengers;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidScore;
+import acme.client.components.validation.ValidEmail;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.constraints.ValidPicture;
-import acme.constraints.ValidService;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidService
-public class Service extends AbstractEntity {
+public class Passenger extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -29,28 +29,28 @@ public class Service extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(min = 1)
 	@Automapped
-	private String				name;
+	private String				fullName;
 
 	@Mandatory
-	@ValidPicture
+	@ValidEmail
 	@Automapped
-	private String				picture;
+	private String				email;
 
 	@Mandatory
-	@ValidNumber(min = 1, max = 100, integer = 3)
+	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
 	@Automapped
-	private Double				avgDwellTime;
+	private String				passportNumber;
+
+	@Mandatory
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				dateOfBirth;
 
 	@Optional
-	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
-	@Column(unique = true)
-	private String				promotionCode;
-
-	@Optional
-	@ValidScore
+	@ValidString(max = 50)
 	@Automapped
-	private Double				discount;
+	private String				specialNeeds;
 
 }
