@@ -41,7 +41,7 @@ public class AirlineManager extends AbstractRole {
 	private String				identifier;
 
 	@Mandatory()
-	@ValidNumber(min = 0, max = 120, integer = 3, fraction = 0)
+	@ValidNumber(min = 0, max = 120)
 	@Automapped()
 	private Integer				yearsOfExperience;
 
