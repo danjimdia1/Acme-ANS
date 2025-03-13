@@ -1,21 +1,21 @@
 key,flightNumber,scheduledDeparture,scheduledArrival,status,key:flight,key:departureAirport,key:arrivalAirport,key:aircraft
 #base-entity,"","","","","","","",""
-leg-00,"",2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
+leg-00,AAB1111,2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
 #Probando scheduledDeparture y scheduledArrival,"","","","","","","",""
-leg-01,"",2025/01/01 0:00,2025/01/01 0:01,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
-leg-02,"",2200/12/31 23:59,2201/01/01 0:00,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
-leg-03,"",2025/01/2025 0:01,2025/01/2025 0:02,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
-leg-04,"",2200/12/31 23:58,2200/12/31 23:59,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
+leg-01,AAB1112,2025/01/01 0:00,2025/01/01 0:01,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
+leg-02,AAB1113,2200/12/31 23:59,2201/01/01 0:00,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
+leg-03,AAB1114,2025/01/2025 0:01,2025/01/2025 0:02,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
+leg-04,AAB1115,2200/12/31 23:58,2200/12/31 23:59,ON_TIME,flight-00,airport-01,airport-02,aicraft-00
 #Probando status,"","","","","","","",""
-leg-05,"",2113/01/01 0:00,2133/01/01 5:00,DELAYED,flight-00,airport-01,airport-02,aicraft-00
-leg-06,"",2113/01/01 0:00,2113/01/01 0:00,CANCELLED,flight-00,airport-01,airport-02,aicraft-00
-leg-07,"",2113/01/01 0:00,2113/01/01 0:00,LANDED,flight-00,airport-01,airport-02,aicraft-00
+leg-05,AAB1116,2113/01/01 0:00,2133/01/01 5:00,DELAYED,flight-00,airport-01,airport-02,aicraft-00
+leg-06,AAB1117,2113/01/01 0:00,2113/01/01 0:00,CANCELLED,flight-00,airport-01,airport-02,aicraft-00
+leg-07,AAB1118,2113/01/01 0:00,2113/01/01 0:00,LANDED,flight-00,airport-01,airport-02,aicraft-00
 #Probando Flight,"","","","","","","",""
-leg-08,"",2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-01,airport-01,airport-02,aicraft-00
+leg-08,AAB1119,2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-01,airport-01,airport-02,aicraft-00
 #Probando departureAirport,"","","","","","","",""
-leg-09,"",2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-03,airport-02,aircraft-00
+leg-09,AAB1120,2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-03,airport-02,aircraft-00
 #Probando arrivalAirport,"","","","","","","",""
-leg-10,"",2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-03,aiport-04,aircraft-00
+leg-10,AAB1121,2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-03,aiport-04,aircraft-00
 #Probando Aircraft,"","","","","","","",""
-leg-11,"",2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-01,airport-02,aircraft-01
+leg-11,AAC1111,2113/01/01 0:00,2133/01/01 5:00,ON_TIME,flight-00,airport-01,airport-02,aircraft-01
 "","","","","","","","",""
