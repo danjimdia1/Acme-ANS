@@ -50,10 +50,11 @@ public class Review extends AbstractEntity {
 	private String				text;
 
 	@Optional()
+	@Valid()
 	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 1)
 	private Double				score;
 
-	@Mandatory()
+	@Optional()
 	@Valid()
 	@Automapped()
 	private Boolean				isRecommended;
