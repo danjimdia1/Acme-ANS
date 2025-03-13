@@ -87,3 +87,7 @@ user-account-manager-28,true,"UserIdentity{name: 'Manfred', surname: 'Wagner', e
 user-account-manager-29,true,"UserIdentity{name: 'Sabine', surname: 'Becker', email: 'manager29@acme.com'}",manager29,manager29
 user-account-manager-30,true,"UserIdentity{name: 'Jurgen', surname: 'Lehmann', email: 'manager30@acme.com'}",manager30,manager30
 user-account-manager-31,true,"UserIdentity{name: 'Anja', surname: 'Koch', email: 'manager31@acme.com'}",manager31,manager31
+# Assistance agent accounts
+user-account-agent-01,true,"UserIdentity{name: 'Desmond', surname: 'Jorge', email: 'antonio@acme.com'}",agent1,agent1
+user-account-agent-02,true,"UserIdentity{name: 'Daisy', surname: 'Jaramillo', email: 'beatriz@acme.com'}",agent2,agent2
+user-account-agent-03,true,"UserIdentity{name: 'Dexter', surname: 'Jimenez', email: 'ricardo@acme.com'}",agent3,agent3
