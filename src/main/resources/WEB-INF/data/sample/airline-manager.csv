@@ -31,6 +31,6 @@ manager-26,user-account-manager-26,WB111111,60,2012/07/02 0:00,http://example.or
 manager-27,user-account-manager-27,ES111111,60,2012/07/02 0:00,http://example.org/a/b?,airline-01
 manager-28,user-account-manager-28,MW111111,60,2012/07/02 0:00,http://example.org/a/b?a&b,airline-01
 manager-29,user-account-manager-29,SB111111,60,2012/07/02 0:00,ftp://,airline-01
-manager-30,user-account-manager-30,JL111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZW,airline-01
+manager-30,user-account-manager-30,JL111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ,airline-01
 #Probando airline
 manager-31,user-account-manager-31,AK111111,60,2012/07/02 0:00,http://lorem.com/ipsum,airline-02
