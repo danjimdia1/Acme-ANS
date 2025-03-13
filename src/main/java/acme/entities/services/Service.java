@@ -3,8 +3,6 @@ package acme.entities.services;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -15,7 +13,6 @@ import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidPicture;
 import acme.constraints.ValidService;
-import acme.entities.airport.Airport;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -55,10 +52,5 @@ public class Service extends AbstractEntity {
 	@ValidScore
 	@Automapped
 	private Double				discount;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Airport				airport;
 
 }
