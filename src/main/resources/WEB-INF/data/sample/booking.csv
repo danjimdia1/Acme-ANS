@@ -1,0 +1,31 @@
+key,locatorCode,purchaseMoment,travelClass,price,lastCardNibble,key:customer,key:flight
+# Base Entity
+booking-01,AYCX99RS,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+# LocatorCode - variations
+booking-02,666666,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+booking-03,RZX3P0I,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+booking-04,洛伦·伊普森3,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+booking-05,7Q47YQS8,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+# purchaseMoment - variations
+booking-06,88TS0L6K,2000/01/01 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+booking-07,EH4EUF71,2000/01/01 00:01,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+booking-08,XOEXWOZ8,2022/07/29 23:59,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+booking-09,MCT8Z3WR,2022/07/30 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+# TravelClass - variations
+booking-10,NDJWZBPV,2012/07/02 00:00,BUSINESS,EUR 40.00,4999,customer-01,fligth-01
+# Price - variations
+booking-11,Y1P818D8,2012/07/02 00:00,ECONOMY,EUR 0.00,4999,customer-01,fligth-01
+booking-12,1G369BGW,2012/07/02 00:00,ECONOMY,EUR 0.01,4999,customer-01,fligth-01
+booking-13,JC1L09U4,2012/07/02 00:00,ECONOMY,EUR 999999.99,4999,customer-01,fligth-01
+booking-14,7OX28T9D,2012/07/02 00:00,ECONOMY,EUR 1000000.00,4999,customer-01,fligth-01
+# LastCreditCardNibble - variations
+booking-15,JPJUEUVU,2012/07/02 00:00,ECONOMY,EUR 40.00,0000,customer-01,fligth-01
+booking-16,YSJYFPR6,2012/07/02 00:00,ECONOMY,EUR 40.00,0001,customer-01,fligth-01
+booking-17,RPL9I3G5,2012/07/02 00:00,ECONOMY,EUR 40.00,,customer-01,fligth-01
+booking-18,SPGN7J7J,2012/07/02 00:00,ECONOMY,EUR 40.00,9999,customer-01,fligth-01
+# key:customer - variations
+booking-19,O8GYSM02,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-02,fligth-01
+booking-20,FBE9Z9TX,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-01
+# key:fligth - variations
+booking-21,ZH8SGLR0,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-02
+booking-22,GU614MD3,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,fligth-03
