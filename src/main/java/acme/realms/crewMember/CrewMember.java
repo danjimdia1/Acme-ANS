@@ -1,24 +1,29 @@
 
-package acme.entities.crewMember;
+package acme.realms.crewMember;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidCrewMember;
+import acme.entities.airlines.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class CrewMember extends AbstractEntity {
+@ValidCrewMember
+public class CrewMember extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -47,17 +52,12 @@ public class CrewMember extends AbstractEntity {
 	private AvailabilityStatus	availabilityStatus;
 
 	@Mandatory
-	@Valid
-	@Automapped
-	private String				airline;
-
-	@Mandatory
 	@ValidMoney
 	@Automapped
 	private Money				salary;
 
 	@Optional
-	@Valid
+	@ValidNumber(min = 0, max = 120)
 	@Automapped
 	private Integer				yearsExperience;
 
@@ -65,4 +65,8 @@ public class CrewMember extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 }
