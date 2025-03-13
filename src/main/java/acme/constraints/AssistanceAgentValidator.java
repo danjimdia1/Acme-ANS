@@ -4,8 +4,10 @@ package acme.constraints;
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
+import acme.client.components.validation.Validator;
 import acme.realms.AssistanceAgent;
 
+@Validator
 public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceAgent, AssistanceAgent> {
 
 	@Override
@@ -24,16 +26,15 @@ public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceA
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			String initials = "";
-			String name = agent.getIdentity().getName();
-			String surname = agent.getIdentity().getSurname();
-			String[] surnameParts = surname.split(" ");
+			String name = agent.getIdentity().getName().toUpperCase();
+			String surname = agent.getIdentity().getSurname().toUpperCase();
 
 			initials += name.charAt(0);
-			initials += surnameParts[0].charAt(0);
-			if (surnameParts.length > 1)
-				initials += surnameParts[1].charAt(0);
+			initials += surname.charAt(0);
 
-			boolean validEmployeeCode = agent.getEmployeeCode().matches("^" + initials + "\\d{6}$");
+			String code = agent.getEmployeeCode();
+
+			boolean validEmployeeCode = code.startsWith(initials);
 
 			super.state(context, validEmployeeCode, "employeeCode", "java.validation.assistanceAgent.identifier.message");
 

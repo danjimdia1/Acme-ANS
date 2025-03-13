@@ -1,5 +1,5 @@
 
-package acme.entities.incident;
+package acme.entities.claims;
 
 import java.util.Date;
 
@@ -12,23 +12,24 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.crewMember.CrewMember;
+import acme.entities.legs.Leg;
+import acme.realms.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Incident extends AbstractEntity {
+public class Claim extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Attributes -------------------------------------------------------------	
 
 	@Mandatory
 	@ValidMoment(past = true)
@@ -36,9 +37,9 @@ public class Incident extends AbstractEntity {
 	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidEmail
 	@Automapped
-	private String				typeIncident;
+	private String				email;
 
 	@Mandatory
 	@ValidString(max = 255)
@@ -46,9 +47,14 @@ public class Incident extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10)
+	@Valid
 	@Automapped
-	private Integer				severityLevel;
+	private ClaimType			type;
+
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean				accepted;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -56,6 +62,12 @@ public class Incident extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private CrewMember			crewMember;
+	@ManyToOne(optional = false)
+	private AssistanceAgent		assistanceAgent;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg					leg;
+
 }

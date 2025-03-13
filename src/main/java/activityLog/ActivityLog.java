@@ -1,9 +1,10 @@
 
-package acme.entities.reviews;
+package activityLog;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -11,17 +12,18 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.legs.Leg;
+import acme.realms.crewMember.CrewMember;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity()
-@Getter()
-@Setter()
-public class Review extends AbstractEntity {
+@Entity
+@Getter
+@Setter
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -29,38 +31,38 @@ public class Review extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Mandatory()
-	@ValidString(min = 1, max = 50)
-	@Automapped()
-	private String				name;
-
-	@Mandatory()
+	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				moment;
+	private Date				registrationMoment;
 
-	@Mandatory()
+	@Mandatory
 	@ValidString(min = 1, max = 50)
-	@Automapped()
-	private String				subject;
+	@Automapped
+	private String				typeIncident;
 
-	@Mandatory()
-	@ValidString(min = 1)
-	@Automapped()
-	private String				text;
+	@Mandatory
+	@ValidString(min = 1, max = 255)
+	@Automapped
+	private String				description;
 
-	@Optional()
-	@Valid()
-	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 1)
-	private Double				score;
-
-	@Optional()
-	@Valid()
-	@Automapped()
-	private Boolean				isRecommended;
+	@Mandatory
+	@ValidNumber(min = 0, max = 10)
+	@Automapped
+	private Integer				severityLevel;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private CrewMember			crewMember;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg					leg;
 
 }
