@@ -9,10 +9,10 @@ member-04,CCA123456,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000
 member-05,AB555555,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-05
 
 #Probando PhoneNumber 
-member-06,AA123457,999999,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-06
-member-07,AA123458,000000000000000,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-07
+member-06,AA123457,+000000,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-06
+member-07,AA123458,+000000000000000,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-07
 member-08,AA123459,+123456,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-08
-member-09,AA123460,123456,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-09
+member-09,AA123460,123456123,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-09
 member-10,AA123461,+001234567890123,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,14,user-account-member-10
 
 #Probando LanguageSkills 
@@ -45,8 +45,8 @@ member-30,AA123481,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 999999
 member-31,AA123482,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 1000000.00,14,user-account-member-31
 
 #Probando YearsOfExperience 
-member-32,AA123483,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,0,user-account-member-32
-member-33,AA123484,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,1,user-account-member-33
-member-34,AA123485,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,119,user-account-member-34
-member-35,AA123486,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,120,user-account-member-35
-member-36,AA123487,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,,user-account-member-36
+member-32,AA123487,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,,user-account-member-32
+member-33,AA123483,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,0,user-account-member-33
+member-34,AA123484,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,1,user-account-member-34
+member-35,AA123485,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,119,user-account-member-35
+member-36,AA123486,+123456789,Español e Inglés,AVAILABLE,airline-01,EUR 10000.00,120,user-account-member-36
