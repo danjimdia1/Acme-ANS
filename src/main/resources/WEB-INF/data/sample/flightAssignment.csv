@@ -29,9 +29,15 @@ assignment-19,PILOT,2025/01/01 00:00,CONFIRMED,<marquee>Hacked</marquee>,member-
 assignment-20,PILOT,2025/01/01 00:00,CONFIRMED,<script>alert(‘Hacked!’);</script>,member-01,leg-01
 assignment-21,PILOT,2025/01/01 00:00,CONFIRMED,' or 'A' = 'A,member-01,leg-01
 
+#Probando Crew Member
+assignment-22,PILOT,2025/01/01 00:00,CONFIRMED,,member-02,leg-01
+assignment-23,PILOT,2025/01/01 00:00,CONFIRMED,,member-15,leg-01
+assignment-24,PILOT,2025/01/01 00:00,CONFIRMED,,member-35,leg-01
+assignment-25,PILOT,2025/01/01 00:00,CONFIRMED,,member-36,leg-01
+
 #Probando Leg
-assignment-22,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-01
-assignment-23,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-02
-assignment-24,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-03
-assignment-25,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-04
-assignment-26,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-05
+assignment-26,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-01
+assignment-27,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-05
+assignment-28,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-09
+assignment-29,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-10
+assignment-30,PILOT,2025/01/01 00:00,CONFIRMED,,member-01,leg-11
