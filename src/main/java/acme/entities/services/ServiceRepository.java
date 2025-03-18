@@ -12,6 +12,6 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface ServiceRepository extends AbstractRepository {
 
-	@Query("SELECT s FROM Service s WHERE s.promotionCode = :promotionCode")
-	Optional<Service> findByPromotionCode(@Param("promotionCode") String promotionCode);
+	@Query("SELECT s FROM Service s WHERE s.promotionCode = :promotionCode AND s.id != :serviceId")
+	Optional<Service> findByPromotionCodeAndNotServiceId(@Param("promotionCode") String promotionCode, @Param("serviceId") int serviceId);
 }
