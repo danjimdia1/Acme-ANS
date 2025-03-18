@@ -37,7 +37,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 			return false;
 		}
 
-		Optional<TrackingLog> latestTrackingLogOpt = this.trackingLogRepository.findLastTrackingLogByClaimId(log.getClaim().getId());
+		Optional<TrackingLog> latestTrackingLogOpt = this.trackingLogRepository.findLastTrackingLogByClaimId(log.getClaim().getId(), log.getId());
 
 		if (log.getResolutionPercentage() == 100.00) {
 			boolean correctResolution;
