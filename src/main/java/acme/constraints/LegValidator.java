@@ -6,7 +6,9 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
+import acme.client.helpers.SpringHelper;
 import acme.entities.legs.Leg;
+import acme.entities.legs.LegRepository;
 
 @Validator
 public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
@@ -38,6 +40,13 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 				super.state(context, validScheduledArrival, "*", "java.validation.leg.scheduledArrival.message");
 			}
+			{
+				LegRepository repository;
+				repository = SpringHelper.getBean(LegRepository.class);
+				Boolean repeatedflightNumber = repository.findByFlightNumber(leg.getFlightNumber()).isPresent();
+				super.state(context, !repeatedflightNumber, "identifier", "java.validation.airlineManager.repeatedIdentifier.identifier.message");
+			}
+
 		}
 		result = !super.hasErrors(context);
 

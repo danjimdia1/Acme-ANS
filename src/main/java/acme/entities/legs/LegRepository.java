@@ -3,6 +3,7 @@ package acme.entities.legs;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,6 +13,9 @@ import acme.client.repositories.AbstractRepository;
 
 @Repository
 public interface LegRepository extends AbstractRepository {
+
+	@Query("SELECT l FROM Leg l WHERE l.flightNumber = :flightNumber")
+	Optional<Leg> findByFlightNumber(@Param("flightNumber") String flightNumber);
 
 	@Query("SELECT COUNT(l) from Leg l WHERE l.flight.id = :flightId")
 	Integer numberOfLavoyers(@Param("flightId") int flightId);
