@@ -1,4 +1,5 @@
 key,name,IATA,website,type,foundationMoment,email,phoneNumber
+
 #Base-Entity
 airline-00,Lorem ipsum dolor sit ame,AAA,http://lorem.com/ipsum,STANDARD,2012/07/02 00:00,acme@lorem-ipsum.org,+123456789
 
@@ -34,29 +35,28 @@ airline-26,Lorem ipsum dolor sit ame,QQQ,http://example.org/a/b,STANDARD,2012/01
 airline-27,Lorem ipsum dolor sit ame,QBC,http://example.org/a/b?a&b,STANDARD,2012/01/01 00:00,acme27@lorem-ipsum.org,+123456789
 
 #Probando Type
-airline-28,"Lorem ipsum dolor sit ame",BBC,http://lorem.com/ipsum,LOW_COST,2012/01/01 00:00,acme28@lorem-ipsum.org,+123456789
-airline-29,"Lorem ipsum dolor sit ame",BBD,http://lorem.com/ipsum,LUXURY,2012/01/01 00:00,acme29@lorem-ipsum.org,+123456789
+airline-28,Lorem ipsum dolor sit ame,BBC,http://lorem.com/ipsum,LOW_COST,2012/01/01 00:00,acme28@lorem-ipsum.org,+123456789
+airline-29,Lorem ipsum dolor sit ame,BBD,http://lorem.com/ipsum,LUXURY,2012/01/01 00:00,acme29@lorem-ipsum.org,+123456789
+#Probando Foundation Moment
+airline-30,Lorem ipsum dolor sit ame,CCD,http://example.org/,STANDARD,2000/01/01 00:00,acme30@lorem-ipsum.org,+123456789
+airline-31,Lorem ipsum dolor sit ame,CCE,http://example.org/,STANDARD,2000/01/01 00:01,acme31@lorem-ipsum.org,+123456789
+airline-32,Lorem ipsum dolor sit ame,CCF,http://example.org/,STANDARD,2022/07/29 23:59,acme32@lorem-ipsum.org,+123456789
+airline-33,Lorem ipsum dolor sit ame,CCG,http://example.org/,STANDARD,2022/07/30 00:00,acme33@lorem-ipsum.org,+123456789
 
-#Probando Foundation Moment 
-airline-30,"Lorem ipsum dolor sit ame",CCD,http://example.org/,STANDARD,2000/01/01 00:00,acme30@lorem-ipsum.org,+123456789
-airline-31,"Lorem ipsum dolor sit ame",CCE,http://example.org/,STANDARD,2000/01/01 00:01,acme31@lorem-ipsum.org,+123456789
-airline-32,"Lorem ipsum dolor sit ame",CCF,http://example.org/,STANDARD,2022/07/29 23:59,acme32@lorem-ipsum.org,+123456789
-airline-33,"Lorem ipsum dolor sit ame",CCG,http://example.org/,STANDARD,2022/07/30 00:00,acme33@lorem-ipsum.org,+123456789
+#Probando Email
+airline-34,Lorem ipsum dolor sit ame,DDE,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,a@b.e,+123456789
+airline-35,Lorem ipsum dolor sit ame,DDF,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,a@b.es,+123456789
+airline-36,Lorem ipsum dolor sit ame,DDG,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,a@b.esx,+123456789
+airline-37,Lorem ipsum dolor sit ame,DDH,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.edu,+123456789
+airline-38,Lorem ipsum dolor sit ame,DDI,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.org,+123456789
+airline-39,Lorem ipsum dolor sit ame,DDJ,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.com,+123456789
+airline-40,Lorem ipsum dolor sit ame,DDK,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,,+123456789
 
-#Probando Email 
-airline-34,"Lorem ipsum dolor sit ame",DDE,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,a@b.e,+123456789
-airline-35,"Lorem ipsum dolor sit ame",DDF,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,a@b.es,+123456789
-airline-36,"Lorem ipsum dolor sit ame",DDG,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,a@b.esx,+123456789
-airline-37,"Lorem ipsum dolor sit ame",DDH,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.edu,+123456789
-airline-38,"Lorem ipsum dolor sit ame",DDI,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.org,+123456789
-airline-39,"Lorem ipsum dolor sit ame",DDJ,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.com,+123456789
-airline-40,"Lorem ipsum dolor sit ame",DDK,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,,+123456789
-
-#Probando Phone Number 
-airline-41,"Lorem ipsum dolor sit ame",EEF,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme41@lorem-ipsum.org,
-airline-42,"Lorem ipsum dolor sit ame",EEG,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme42@lorem-ipsum.org,+000000
-airline-43,"Lorem ipsum dolor sit ame",EEH,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme43@lorem-ipsum.org,+000000000000000
-airline-44,"Lorem ipsum dolor sit ame",EEI,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme44@lorem-ipsum.org,+44444444444
-airline-45,"Lorem ipsum dolor sit ame",EEJ,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme45@lorem-ipsum.org,+302200
-airline-46,"Lorem ipsum dolor sit ame",EEK,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme46@lorem-ipsum.org,+54836954782
-airline-47,"Lorem ipsum dolor sit ame",EEL,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme47@lorem-ipsum.org,+5313995
+#Probando Phone Number
+airline-41,Lorem ipsum dolor sit ame,EEF,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme41@lorem-ipsum.org,
+airline-42,Lorem ipsum dolor sit ame,EEG,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme42@lorem-ipsum.org,+000000
+airline-43,Lorem ipsum dolor sit ame,EEH,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme43@lorem-ipsum.org,+000000000000000
+airline-44,Lorem ipsum dolor sit ame,EEI,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme44@lorem-ipsum.org,+44444444444
+airline-45,Lorem ipsum dolor sit ame,EEJ,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme45@lorem-ipsum.org,+302200
+airline-46,Lorem ipsum dolor sit ame,EEK,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme46@lorem-ipsum.org,+54836954782
+airline-47,Lorem ipsum dolor sit ame,EEL,http://lorem.com/ipsum,STANDARD,2012/01/01 00:00,acme47@lorem-ipsum.org,+5313995
