@@ -1,11 +1,11 @@
-key,registrationMoment,typeOfIncident,description,severityLevel,key:assignment
+key,registrationMoment,typeIncident,description,severityLevel,key:assignment
 #Base-Entity
-activityLog-01,2000/01/01 00:00,L,5,assignment-01
+activityLog-01,2000/01/01 00:00,L,L,5,assignment-01
 
 #Probrando RegistrationMoment
-activityLog-02,2010/01/01 00:00,L,5,assignment-01
+activityLog-02,2010/01/01 00:00,L,L,5,assignment-01
 
-#Probando TypeOfIncident
+#Probando typeIncident
 activityLog-03,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
 activityLog-04,2000/01/01 00:00,Lo,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
 activityLog-05,2000/01/01 00:00,Lorem ipsum dolor sit amet  consectetur adipiscin,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
@@ -30,12 +30,12 @@ activityLog-21,2000/01/01 00:00,L,<script>alert(‘Hacked!’);</script>,5,assig
 activityLog-22,2000/01/01 00:00,L,' or 'A' = 'A,5,assignment-01
 
 #Probando SeverityLevel
-activityLog-23,2000/01/01 00:00,L,0,assignment-01
-activityLog-24,2000/01/01 00:00,L,1,assignment-01
-activityLog-25,2000/01/01 00:00,L,9,assignment-01
-activityLog-26,2000/01/01 00:00,L,10,assignment-01
+activityLog-23,2000/01/01 00:00,L,L,0,assignment-01
+activityLog-24,2000/01/01 00:00,L,L,1,assignment-01
+activityLog-25,2000/01/01 00:00,L,L,9,assignment-01
+activityLog-26,2000/01/01 00:00,L,L, 10,assignment-01
 
 #Probando Assignment
 activityLog-27,2000/01/01 00:00,Lorem ipsum dolor sit ame,L,5,assignment-02
 activityLog-28,2000/01/01 00:00,Lorem ipsum dolor sit ame,L,5,assignment-03
-activityLog-29,2000/01/01 00:00,L,5,assignment-04
+activityLog-29,2000/01/01 00:00,L,L,5,assignment-04
