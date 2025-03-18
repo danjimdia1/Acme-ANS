@@ -14,8 +14,8 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface LegRepository extends AbstractRepository {
 
-	@Query("SELECT l FROM Leg l WHERE l.flightNumber = :flightNumber")
-	Optional<Leg> findByFlightNumber(@Param("flightNumber") String flightNumber);
+	@Query("SELECT l FROM Leg l WHERE l.flightNumber = :flightNumber AND l.id != :legId")
+	Optional<Leg> findByFlightNumber(@Param("flightNumber") String flightNumber, @Param("legId") int legId);
 
 	@Query("SELECT COUNT(l) from Leg l WHERE l.flight.id = :flightId")
 	Integer numberOfLavoyers(@Param("flightId") int flightId);
