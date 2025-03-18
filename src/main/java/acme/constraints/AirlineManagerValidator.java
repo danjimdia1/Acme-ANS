@@ -5,7 +5,9 @@ import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
-import acme.realms.AirlineManager;
+import acme.client.helpers.SpringHelper;
+import acme.realms.airlineManager.AirlineManager;
+import acme.realms.airlineManager.AirlineManagerRepository;
 
 @Validator
 public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManager, AirlineManager> {
@@ -25,25 +27,33 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 		if (airlineManager == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
+			{
+				String initials = "";
+				String name = airlineManager.getUserAccount().getIdentity().getName();
+				String surname = airlineManager.getUserAccount().getIdentity().getSurname();
 
-			String initials = "";
-			String name = airlineManager.getUserAccount().getIdentity().getName();
-			String surname = airlineManager.getUserAccount().getIdentity().getSurname();
+				initials += name.charAt(0);
+				initials += surname.charAt(0);
 
-			initials += name.charAt(0);
-			initials += surname.charAt(0);
+				boolean validIdentifier;
 
-			boolean validIdentifier;
+				String identifier = airlineManager.getIdentifier();
 
-			String identifier = airlineManager.getIdentifier();
+				boolean validLength = identifier.length() >= 8 && identifier.length() <= 9;
 
-			boolean validLength = identifier.length() >= 8 && identifier.length() <= 9;
+				boolean validInitials = identifier.startsWith(initials);
 
-			boolean validInitials = identifier.startsWith(initials);
+				validIdentifier = validLength && validInitials;
 
-			validIdentifier = validLength && validInitials;
-
-			super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.identifier.message");
+				super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.message");
+			}
+			{
+				AirlineManagerRepository repository;
+				repository = SpringHelper.getBean(AirlineManagerRepository.class);
+				Boolean repeatedIdentifier = repository.findByIdentifier(airlineManager.getIdentifier()).isPresent();
+				// repeatedIdentifier nos devuelve True si encuentra un identificador, por tanto lo negamos para que sea inválido
+				super.state(context, !repeatedIdentifier, "identifier", "java.validation.airlineManager.repeatedIdentifier.identifier.message");
+			}
 		}
 
 		result = !super.hasErrors(context);
