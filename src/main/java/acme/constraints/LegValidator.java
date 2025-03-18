@@ -44,7 +44,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				LegRepository repository;
 				repository = SpringHelper.getBean(LegRepository.class);
 				Boolean repeatedflightNumber = repository.findByFlightNumber(leg.getFlightNumber()).isPresent();
-				super.state(context, !repeatedflightNumber, "identifier", "java.validation.airlineManager.repeatedIdentifier.identifier.message");
+				super.state(context, !repeatedflightNumber, "identifier", "java.validation.leg.repeatedflightNumber.flightNumber.message");
 			}
 
 		}
