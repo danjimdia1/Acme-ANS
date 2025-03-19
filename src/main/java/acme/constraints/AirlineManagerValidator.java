@@ -6,6 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.client.helpers.SpringHelper;
+import acme.client.helpers.StringHelper;
 import acme.realms.airlineManager.AirlineManager;
 import acme.realms.airlineManager.AirlineManagerRepository;
 
@@ -28,6 +29,9 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			{
+				if (StringHelper.isBlank(airlineManager.getIdentifier()))
+					super.state(context, false, "identifier", "java.validation.airlineManager.identifier.identifier-couldnt-be-blank");
+
 				String initials = "";
 				String name = airlineManager.getUserAccount().getIdentity().getName();
 				String surname = airlineManager.getUserAccount().getIdentity().getSurname();
@@ -35,17 +39,9 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 				initials += name.charAt(0);
 				initials += surname.charAt(0);
 
-				boolean validIdentifier;
+				boolean validIdentifier = StringHelper.startsWith(airlineManager.getIdentifier(), initials, true);
 
-				String identifier = airlineManager.getIdentifier();
-
-				boolean validLength = identifier.length() >= 8 && identifier.length() <= 9;
-
-				boolean validInitials = identifier.startsWith(initials);
-
-				validIdentifier = validLength && validInitials;
-
-				super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.message");
+				super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.invalid-identifier");
 			}
 			{
 				AirlineManagerRepository repository;
