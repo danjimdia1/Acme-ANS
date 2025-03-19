@@ -5,7 +5,10 @@ import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
-import acme.realms.AirlineManager;
+import acme.client.helpers.SpringHelper;
+import acme.client.helpers.StringHelper;
+import acme.realms.airlineManager.AirlineManager;
+import acme.realms.airlineManager.AirlineManagerRepository;
 
 @Validator
 public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManager, AirlineManager> {
@@ -25,25 +28,29 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 		if (airlineManager == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
+			{
+				if (StringHelper.isBlank(airlineManager.getIdentifier()))
+					super.state(context, false, "identifier", "java.validation.airlineManager.identifier.identifier-couldnt-be-blank");
 
-			String initials = "";
-			String name = airlineManager.getUserAccount().getIdentity().getName();
-			String surname = airlineManager.getUserAccount().getIdentity().getSurname();
+				String initials = "";
+				String name = airlineManager.getUserAccount().getIdentity().getName();
+				String surname = airlineManager.getUserAccount().getIdentity().getSurname();
 
-			initials += name.charAt(0);
-			initials += surname.charAt(0);
+				initials += name.charAt(0);
+				initials += surname.charAt(0);
 
-			boolean validIdentifier;
+				boolean validIdentifier = StringHelper.startsWith(airlineManager.getIdentifier(), initials, true);
 
-			String identifier = airlineManager.getIdentifier();
+				super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.invalid-identifier");
+			}
+			{
+				AirlineManagerRepository repository;
+				repository = SpringHelper.getBean(AirlineManagerRepository.class);
 
-			boolean validLength = identifier.length() >= 8 && identifier.length() <= 9;
+				Boolean repeatedIdentifier = repository.findByIdentifier(airlineManager.getIdentifier(), airlineManager.getId()).isEmpty();
+				super.state(context, repeatedIdentifier, "identifier", "java.validation.airlineManager.repeatedIdentifier.identifier.message");
 
-			boolean validInitials = identifier.startsWith(initials);
-
-			validIdentifier = validLength && validInitials;
-
-			super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.identifier.message");
+			}
 		}
 
 		result = !super.hasErrors(context);

@@ -9,8 +9,8 @@ booking-05,7Q47YQS8,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-0
 # purchaseMoment - variations
 booking-06,88TS0L6K,2000/01/01 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 booking-07,EH4EUF71,2000/01/01 00:01,ECONOMY,EUR 40.00,4999,customer-01,flight-01
-booking-08,XOEXWOZ8,2022/07/29 23:59,ECONOMY,EUR 40.00,4999,customer-01,flight-01
-booking-09,MCT8Z3WR,2024/12/30 23:59,ECONOMY,EUR 40.00,4999,customer-01,flight-01
+booking-08,XOEXWOZ8,2024/12/30 23:59,ECONOMY,EUR 40.00,4999,customer-01,flight-01
+booking-09,MCT8Z3WR,2025/01/01 00:00,ECONOMY,EUR 40.00,4999,customer-01,flight-01
 # TravelClass - variations,"","",""
 booking-10,NDJWZBPV,2012/07/02 00:00,BUSINESS,EUR 40.00,4999,customer-01,flight-01
 # Price - variations

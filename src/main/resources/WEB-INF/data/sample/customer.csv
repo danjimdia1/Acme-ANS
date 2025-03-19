@@ -1,6 +1,7 @@
 key,key:userAccount,identifier,phoneNumber,physicalAddress,city,country,earnedPoints
 customer-01,user-account-customer-01,DJ111111,+11234567890,123 Main Street Apartment 4B,New York,USA,12000
-customer-02,user-account-customer-02,JW222222,+8613912345678,北京市朝阳区光华路5号,北京,中国,18000
+# identifier - variations
+customer-02,user-account-customer-02,JWP222226,+8613912345678,北京市朝阳区光华路5号,北京,中国,18000
 # customerPhoneNumber - variations
 customer-03,user-account-customer-03,MA333333,+123456,123 Main Street Apartment 4B,New York,USA,12000
 customer-04,user-account-customer-04,DJ444445,+123456763,123 Main Street Apartment 4B,New York,USA,12000
