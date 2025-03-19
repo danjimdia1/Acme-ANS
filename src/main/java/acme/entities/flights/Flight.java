@@ -41,7 +41,7 @@ public class Flight extends AbstractEntity {
 	@Mandatory()
 	@Valid()
 	@Automapped()
-	private FlightSelfTransfer	indication;
+	private FlightSelfTransfer	selftTransfer;
 
 	@Mandatory()
 	@ValidMoney(min = 0.00, max = 1000000.00)
@@ -64,7 +64,7 @@ public class Flight extends AbstractEntity {
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findFirstScheduledDeparture(this.getId());
-		result = wrapper.get(0);
+		result = wrapper == null ? null : wrapper.get(0);
 
 		return result;
 	}
@@ -77,7 +77,7 @@ public class Flight extends AbstractEntity {
 
 		repository = SpringHelper.getBean(LegRepository.class);
 		wrapper = repository.findLastScheduledArrival(this.getId());
-		result = wrapper.get(0);
+		result = wrapper == null ? null : wrapper.get(0);
 
 		return result;
 	}
@@ -107,7 +107,7 @@ public class Flight extends AbstractEntity {
 	}
 
 	@Transient()
-	public Integer getNumberOfLavoyers() {
+	public Integer getNumberOfLayovers() {
 		Integer result;
 		LegRepository repository;
 		Integer wrapper;
