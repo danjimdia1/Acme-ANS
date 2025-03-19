@@ -28,12 +28,9 @@ public class ServiceValidator extends AbstractValidator<ValidService, Service> {
 
 		if (service == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-
-		int currentYearInt = MomentHelper.getCurrentMoment().getYear();
 		String promotionCode = service.getPromotionCode();
-
 		if (!StringHelper.isBlank(promotionCode)) {
-			if (!StringHelper.endsWith(promotionCode, String.valueOf(currentYearInt), true))
+			if (!StringHelper.endsWith(promotionCode, String.valueOf(MomentHelper.getCurrentMoment().getYear() % 100), true))
 				super.state(context, false, "PromotionCode", "acme.validation.promotion-code.not-current-year");
 
 			Optional<Service> foundService = SpringHelper.getBean(ServiceRepository.class).findByPromotionCodeAndNotServiceId(promotionCode, service.getId());
