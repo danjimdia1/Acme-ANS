@@ -41,7 +41,7 @@ public class Flight extends AbstractEntity {
 	@Mandatory()
 	@Valid()
 	@Automapped()
-	private FlightSelfTransfer	selftTransfer;
+	private FlightSelfTransfer	selfTransfer;
 
 	@Mandatory()
 	@ValidMoney(min = 0.00, max = 1000000.00)
