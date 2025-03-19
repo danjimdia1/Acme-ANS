@@ -44,7 +44,7 @@ service-36,Lorem ipsum,http://www.lorem-ipsum.org,50.00,XYXE-25,50.00
 service-37,Lorem ipsum,http://www.lorem-ipsum.org,50.00,XYXF-25,50.00
 service-38,Lorem ipsum,http://www.lorem-ipsum.org,50.00,XYXG-25,50.00
 service-39,Lorem ipsum,http://www.lorem-ipsum.org,50.00,XYXH-25,50.00
-service-40,Lorem ipsum,http://www.lorem-ipsum.org,50.00,,50.00
+service-40,Lorem ipsum,http://www.lorem-ipsum.org,50.00,ZZZZ-25,50.00
 # discount - variations
 service-41,Lorem ipsum,http://www.lorem-ipsum.org,50.00,AABP-25,0.00
 service-42,Lorem ipsum,http://www.lorem-ipsum.org,50.00,AABQ-25,0.01
