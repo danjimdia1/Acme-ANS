@@ -1,12 +1,17 @@
 
 package acme.constraints;
 
+import java.util.Optional;
+
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
-import acme.realms.Customer;
+import acme.client.helpers.SpringHelper;
+import acme.client.helpers.StringHelper;
+import acme.realms.customer.Customer;
+import acme.realms.customer.CustomerRepository;
 
 @Validator
 public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer> {
@@ -19,34 +24,29 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 	@Override
 	public boolean isValid(final Customer customer, final ConstraintValidatorContext context) {
 		assert context != null;
-		boolean result = true;
+		boolean result;
 
-		if (customer == null) {
+		if (customer == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-			return false;
-		}
 
 		String identifier = customer.getIdentifier();
 		DefaultUserIdentity identity = customer.getUserAccount().getIdentity();
 
-		if (identifier != null && !identifier.isBlank() && identity != null) {
+		if (!StringHelper.isBlank(identifier)) {
 			String name = identity.getName();
 			String surname = identity.getSurname();
-
-			if (name != null && !name.isBlank() && surname != null && !surname.isBlank()) {
-				String expectedPrefix = (name.substring(0, 1) + surname.substring(0, 1)).toUpperCase();
-				String actualPrefix = identifier.substring(0, 2).toUpperCase();
-
-				boolean validPrefix = expectedPrefix.equals(actualPrefix);
-
-				if (!validPrefix) {
+			if (!StringHelper.isBlank(name) && !StringHelper.isBlank(name)) {
+				if (!StringHelper.startsWith(identifier, name.substring(0, 1) + surname.substring(0, 1), true))
 					super.state(context, false, "identifier", "java.validation.customer.identifier.invalidPrefix");
-					result = false;
-				}
-			}
-		}
 
-		result = result && !super.hasErrors(context);
+				Optional<Customer> foundCustomer = SpringHelper.getBean(CustomerRepository.class).findByIdentifierAnNotCustomerId(identifier, customer.getId());
+				if (foundCustomer.isPresent())
+					super.state(context, false, "identifier", "acme.validation.identifier.not-unique");
+			} else
+				super.state(context, false, "identifier", "acme.validation.identifier.blank-name-surname");
+		} else
+			super.state(context, false, "identifier", "acme.validation.identifier.is-blank");
+		result = !super.hasErrors(context);
 		return result;
 	}
 }
