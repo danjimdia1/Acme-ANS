@@ -35,7 +35,7 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 		if (!StringHelper.isBlank(identifier)) {
 			String name = identity.getName();
 			String surname = identity.getSurname();
-			if (!StringHelper.isBlank(name) && !StringHelper.isBlank(name)) {
+			if (!StringHelper.isBlank(name) && !StringHelper.isBlank(surname)) {
 				if (!StringHelper.startsWith(identifier, name.substring(0, 1) + surname.substring(0, 1), true))
 					super.state(context, false, "identifier", "java.validation.customer.identifier.invalidPrefix");
 
