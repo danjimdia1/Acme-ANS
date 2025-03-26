@@ -24,9 +24,9 @@ public interface LegRepository extends AbstractRepository {
 	@Query(value = "SELECT l.scheduled_arrival FROM Leg l WHERE l.flight_id = :flightId ORDER BY l.scheduled_arrival DESC LIMIT 1", nativeQuery = true)
 	Optional<Date> findLastScheduledArrival(int flightId);
 
-	@Query(value = "SELECT l.departure_airport_city FROM Leg l WHERE l.flight_id = :flightId ORDER BY l.scheduled_departure ASC LIMIT 1", nativeQuery = true)
+	@Query(value = "SELECT a.city FROM Leg l JOIN Airport a ON l.departure_airport_id = a.id WHERE l.flight_id = :flightId ORDER BY l.scheduled_departure ASC LIMIT 1", nativeQuery = true)
 	Optional<String> findFirstOriginCity(int flightId);
 
-	@Query(value = "SELECT l.arrival_airport_city FROM Leg l WHERE l.flight_id = :flightId ORDER BY l.scheduled_arrival DESC LIMIT 1", nativeQuery = true)
+	@Query(value = "SELECT a.city FROM Leg l JOIN Airport a ON l.arrival_airport_id = a.id WHERE l.flight_id = :flightId ORDER BY l.scheduled_arrival DESC LIMIT 1", nativeQuery = true)
 	Optional<String> findLastDestinationCity(int flightId);
 }
