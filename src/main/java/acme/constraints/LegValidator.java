@@ -30,13 +30,12 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			{
-				if (StringHelper.isBlank(leg.getFlightNumber()))
-					super.state(context, false, "*", "java.validation.leg.flightNumber.flightNumber-couldnt-be-blank");
+				if (!StringHelper.isBlank(leg.getFlightNumber())) {
+					String airlineIataCode = leg.getAircraft().getAirline().getIATA();
+					boolean validFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineIataCode, true);
 
-				String airlineIataCode = leg.getAircraft().getAirline().getIATA();
-				boolean validFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineIataCode, true);
-
-				super.state(context, validFlightNumber, "*", "java.validation.leg.flightNumber.message");
+					super.state(context, validFlightNumber, "*", "java.validation.leg.flightNumber.message");
+				}
 			}
 			{
 
