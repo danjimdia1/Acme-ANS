@@ -1,0 +1,20 @@
+# messages-es.i18n
+
+airline-manager.flight.list.title = Lista de vuelos
+
+airline-manager.flight.list.label.tag = Etiqueta
+airline-manager.flight.list.label.selfTransfer = Auto-trasbordo
+airline-manager.flight.list.label.cost = Precio
+airline-manager.flight.list.label.description = Descripcion
+
+airline-manager.flight.form.title = Vuelo
+
+airline-manager.flight.form.label.tag = Etiqueta
+airline-manager.flight.form.label.selfTransfer = Auto-trasbordo
+airline-manager.flight.form.label.cost = Precio
+airline-manager.flight.form.label.description = Descripción
+airline-manager.flight.form.label.scheduledDeparture = Hora de Salida
+airline-manager.flight.form.label.scheduledArrival = Hora de Llegada
+airline-manager.flight.form.label.originCity = Ciudad de origen
+airline-manager.flight.form.label.destinationCity = Ciudad de destino
+airline-manager.flight.form.label.numberOfLayovers = Number of layovers

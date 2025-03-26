@@ -1,11 +1,13 @@
-# messages-es.i18n
+# messages-en.i18n
 
-airline-manager.list.title = Lista de vuelos
+airline-manager.flight.list.title = Listing of flights
 
-airline-manager.flight.list.label.tag = Etiqueta
-airline-manager.flight.list.label.selfTransfer = Auto-trasbordo
-airline-manager.flight.list.label.cost = Precio
-airline-manager.flight.list.label.description = Descripcion
+airline-manager.flight.list.label.tag = Tag
+airline-manager.flight.list.label.selfTransfer = Self Transfer
+airline-manager.flight.list.label.cost = Cost
+airline-manager.flight.list.label.description = Description
+
+airline-manager.flight.form.title = Flight
 
 airline-manager.flight.form.label.tag = Tag
 airline-manager.flight.form.label.selfTransfer = Self Transfer
