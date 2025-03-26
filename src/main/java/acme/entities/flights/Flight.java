@@ -3,7 +3,6 @@ package acme.entities.flights;
 
 import java.beans.Transient;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -58,65 +57,33 @@ public class Flight extends AbstractEntity {
 
 	@Transient()
 	public Date getScheduledDeparture() {
-		Date result;
-		LegRepository repository;
-		List<Date> wrapper;
-
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findFirstScheduledDeparture(this.getId());
-		result = wrapper == null ? null : wrapper.get(0);
-
-		return result;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		return repository.findFirstScheduledDeparture(this.getId()).orElse(null);
 	}
 
 	@Transient()
 	public Date getScheduledArrival() {
-		Date result;
-		LegRepository repository;
-		List<Date> wrapper;
-
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLastScheduledArrival(this.getId());
-		result = wrapper == null ? null : wrapper.get(0);
-
-		return result;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		return repository.findLastScheduledArrival(this.getId()).orElse(null);
 	}
 
+	@Transient()
 	public String getOriginCity() {
-		String result;
-		LegRepository repository;
-		List<String> wrapper;
-
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findFirstOriginCity(this.getId());
-		result = wrapper == null ? "" : wrapper.get(0);
-
-		return result;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		return repository.findFirstOriginCity(this.getId()).orElse("Desconocido");
 	}
 
+	@Transient()
 	public String getDestinationCity() {
-		String result;
-		LegRepository repository;
-		List<String> wrapper;
-
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.findLastDestinationCity(this.getId());
-		result = wrapper == null ? "" : wrapper.get(0);
-
-		return result;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		return repository.findLastDestinationCity(this.getId()).orElse("Desconocido");
 	}
 
 	@Transient()
 	public Integer getNumberOfLayovers() {
-		Integer result;
-		LegRepository repository;
-		Integer wrapper;
-
-		repository = SpringHelper.getBean(LegRepository.class);
-		wrapper = repository.numberOfLavoyers(this.getId());
-		result = wrapper == null ? 0 : wrapper - 1; // El numero de lavoyers es el total menos 1
-
-		return result;
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		Integer layovers = repository.numberOfLavoyers(this.getId());
+		return layovers == null || layovers == 0 ? 0 : layovers - 1;
 	}
 
 	// Relationships ----------------------------------------------------------
