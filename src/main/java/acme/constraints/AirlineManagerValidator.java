@@ -29,19 +29,18 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
 			{
-				if (StringHelper.isBlank(airlineManager.getIdentifier()))
-					super.state(context, false, "identifier", "java.validation.airlineManager.identifier.identifier-couldnt-be-blank");
+				if (!StringHelper.isBlank(airlineManager.getIdentifier())) {
+					String initials = "";
+					String name = airlineManager.getUserAccount().getIdentity().getName();
+					String surname = airlineManager.getUserAccount().getIdentity().getSurname();
 
-				String initials = "";
-				String name = airlineManager.getUserAccount().getIdentity().getName();
-				String surname = airlineManager.getUserAccount().getIdentity().getSurname();
+					initials += name.charAt(0);
+					initials += surname.charAt(0);
 
-				initials += name.charAt(0);
-				initials += surname.charAt(0);
+					boolean validIdentifier = StringHelper.startsWith(airlineManager.getIdentifier(), initials, true);
 
-				boolean validIdentifier = StringHelper.startsWith(airlineManager.getIdentifier(), initials, true);
-
-				super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.invalid-identifier");
+					super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.invalid-identifier");
+				}
 			}
 			{
 				AirlineManagerRepository repository;
