@@ -1,0 +1,8 @@
+# messages-es.i18n
+
+airline-manager.list.title = Lista de vuelos
+
+airline-manager.flight.list.label.tag = Etiqueta
+airline-manager.flight.list.label.selfTransfer = Auto-trasbordo
+airline-manager.flight.list.label.cost = Precio
+airline-manager.flight.list.label.description = Descripcion

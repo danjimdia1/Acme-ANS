@@ -1,0 +1,8 @@
+# messages-en.i18n
+
+airline-manager.list.title = Listing of flights
+
+airline-manager.flight.list.label.tag = Tag
+airline-manager.flight.list.label.selfTransfer = Self Transfer
+airline-manager.flight.list.label.cost = Cost
+airline-manager.flight.list.label.description = Description
