@@ -10,7 +10,7 @@ import acme.entities.flights.Flight;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiService
-public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineManager, Flight> {
+public class AirlineManagerFlightCreateService extends AbstractGuiService<AirlineManager, Flight> {
 
 	@Autowired
 	private AirlineManagerFlightRepository repository;
@@ -18,28 +18,36 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId;
-		Flight flight;
-		AirlineManager manager;
-
-		masterId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findFlightById(masterId);
-		manager = flight == null ? null : flight.getManager();
-		status = super.getRequest().getPrincipal().hasRealm(manager) || flight != null;
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
 	public void load() {
 		Flight flight;
-		int id;
+		AirlineManager manager;
 
-		id = super.getRequest().getData("id", int.class);
-		flight = this.repository.findFlightById(id);
+		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
+
+		flight = new Flight();
+		flight.setDraftMode(true);
+		flight.setManager(manager);
 
 		super.getBuffer().addData(flight);
+	}
+
+	@Override
+	public void bind(final Flight flight) {
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description");
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		this.repository.save(flight);
 	}
 
 	@Override
