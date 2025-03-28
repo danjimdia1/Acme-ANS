@@ -1,12 +1,15 @@
 
 package acme.features.airlineManager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiService
@@ -51,7 +54,11 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+		int flightId = flight.getId();
+		Collection<Leg> legs = this.repository.findLegsByFlightId(flightId);
+
+		boolean hasLegs = !legs.isEmpty();
+		super.state(hasLegs, "draftMode", "airline-manager.flight.publish.error.no-legs");
 	}
 
 	@Override

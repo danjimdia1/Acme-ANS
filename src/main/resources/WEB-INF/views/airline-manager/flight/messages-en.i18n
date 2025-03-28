@@ -14,7 +14,7 @@ airline-manager.flight.form.label.tag = Tag
 airline-manager.flight.form.label.selfTransfer = Self Transfer
 airline-manager.flight.form.label.cost = Cost
 airline-manager.flight.form.label.description = Description
-airline-manager.flight.form.label.draft-mode = Draft Mode
+airline-manager.flight.form.label.draftMode = Draft Mode
 airline-manager.flight.form.label.scheduledDeparture = Scheduled Airport
 airline-manager.flight.form.label.scheduledArrival = Scheduled Arrival
 airline-manager.flight.form.label.originCity = Origin City
@@ -26,3 +26,5 @@ airline-manager.flight.form.button.create = Create
 airline-manager.flight.form.button.update = Update
 airline-manager.flight.form.button.delete = Delete
 airline-manager.flight.form.button.publish = Publish
+
+airline-manager.flight.publish.error.no-legs = Must be any leg

@@ -47,6 +47,7 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 				repository = SpringHelper.getBean(AirlineManagerRepository.class);
 
 				Boolean repeatedIdentifier = repository.findByIdentifier(airlineManager.getIdentifier(), airlineManager.getId()).isEmpty();
+
 				super.state(context, repeatedIdentifier, "identifier", "java.validation.airlineManager.repeatedIdentifier.identifier.message");
 
 			}
