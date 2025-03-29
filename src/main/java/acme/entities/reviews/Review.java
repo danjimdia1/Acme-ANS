@@ -50,8 +50,8 @@ public class Review extends AbstractEntity {
 	private String				text;
 
 	@Optional()
-	@Valid()
 	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 2)
+	@Automapped
 	private Double				score;
 
 	@Optional()
