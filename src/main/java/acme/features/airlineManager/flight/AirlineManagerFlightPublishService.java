@@ -1,16 +1,19 @@
 
 package acme.features.airlineManager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.legs.Leg;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiService
-public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineManager, Flight> {
+public class AirlineManagerFlightPublishService extends AbstractGuiService<AirlineManager, Flight> {
 
 	@Autowired
 	private AirlineManagerFlightRepository repository;
@@ -23,10 +26,12 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 		Flight flight;
 		AirlineManager manager;
 
+		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
+
 		masterId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(masterId);
-		manager = flight == null ? null : flight.getManager();
-		status = super.getRequest().getPrincipal().hasRealm(manager) || flight != null;
+		// manager = flight != null ? null : flight.getManager();
+		status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(manager);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -43,6 +48,26 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 	}
 
 	@Override
+	public void bind(final Flight flight) {
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description");
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		int flightId = flight.getId();
+		Collection<Leg> legs = this.repository.findLegsByFlightId(flightId);
+
+		boolean hasLegs = !legs.isEmpty();
+		super.state(hasLegs, "*", "airline-manager.flight.publish.error.no-legs");
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		flight.setDraftMode(false);
+		this.repository.save(flight);
+	}
+
+	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
@@ -56,5 +81,4 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 
 		super.getResponse().addData(dataset);
 	}
-
 }

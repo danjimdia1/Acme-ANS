@@ -10,7 +10,7 @@ import acme.entities.flights.Flight;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiService
-public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineManager, Flight> {
+public class AirlineManagerFlightUpdateService extends AbstractGuiService<AirlineManager, Flight> {
 
 	@Autowired
 	private AirlineManagerFlightRepository repository;
@@ -23,10 +23,12 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 		Flight flight;
 		AirlineManager manager;
 
+		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
+
 		masterId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(masterId);
-		manager = flight == null ? null : flight.getManager();
-		status = super.getRequest().getPrincipal().hasRealm(manager) || flight != null;
+		// manager = flight != null ? null : flight.getManager();
+		status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(manager);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -40,6 +42,21 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 		flight = this.repository.findFlightById(id);
 
 		super.getBuffer().addData(flight);
+	}
+
+	@Override
+	public void bind(final Flight flight) {
+		super.bindObject(flight, "tag", "selfTransfer", "cost", "description");
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		this.repository.save(flight);
 	}
 
 	@Override
