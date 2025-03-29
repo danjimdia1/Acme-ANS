@@ -1,11 +1,16 @@
 
 package acme.constraints;
 
+import java.util.Optional;
+
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
-import acme.realms.AssistanceAgent;
+import acme.client.helpers.SpringHelper;
+import acme.client.helpers.StringHelper;
+import acme.realms.assistanceAgent.AssistanceAgent;
+import acme.realms.assistanceAgent.AssistanceAgentRepository;
 
 @Validator
 public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceAgent, AssistanceAgent> {
@@ -24,20 +29,21 @@ public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceA
 
 		if (agent == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-		else {
+
+		else if (!StringHelper.isBlank(agent.getEmployeeCode())) {
 			String initials = "";
-			String name = agent.getIdentity().getName().toUpperCase();
-			String surname = agent.getIdentity().getSurname().toUpperCase();
+			String name = agent.getIdentity().getName();
+			String surname = agent.getIdentity().getSurname();
 
 			initials += name.charAt(0);
 			initials += surname.charAt(0);
 
-			String code = agent.getEmployeeCode();
+			boolean validEmployeeCode = StringHelper.startsWith(agent.getEmployeeCode(), initials, true);
+			super.state(context, validEmployeeCode, "employeeCode", "java.validation.assistanceAgent.employeeCode.invalidEmployeeCode");
 
-			boolean validEmployeeCode = code.startsWith(initials);
-
-			super.state(context, validEmployeeCode, "employeeCode", "java.validation.assistanceAgent.identifier.message");
-
+			Optional<AssistanceAgent> sameCode = SpringHelper.getBean(AssistanceAgentRepository.class).findByCode(agent.getEmployeeCode(), agent.getId());
+			boolean repeatedCode = !sameCode.isPresent();
+			super.state(context, repeatedCode, "employeeCode", "java.validation.assistanceAgent.employeeCode.repeatedEmployeeCode");
 		}
 
 		result = !super.hasErrors(context);
