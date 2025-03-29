@@ -2,6 +2,7 @@
 package acme.entities.legs;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +12,9 @@ import acme.client.repositories.AbstractRepository;
 
 @Repository
 public interface LegRepository extends AbstractRepository {
+
+	@Query("SELECT l FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.scheduledDeparture ASC")
+	List<Leg> findByFlightIdOrdered(int flightId);
 
 	@Query("SELECT l FROM Leg l WHERE l.flightNumber = :flightNumber AND l.id != :legId")
 	Optional<Leg> findByFlightNumber(String flightNumber, int legId);
