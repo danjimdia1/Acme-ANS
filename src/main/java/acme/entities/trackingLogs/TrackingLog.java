@@ -3,14 +3,11 @@ package acme.entities.trackingLogs;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -36,10 +33,9 @@ public class TrackingLog extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	// Campo para la fecha de creación
-	@CreationTimestamp
+	@Mandatory
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(updatable = false, nullable = false)
 	private Date				creationMoment;
 
 	@Mandatory
