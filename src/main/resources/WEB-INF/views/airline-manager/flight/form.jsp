@@ -14,7 +14,7 @@
 	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.originCity" path="originCity"/>
 	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.destinationCity" path="destinationCity"/>
 	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.numberOfLayovers" path="numberOfLayovers" />
-	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.draftMode" path="draftMode"/>
+	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="airline-manager.flight.form.button.update" action="/airline-manager/flight/update"/>

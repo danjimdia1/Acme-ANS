@@ -58,7 +58,7 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 		Collection<Leg> legs = this.repository.findLegsByFlightId(flightId);
 
 		boolean hasLegs = !legs.isEmpty();
-		super.state(hasLegs, "draftMode", "airline-manager.flight.publish.error.no-legs");
+		super.state(hasLegs, "*", "airline-manager.flight.publish.error.no-legs");
 	}
 
 	@Override
