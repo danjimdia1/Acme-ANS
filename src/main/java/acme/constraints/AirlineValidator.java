@@ -36,7 +36,7 @@ public class AirlineValidator extends AbstractValidator<ValidAirline, Airline> {
 				AirlineRepository repository;
 				repository = SpringHelper.getBean(AirlineRepository.class);
 				boolean repeatedAirlineIATA = repository.findByIATA(airline.getIATA(), airline.getId()).isEmpty();
-				super.state(context, repeatedAirlineIATA, "identifier", "java.validation.airline.repeatedflightNumber.flightNumber.message");
+				super.state(context, repeatedAirlineIATA, "identifier", "java.validation.airline.repeatedAirlineIATA.message");
 			}
 		}
 
