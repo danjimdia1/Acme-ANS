@@ -15,6 +15,10 @@
 	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.destinationCity" path="destinationCity"/>
 	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.numberOfLayovers" path="numberOfLayovers" />
 	
+	<jstl:if test="${acme:anyOf(_command, 'show|publish') && numberOfLayovers != 0}">
+    	<acme:button code="airline-manager.flight.form.button.legs" action="/airline-manager/leg/list?flightId=${id}" />
+	</jstl:if>
+	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="airline-manager.flight.form.button.update" action="/airline-manager/flight/update"/>

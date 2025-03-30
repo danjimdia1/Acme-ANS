@@ -1,0 +1,8 @@
+airline-manager.leg.list.title = Lista de tramos
+
+airline-manager.leg.label.flightNumber = Número de vuelo
+airline-manager.leg.label.scheduledDeparture = Llegada programada
+airline-manager.leg.label.scheduledArrival = Salida programada
+airline-manager.leg.label.status = Estado
+airline-manager.leg.label.departureAirport = Aeropuerto de salida
+airline-manager.leg.label.arrivalAirport = Aeropuerto de llegada
