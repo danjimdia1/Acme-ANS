@@ -1,7 +1,9 @@
 
 package acme.entities.claims;
 
+import java.beans.Transient;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -15,7 +17,11 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.client.helpers.SpringHelper;
+import acme.constraints.ValidClaim;
 import acme.entities.legs.Leg;
+import acme.entities.trackingLogs.TrackingLogRepository;
+import acme.entities.trackingLogs.TrackingLogStatus;
 import acme.realms.assistanceAgent.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +29,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidClaim
 public class Claim extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -51,23 +58,32 @@ public class Claim extends AbstractEntity {
 	@Automapped
 	private ClaimType			type;
 
-	@Mandatory
-	@Valid
-	@Automapped
-	private Boolean				accepted;
-
 	// Derived attributes -----------------------------------------------------
+
+
+	@Transient()
+	public TrackingLogStatus getStatus() {
+		TrackingLogStatus result;
+		TrackingLogRepository repository;
+
+		repository = SpringHelper.getBean(TrackingLogRepository.class);
+		List<TrackingLogStatus> statuses = repository.findLastStatus(this.getId());
+		result = statuses.isEmpty() ? null : statuses.get(0);
+
+		return result;
+	}
 
 	// Relationships ----------------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private AssistanceAgent		assistanceAgent;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Leg					leg;
+	private AssistanceAgent	assistanceAgent;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg				leg;
 
 }

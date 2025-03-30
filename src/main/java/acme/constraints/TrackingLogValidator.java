@@ -1,24 +1,16 @@
 
 package acme.constraints;
 
-import java.util.Optional;
-
 import javax.validation.ConstraintValidatorContext;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.client.helpers.StringHelper;
 import acme.entities.trackingLogs.TrackingLog;
-import acme.entities.trackingLogs.TrackingLogRepository;
 import acme.entities.trackingLogs.TrackingLogStatus;
 
 @Validator
 public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, TrackingLog> {
-
-	@Autowired
-	private TrackingLogRepository trackingLogRepository;
-
 
 	@Override
 	protected void initialise(final ValidTrackingLog annotation) {
@@ -32,16 +24,12 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 
 		boolean result;
 
-		if (log == null) {
+		if (log == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-			return false;
-		}
-
-		Optional<TrackingLog> latestTrackingLogOpt = this.trackingLogRepository.findLastTrackingLogByClaimId(log.getClaim().getId(), log.getId());
 
 		if (log.getResolutionPercentage() == 100.00) {
 			boolean correctResolution;
-			correctResolution = log.getResolution() != null;
+			correctResolution = !StringHelper.isBlank(log.getResolution());
 			super.state(context, correctResolution, "resolution", "acme.validation.trackingLog.resolution.message");
 
 			boolean correctStatus;
@@ -50,21 +38,13 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		}
 
 		else {
-			boolean correctNullResolution;
-			correctNullResolution = log.getResolution() == null;
-			super.state(context, correctNullResolution, "resolution", "acme.validation.trackingLog.resolution.message");
-
 			boolean correctPendingStatus;
-			correctPendingStatus = log.getStatus().equals(TrackingLogStatus.ACCEPTED) || log.getStatus().equals(TrackingLogStatus.REJECTED);
+			correctPendingStatus = log.getStatus().equals(TrackingLogStatus.PENDING);
 			super.state(context, correctPendingStatus, "status", "acme.validation.trackingLog.status.message");
 		}
 
-		if (latestTrackingLogOpt.isPresent()) {
-			TrackingLog latestTrackingLog = latestTrackingLogOpt.get();
-			boolean correctPercentage;
-			correctPercentage = latestTrackingLog.getResolutionPercentage() < log.getResolutionPercentage();
-			super.state(context, correctPercentage, "status", "acme.validation.trackingLog.percentage.message");
-		}
+		if (log.getCreationMoment().after(log.getLastUpdateMoment()))
+			super.state(context, false, "moment", "javax.validation.trackingLog.wrongMoments.message");
 
 		result = !super.hasErrors(context);
 
