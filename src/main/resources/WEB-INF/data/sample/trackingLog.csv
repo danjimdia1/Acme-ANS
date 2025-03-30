@@ -1,3 +1,37 @@
 key,creationMoment,lastUpdateMoment,step,resolutionPercentage,status,resolution,key:claim
 # base entity
-log-01,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lorem ipsum,claim-01
+log-01,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+# creationMoment and lastUpdateMoments variations
+log-02,2000/01/01 0:00,2000/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit ame,claim-02
+log-03,2000/01/01 0:01,2000/01/01 0:01,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit ame,claim-03
+log-04,2024/12/31 23:59,2024/12/31 23:59,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit ame,claim-04
+log-05,2025/01/01 0:00,2025/01/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lorem ipsum dolor sit ame,claim-05
+# step variations
+log-06,2012/07/02 0:00,2012/07/02 01:00,L,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-07,2012/07/02 0:00,2012/07/02 01:00,Lo,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-08,2012/07/02 0:00,2012/07/02 01:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-09,2012/07/02 0:00,2012/07/02 01:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-10,2012/07/02 0:00,2012/07/02 01:00,โลเร็ม อิปซัม,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-11,2012/07/02 0:00,2012/07/02 01:00,لوريم إيبسومo,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-12,2012/07/02 0:00,2012/07/02 01:00,洛伦·伊普森,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-13,2012/07/02 0:00,2012/07/02 01:00,<marquee>Hacked</marquee>,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-14,2012/07/02 0:00,2012/07/02 01:00,<script>alert(‘Hacked!’);</script>,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+log-15,2012/07/02 0:00,2012/07/02 01:00,' or 'A' = 'A,50.00,PENDING,Lorem ipsum dolor sit ame,claim-01
+# resolutionPercentage and status variations
+log-16,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,0.00,PENDING,Lorem ipsum dolor sit ame,claim-06
+log-17,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,0.01,PENDING,Lorem ipsum dolor sit ame,claim-07
+log-18,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,99.99,PENDING,Lorem ipsum dolor sit ame,claim-08
+log-19,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,Lorem ipsum dolor sit ame,claim-09
+log-20,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,100.00,REJECTED,Lorem ipsum dolor sit ame,claim-10
+# resolution variations
+log-21,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,L,claim-01
+log-22,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,Lo,claim-01
+log-23,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",claim-01
+log-24,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",claim-01
+log-25,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,โลเร็ม อิปซัม,claim-01
+log-26,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,لوريم إيبسوم,claim-01
+log-27,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,洛伦·伊普森,claim-01
+log-28,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,<marquee>Hacked</marquee>,claim-01
+log-29,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,<script>alert(‘Hacked!’);</script>,claim-01
+log-30,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,' or 'A' = 'A,claim-01
+log-31,2012/07/02 0:00,2012/07/02 01:00,Lorem ipsum dolor sit ame,50.00,PENDING,"",claim-01
