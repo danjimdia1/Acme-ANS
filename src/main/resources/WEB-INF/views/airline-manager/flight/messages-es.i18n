@@ -28,5 +28,6 @@ airline-manager.flight.form.button.update = Eliminar
 airline-manager.flight.form.button.publish = Publicar
 
 airline-manager.flight.publish.error.no-legs = Debe haber algún tramo
+airline-manager.flight.publish.error.no-legs-published = Debe haber algún leg publicado
 
 airline-manager.flight.form.button.legs = Tramos

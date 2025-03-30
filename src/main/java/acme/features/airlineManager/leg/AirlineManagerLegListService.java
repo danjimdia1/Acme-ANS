@@ -26,11 +26,12 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 	@Override
 	public void load() {
 		Collection<Leg> legs;
-		int masterId;
+		int flightId;
 
-		masterId = super.getRequest().getData("flightId", int.class);
-		legs = this.repository.findLegsByFlightId(masterId);
+		flightId = super.getRequest().getData("flightId", int.class);
+		legs = this.repository.findLegsByFlightId(flightId);
 
+		super.getResponse().addGlobal("flightId", flightId);
 		super.getBuffer().addData(legs);
 	}
 
@@ -43,6 +44,8 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 		dataset.put("flightNumber", leg.getFlightNumber());
 		dataset.put("departureAirport", leg.getDepartureAirport().getName());
 		dataset.put("arrivalAirport", leg.getArrivalAirport().getName());
+		dataset.put("flightId", leg.getFlight().getId());
+
 		super.getResponse().addData(dataset);
 	}
 }

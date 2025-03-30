@@ -56,12 +56,19 @@ public class Leg extends AbstractEntity {
 	@Automapped()
 	private LegStatus			status;
 
+	@Mandatory
+	// HINT: @Valid by default.
+	@Automapped
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 
 	@Transient()
 	public Double getDuration() {
-		double duration = (double) MomentHelper.computeDuration(this.scheduledDeparture, this.scheduledArrival).toHours();
+		if (this.scheduledArrival == null && this.scheduledDeparture == null)
+			return 0.;
+		double duration = MomentHelper.computeDuration(this.scheduledDeparture, this.scheduledArrival).toHours();
 
 		return duration;
 	}

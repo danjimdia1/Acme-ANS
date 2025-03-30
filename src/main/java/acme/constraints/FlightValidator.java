@@ -41,7 +41,7 @@ public class FlightValidator extends AbstractValidator<ValidFlight, Flight> {
 					Leg nextLeg = legs.get(i + 1);
 
 					if (MomentHelper.isAfter(currentLeg.getScheduledArrival(), nextLeg.getScheduledDeparture()))
-						super.state(context, false, "*", "java.validation.flight.legs.sequential-order");
+						super.state(context, false, "*", "acme.validation.flight.legs.sequential-order");
 				}
 		}
 		result = !super.hasErrors(context);

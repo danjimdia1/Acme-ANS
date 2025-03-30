@@ -12,7 +12,16 @@ airline-manager.leg.form.label.scheduledDeparture = Scheduled departure
 airline-manager.leg.form.label.scheduledArrival = Scheduled arrival
 airline-manager.leg.form.label.status = Status
 
+airline-manager.leg.form.title = Tramo
+
 airline-manager.leg.form.label.duration = Duration
 airline-manager.leg.form.label.departureAirportIata = Departure airport
 airline-manager.leg.form.label.arrivalAirportIata = Arrival airport
 airline-manager.leg.form.label.aircraftRegNumber = Aircraft registration number
+
+airline-manager.leg.list.button.create = Create
+airline-manager.leg.form.button.create = Create
+
+airline-manager.leg.form.button.publish = Publish
+airline-manager.leg.form.button.update = Update
+airline-manager.leg.form.button.delete = Delete

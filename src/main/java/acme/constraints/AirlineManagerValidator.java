@@ -39,7 +39,7 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 
 					boolean validIdentifier = StringHelper.startsWith(airlineManager.getIdentifier(), initials, true);
 
-					super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.invalid-identifier");
+					super.state(context, validIdentifier, "identifier", "acme.validation.airlineManager.validIdentifier.invalid-identifier");
 				}
 			}
 			{
@@ -48,7 +48,7 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 
 				Boolean repeatedIdentifier = repository.findByIdentifier(airlineManager.getIdentifier(), airlineManager.getId()).isEmpty();
 
-				super.state(context, repeatedIdentifier, "identifier", "java.validation.airlineManager.repeatedIdentifier.identifier.message");
+				super.state(context, repeatedIdentifier, "identifier", "acme.validation.airlineManager.repeatedIdentifier.identifier.message");
 
 			}
 		}

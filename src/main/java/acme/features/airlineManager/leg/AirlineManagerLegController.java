@@ -19,10 +19,19 @@ public class AirlineManagerLegController extends AbstractGuiController<AirlineMa
 	@Autowired
 	private AirlineManagerLegShowService	showService;
 
+	@Autowired
+	private AirlineManagerLegCreateService	createService;
+
+	@Autowired
+	private AirlineManagerLegPublishService	publishService;
+
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 }
