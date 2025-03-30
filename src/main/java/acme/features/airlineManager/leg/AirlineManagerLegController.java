@@ -11,14 +11,18 @@ import acme.entities.legs.Leg;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiController
-public class AirlineManagerController extends AbstractGuiController<AirlineManager, Leg> {
+public class AirlineManagerLegController extends AbstractGuiController<AirlineManager, Leg> {
 
 	@Autowired
-	private AirlineManagerLegListService listService;
+	private AirlineManagerLegListService	listService;
+
+	@Autowired
+	private AirlineManagerLegShowService	showService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
+		super.addBasicCommand("show", this.showService);
 	}
 }
