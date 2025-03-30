@@ -16,3 +16,8 @@ airline-manager.leg.form.label.duration = Duration
 airline-manager.leg.form.label.departureAirportIata = Departure airport
 airline-manager.leg.form.label.arrivalAirportIata = Arrival airport
 airline-manager.leg.form.label.aircraftRegNumber = Aircraft registration number
+
+airline-manager.leg.list.button.create = Create
+airline-manager.leg.form.button.create = Create
+
+airline-manager.leg.form.button.publish = Publish

@@ -7,12 +7,13 @@ import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.entities.legs.LegStatus;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiService
-public class AirlineManagerLegShowService extends AbstractGuiService<AirlineManager, Leg> {
+public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineManager, Leg> {
 
 	@Autowired
 	private AirlineManagerLegRepository repository;
@@ -25,13 +26,28 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 
 	@Override
 	public void load() {
-		Leg leg;
-		int id;
+		int masterId = super.getRequest().getData("flightId", int.class);
+		Flight flight = this.repository.findFlightById(masterId);
 
-		id = super.getRequest().getData("id", int.class);
-		leg = this.repository.findLegById(id);
-
+		Leg leg = new Leg();
+		leg.setFlight(flight);
+		leg.setDraftMode(true);
 		super.getBuffer().addData(leg);
+	}
+
+	@Override
+	public void bind(final Leg leg) {
+		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "departureAirport", "arrivalAirport", "aircraft");
+	}
+
+	@Override
+	public void validate(final Leg leg) {
+		;
+	}
+
+	@Override
+	public void perform(final Leg leg) {
+		this.repository.save(leg);
 	}
 
 	@Override
@@ -46,12 +62,6 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "departureAirport", "arrivalAirport", "aircraft");
 
 		dataset.put("flightId", leg.getFlight().getId());
-
-		dataset.put("duration", leg.getDuration());
-		dataset.put("departureAirport", leg.getDepartureAirport().getIataCode());
-		dataset.put("arrivalAirport", leg.getArrivalAirport().getIataCode());
-		dataset.put("aircraftRegNumber", leg.getAircraft().getRegistrationNumber());
-
 		dataset.put("statuses", statuses);
 		dataset.put("departureAirports", departureAirports);
 		dataset.put("arrivalAirports", arrivalAirports);
