@@ -1,0 +1,8 @@
+airline-manager.leg.list.title = List of legs
+
+airline-manager.leg.label.flightNumber = Flight number
+airline-manager.leg.label.scheduledDeparture = Scheduled Departure
+airline-manager.leg.label.scheduledArrival = Scheduled Arrival
+airline-manager.leg.label.status = Status
+airline-manager.leg.label.departureAirport = Departure airport
+airline-manager.leg.label.arrivalAirport = Arrival airport
