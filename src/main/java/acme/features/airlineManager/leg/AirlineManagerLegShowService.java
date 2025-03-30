@@ -43,7 +43,7 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 		SelectChoices arrivalAirports = SelectChoices.from(this.repository.findAllAirports(), "iataCode", leg.getArrivalAirport());
 		SelectChoices aircrafts = SelectChoices.from(this.repository.findAircraftsByLegAirline(leg.getId()), "registrationNumber", leg.getAircraft());
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "departureAirport", "arrivalAirport", "aircraft");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
 
 		dataset.put("flightId", leg.getFlight().getId());
 
