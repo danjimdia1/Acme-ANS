@@ -55,7 +55,7 @@ public class Booking extends AbstractEntity {
 	@Optional
 	@ValidString(pattern = "^[0-9]{4}$")
 	@Automapped
-	private String				lastCardNibble;
+	private String				lastNibble;
 
 	@Mandatory
 	@Automapped
