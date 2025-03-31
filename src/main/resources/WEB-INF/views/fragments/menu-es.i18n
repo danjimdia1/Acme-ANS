@@ -28,6 +28,11 @@ master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
 
+# master.menu.customer ###################################################
+
+master.menu.customer = Cliente
+master.menu.customer.list-bookings = Mis Reservas
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

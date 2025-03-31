@@ -28,6 +28,11 @@ master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
 master.menu.administrator.shut-system-down = Shut system down
 
+# master.menu.customer ###################################################
+
+master.menu.customer = Customer
+master.menu.customer.list-bookings= My Bookings
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
