@@ -24,6 +24,7 @@ master.menu.anonymous.favourite-link.marbarmar16 = 3*0*7*0*F: Barrancos Márquez
 master.menu.administrator = Administrator
 master.menu.administrator.list-user-accounts = List user accounts
 master.menu.administrator.aircraft = List Aircrafts
+master.menu.administrator.airline = List Airlines
 master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
 master.menu.administrator.shut-system-down = Shut system down
