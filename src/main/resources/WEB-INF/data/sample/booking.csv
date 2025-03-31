@@ -1,4 +1,4 @@
-key,locatorCode,purchaseMoment,travelClass,lastCardNibble,draftMode,key:customer,key:flight
+key,locatorCode,purchaseMoment,travelClass,lastNibble,draftMode,key:customer,key:flight
 # Base Entity
 booking-01,AYCX99RS,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
 # LocatorCode - variations
@@ -13,7 +13,7 @@ booking-08,XOEXWOZ8,2024/12/30 23:59,ECONOMY,4999,false,customer-01,flight-01
 booking-09,MCT8Z3WR,2025/01/01 00:00,ECONOMY,4999,false,customer-01,flight-01
 # TravelClass - variations
 booking-10,NDJWZBPV,2012/07/02 00:00,BUSINESS,4999,false,customer-01,flight-01
-# LastCreditCardNibble - variations
+# LastNibble - variations
 booking-11,JPJUEUVU,2012/07/02 00:00,ECONOMY,0000,false,customer-01,flight-01
 booking-12,YSJYFPR6,2012/07/02 00:00,ECONOMY,0001,false,customer-01,flight-01
 booking-13,RPL9I3G5,2012/07/02 00:00,ECONOMY,,false,customer-01,flight-01
