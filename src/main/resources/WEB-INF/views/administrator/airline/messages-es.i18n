@@ -1,0 +1,21 @@
+# messages-es.i18n
+
+administrator.airline.list.title = Lista de aerolíneas
+
+administrator.airline.form.title = Aerolínea
+
+# Airline list
+
+administrator.airline.list.label.name = Nombre
+administrator.airline.list.label.iata = Código IATA
+administrator.airline.list.label.foundationMoment = Momento de fundación
+
+# Airline form
+
+administrator.airline.form.label.name = Nombre
+administrator.airline.form.label.iata = Código IATA
+administrator.airline.form.label.foundationMoment = Momento de fundación
+administrator.airline.form.label.website = Página web
+administrator.airline.form.label.type = Tipo
+administrator.airline.form.label.email = Correo electrónico
+administrator.airline.form.label.phoneNumber = Número de telefono
