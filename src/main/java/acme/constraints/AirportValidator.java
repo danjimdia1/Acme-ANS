@@ -33,7 +33,7 @@ public class AirportValidator extends AbstractValidator<ValidAirport, Airport> {
 		else if (!StringHelper.isBlank(airport.getIataCode())) {
 			Optional<Airport> sameCode = SpringHelper.getBean(AirportRepository.class).findByCode(airport.getIataCode(), airport.getId());
 			boolean repeatedCode = !sameCode.isPresent();
-			super.state(context, repeatedCode, "employeeCode", "java.validation.assistanceAgent.employeeCode.repeatedIATACode");
+			super.state(context, repeatedCode, "employeeCode", "acme.validation.assistanceAgent.employeeCode.repeatedIATACode");
 		}
 
 		result = !super.hasErrors(context);
