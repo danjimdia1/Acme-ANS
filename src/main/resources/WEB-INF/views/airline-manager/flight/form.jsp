@@ -9,13 +9,13 @@
 	<acme:input-money code="airline-manager.flight.form.label.cost" path="cost"/>
 	<acme:input-textarea code="airline-manager.flight.form.label.description" path="description"/>	
 
-	<acme:input-moment readonly="true" code="airline-manager.flight.form.label.scheduledDeparture" path="scheduledDeparture"/>
-	<acme:input-moment readonly="true" code="airline-manager.flight.form.label.scheduledArrival" path="scheduledArrival"/>
-	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.originCity" path="originCity"/>
-	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.destinationCity" path="destinationCity"/>
-	<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.numberOfLayovers" path="numberOfLayovers" />
 	
-	<jstl:if test="${acme:anyOf(_command, 'show|publish')}">
+	<jstl:if test="${acme:anyOf(_command, 'show|publish|update|delete')}">
+		<acme:input-moment readonly="true" code="airline-manager.flight.form.label.scheduledDeparture" path="scheduledDeparture"/>
+		<acme:input-moment readonly="true" code="airline-manager.flight.form.label.scheduledArrival" path="scheduledArrival"/>
+		<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.originCity" path="originCity"/>
+		<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.destinationCity" path="destinationCity"/>
+		<acme:input-textbox readonly="true" code="airline-manager.flight.form.label.numberOfLayovers" path="numberOfLayovers" />
     	<acme:button code="airline-manager.flight.form.button.legs" action="/airline-manager/leg/list?flightId=${id}" />
 	</jstl:if>
 	
