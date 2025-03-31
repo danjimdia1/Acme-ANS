@@ -39,17 +39,18 @@ public class AirlineManagerValidator extends AbstractValidator<ValidAirlineManag
 
 					boolean validIdentifier = StringHelper.startsWith(airlineManager.getIdentifier(), initials, true);
 
-					super.state(context, validIdentifier, "identifier", "acme.validation.airlineManager.validIdentifier.invalid-identifier");
+					super.state(context, validIdentifier, "identifier", "acme.validation.airlineManager.identifier.invalid-identifier.message");
 				}
 			}
 			{
-				AirlineManagerRepository repository;
-				repository = SpringHelper.getBean(AirlineManagerRepository.class);
+				if (!StringHelper.isBlank(airlineManager.getIdentifier())) {
+					AirlineManagerRepository repository;
+					repository = SpringHelper.getBean(AirlineManagerRepository.class);
 
-				Boolean repeatedIdentifier = repository.findByIdentifier(airlineManager.getIdentifier(), airlineManager.getId()).isEmpty();
+					Boolean repeatedIdentifier = repository.findByIdentifier(airlineManager.getIdentifier(), airlineManager.getId()).isEmpty();
 
-				super.state(context, repeatedIdentifier, "identifier", "acme.validation.airlineManager.repeatedIdentifier.identifier.message");
-
+					super.state(context, repeatedIdentifier, "identifier", "acme.validation.airlineManager.identifier.repeatedIdentifier.message");
+				}
 			}
 		}
 
