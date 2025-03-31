@@ -32,7 +32,7 @@ flight-24,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,洛伦·伊普�
 flight-25,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,<marquee>Hacked</marquee>,TRUE,manager-01
 flight-26,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,<script>alert(‘Hacked!’);</script>,TRUE,manager-01
 flight-27,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,' or 'A' = 'A,TRUE,manager-01
-flight-28,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,,TRUE,manager-01
 #Probando manager,"","","","","",""
 flight-29,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",TRUE,manager-02
-"","","","","","",""
+#Probando draftMode,"","","","","",""
+flight-30,Lorem ipsum dolor sit ame,SELF_TRANSFER,EUR 500000.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FALSE,manager-01
