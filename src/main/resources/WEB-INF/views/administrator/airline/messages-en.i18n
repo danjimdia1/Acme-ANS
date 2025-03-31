@@ -19,3 +19,10 @@ administrator.airline.form.label.website = Website
 administrator.airline.form.label.type = Type
 administrator.airline.form.label.email = Email
 administrator.airline.form.label.phoneNumber = Phone number
+administrator.airline.form.label.confirmation = Confirm
+
+# Operations
+
+administrator.airline.list.button.create = Create
+administrator.airline.form.button.create = Create
+administrator.airline.form.button.update = Update

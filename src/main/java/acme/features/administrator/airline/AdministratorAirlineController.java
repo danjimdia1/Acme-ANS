@@ -14,15 +14,23 @@ import acme.entities.airlines.Airline;
 public class AdministratorAirlineController extends AbstractGuiController<Administrator, Airline> {
 
 	@Autowired
-	private AdministratorAirlineListService	listService;
+	private AdministratorAirlineListService		listService;
 
 	@Autowired
-	private AdministratorAirlineShowService	showService;
+	private AdministratorAirlineShowService		showService;
+
+	@Autowired
+	private AdministratorAirlineCreateService	createService;
+
+	@Autowired
+	private AdministratorAirlineUpdateService	updateService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
 	}
 }

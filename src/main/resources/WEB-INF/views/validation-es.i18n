@@ -13,3 +13,7 @@ acme.validation.leg.flightNumber.repeatedflightNumber.message = El número de vu
 acme.validation.leg.aircraft.overlapping.message = Otro tramo esta usando esta aeronave
 acme.validation.leg.aircraft.no-same-airline.message = La aeronave debe ser de la misma aerlínea
 acme.validation.leg.aircraft.no-same-airport.message = El aeropuerto de salida y llegada no pueden ser el mismo
+
+#Airline validations
+acme.validation.airline.repeatedAirlineIATA.message = Este código IATA ya está en uso
+acme.validation.airline.iata.wrong-pattern.message = Formato inválido, deben ser 3 letras mayúsculas
