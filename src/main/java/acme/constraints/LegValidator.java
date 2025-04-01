@@ -50,7 +50,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 					super.state(context, repeatedFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.repeatedflightNumber.message");
           
 					if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
-             if (leg.getAircraft().getStatus().equals(Status.MAINTENANCE))
+						if (leg.getAircraft().getStatus().equals(Status.MAINTENANCE))
 							super.state(context, false, "aircraft", "acme.validation.leg.aircraft.maintenance.message");
 						List<Leg> otherLegs = repository.findByAircraftId(leg.getAircraft().getId(), leg.getId());
 						for (Leg otherLeg : otherLegs)
