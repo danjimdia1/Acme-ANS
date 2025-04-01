@@ -46,6 +46,6 @@ aircraft-36,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame29,128,26000.00,A
 aircraft-37,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame30,128,26000.00,ACTIVE,<marquee>Hacked</marquee>,airline-01
 aircraft-38,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame31,128,26000.00,ACTIVE,<script>alert(‘Hacked!’);</script>,airline-01
 aircraft-39,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame32,128,26000.00,ACTIVE,' or 'A' = 'A,airline-01
-aircraft-40,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame33,128,26000.00,ACTIVE,"",airline-01
+aircraft-40,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame33,128,26000.00,ACTIVE,null,airline-01
 #Probando Airline
 aircraft-41,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame34,128,26000.00,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-02

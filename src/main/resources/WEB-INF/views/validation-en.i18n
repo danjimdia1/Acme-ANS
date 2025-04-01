@@ -13,3 +13,9 @@ acme.validation.leg.flightNumber.repeatedflightNumber.message = The flight numbe
 acme.validation.leg.aircraft.overlapping.message = Another leg is using this aircraft
 acme.validation.leg.aircraft.no-same-airline.message = The aircraft must belong to the same airline
 acme.validation.leg.aircraft.no-same-airport.message = The departure and arrival airport cannot be the same
+
+#Airline validations
+acme.validation.airline.repeatedAirlineIATA.message = This IATA code is already in use
+acme.validation.airline.iata.wrong-pattern.message = Wrong format, must be 3 capital letters
+
+acme.validation.leg.aircraft.maintenance.message = This aircraft is under maintenance

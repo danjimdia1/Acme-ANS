@@ -30,7 +30,7 @@ public class CrewMemberValidator extends AbstractValidator<ValidCrewMember, Crew
 		else {
 			{
 				if (StringHelper.isBlank(crewMember.getEmployeeCode()))
-					super.state(context, false, "identifier", "java.validation.airlineManager.identifier.identifier-couldnt-be-blank");
+					super.state(context, false, "identifier", "java.validation.crewMember.identifier.identifier-couldnt-be-blank");
 				else {
 					String initials = "";
 					String name = crewMember.getUserAccount().getIdentity().getName();
@@ -41,14 +41,14 @@ public class CrewMemberValidator extends AbstractValidator<ValidCrewMember, Crew
 
 					boolean validIdentifier = StringHelper.startsWith(crewMember.getEmployeeCode(), initials, true);
 
-					super.state(context, validIdentifier, "identifier", "java.validation.airlineManager.validIdentifier.invalid-identifier");
+					super.state(context, validIdentifier, "identifier", "java.validation.crewMember.validIdentifier.invalid-identifier");
 				}
 			}
 			{
 				CrewMemberRepository repository;
 				repository = SpringHelper.getBean(CrewMemberRepository.class);
 				boolean repeatedEmployeeCode = repository.findByEmployeeCode(crewMember.getEmployeeCode(), crewMember.getId()).isEmpty();
-				super.state(context, repeatedEmployeeCode, "identifier", "java.validation.leg.repeatedflightNumber.flightNumber.message");
+				super.state(context, repeatedEmployeeCode, "identifier", "java.validation.crewMember.repeatedEmployeeCode.message");
 			}
 		}
 
