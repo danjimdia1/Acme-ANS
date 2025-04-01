@@ -1,0 +1,22 @@
+customer.booking.form.title = Details of booking
+customer.booking.list.title = List of bookings
+
+customer.booking.form.button.create = Create 
+customer.booking.form.button.update = Update
+customer.booking.form.button.publish= Publish
+customer.booking.form.button.return = Return
+customer.booking.form.show.passengers = Show passengers
+customer.booking.form.add.passenger = Add Passenger
+customer.booking.list.button.create = Create
+
+customer.booking.list.label.flight=Flight
+customer.booking.list.label.purchaseMoment=Purchase Moment
+customer.booking.list.label.price=Price
+customer.booking.list.label.draftmode=Draft Mode
+customer.booking.list.label.locatorCode= Locator Code
+
+customer.booking.list.label.lastNibble= Last 4 digits of payment card
+customer.booking.list.label.travelClass= Travel Class
+
+acme.validation.lastNibble.message = You must complete the last digits of your card to publish
+customer.booking.form.error.duplicateLocatorCode = That locator Code is already in use

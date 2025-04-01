@@ -44,7 +44,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		}
 
 		if (log.getCreationMoment().after(log.getLastUpdateMoment()))
-			super.state(context, false, "moment", "javax.validation.trackingLog.wrongMoments.message");
+			super.state(context, false, "moment", "acme.validation.trackingLog.wrongMoments.message");
 
 		result = !super.hasErrors(context);
 

@@ -28,7 +28,7 @@
 			<acme:submit code="administrator.aircraft.form.button.enable" action="/administrator/aircraft/disable"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmation"/>
+			<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmaton"/>
 			<acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create"/>
 		</jstl:when>		
 	</jstl:choose>
