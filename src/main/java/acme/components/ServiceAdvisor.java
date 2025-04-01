@@ -11,7 +11,7 @@ import acme.entities.services.Service;
 public class ServiceAdvisor {
 
 	@Autowired
-	private ServiceRepository repository;
+	private ServiceAdvisorRepository repository;
 
 
 	@ModelAttribute("service")
