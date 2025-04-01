@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-
+	<acme:input-textbox readonly="true" code="airline-manager.leg.form.label.airlineIata" path="airlineIata"/>
 	<acme:input-textbox code="airline-manager.leg.form.label.flightNumber" path="flightNumber"/>
 	<acme:input-moment code="airline-manager.leg.form.label.scheduledDeparture" path="scheduledDeparture"/>
 	<acme:input-moment code="airline-manager.leg.form.label.scheduledArrival" path="scheduledArrival"/>

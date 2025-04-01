@@ -12,8 +12,9 @@ airline-manager.leg.form.label.scheduledDeparture = Scheduled departure
 airline-manager.leg.form.label.scheduledArrival = Scheduled arrival
 airline-manager.leg.form.label.status = Status
 
-airline-manager.leg.form.title = Tramo
+airline-manager.leg.form.title = Leg
 
+airline-manager.leg.form.label.airlineIata = Airline IATA code
 airline-manager.leg.form.label.duration = Duration
 airline-manager.leg.form.label.departureAirportIata = Departure airport
 airline-manager.leg.form.label.arrivalAirportIata = Arrival airport

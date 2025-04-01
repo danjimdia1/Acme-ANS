@@ -32,12 +32,16 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		if (leg == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			if (!StringHelper.isBlank(leg.getFlightNumber()))
-				if (leg.getAircraft() != null && leg.getAircraft().getAirline() != null) {
-					String airlineIataCode = leg.getAircraft().getAirline().getIATA();
-					boolean validFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineIataCode, true);
-					super.state(context, validFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.validFlightNumber.message");
-				}
+			if (!StringHelper.isBlank(leg.getFlightNumber())) {
+				String airlineIataCode = leg.getFlight().getManager().getAirline().getIATA();
+				boolean validFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineIataCode, true);
+				super.state(context, validFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.validFlightNumber.message");
+			}
+
+			if (leg.getScheduledDeparture() != null) {
+				boolean isAfterCurrent = MomentHelper.isAfter(leg.getScheduledDeparture(), MomentHelper.getCurrentMoment());
+				super.state(context, isAfterCurrent, "scheduledDeparture", "acme.validation.leg.scheduledArrival.must-be-after-current-moment.message");
+			}
 			if (leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
 				boolean validScheduledArrival = MomentHelper.isAfter(leg.getScheduledArrival(), leg.getScheduledDeparture());
 				super.state(context, validScheduledArrival, "scheduledArrival", "acme.validation.leg.scheduledArrival.must-be-after.message");

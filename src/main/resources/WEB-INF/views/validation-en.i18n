@@ -9,6 +9,7 @@ acme.validation.airline-manager.flight.no-legs = Must have any leg
 # Legs validations
 acme.validation.leg.flightNumber.validFlightNumber.message = Invalid flight number, it must start with the airline's IATA code followed by 4 digits
 acme.validation.leg.scheduledArrival.must-be-after.message = Scheduled arrival must be after the scheduled departure
+acme.validation.leg.scheduledArrival.must-be-after-current-moment.message = Scheduled departure must be after current moment
 acme.validation.leg.flightNumber.repeatedflightNumber.message = The flight number already exists
 acme.validation.leg.aircraft.overlapping.message = Another leg is using this aircraft
 acme.validation.leg.aircraft.no-same-airline.message = The aircraft must belong to the same airline
