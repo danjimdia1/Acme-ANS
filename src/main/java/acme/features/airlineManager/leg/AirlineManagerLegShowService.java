@@ -41,16 +41,18 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 	public void unbind(final Leg leg) {
 		Dataset dataset;
 
-		Collection<Aircraft> aircraftsByLegAirline = this.repository.findAircraftsByLegAirline(leg.getId()).stream().filter(x -> x.getAirline().equals(leg.getFlight().getManager().getAirline())).toList();
+		Collection<Aircraft> aircraftsByAirline = this.repository.findAircraftsByAirline(leg.getFlight().getManager().getAirline().getId());
 
 		SelectChoices statuses = SelectChoices.from(LegStatus.class, leg.getStatus());
 		SelectChoices departureAirports = SelectChoices.from(this.repository.findAllAirports(), "iataCode", leg.getDepartureAirport());
 		SelectChoices arrivalAirports = SelectChoices.from(this.repository.findAllAirports(), "iataCode", leg.getArrivalAirport());
-		SelectChoices aircrafts = SelectChoices.from(aircraftsByLegAirline, "registrationNumber", leg.getAircraft());
+		SelectChoices aircrafts = SelectChoices.from(aircraftsByAirline, "registrationNumber", leg.getAircraft());
 
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "draftMode", "departureAirport", "arrivalAirport", "aircraft");
 
 		dataset.put("flightId", leg.getFlight().getId());
+
+		dataset.put("airlineIata", leg.getFlight().getManager().getAirline().getIATA());
 
 		dataset.put("duration", leg.getDuration());
 		dataset.put("departureAirport", leg.getDepartureAirport().getIataCode());
