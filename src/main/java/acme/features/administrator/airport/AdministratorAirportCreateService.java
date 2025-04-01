@@ -32,7 +32,6 @@ public class AdministratorAirportCreateService extends AbstractGuiService<Admini
 		Airport airport;
 
 		airport = new Airport();
-		airport.setDraftMode(true);
 
 		super.getBuffer().addData(airport);
 	}
@@ -61,7 +60,7 @@ public class AdministratorAirportCreateService extends AbstractGuiService<Admini
 
 		SelectChoices operationalScopes = SelectChoices.from(OperationalScope.class, airport.getOperationalScope());
 
-		dataset = super.unbindObject(airport, "name", "iataCode", "operationalScope", "city", "country", "website", "email", "contactPhoneNumber", "draftMode");
+		dataset = super.unbindObject(airport, "name", "iataCode", "operationalScope", "city", "country", "website", "email", "contactPhoneNumber");
 
 		dataset.put("operationalScopes", operationalScopes);
 

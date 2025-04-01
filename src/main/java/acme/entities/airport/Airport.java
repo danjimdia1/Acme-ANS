@@ -68,11 +68,6 @@ public class Airport extends AbstractEntity {
 	@Automapped
 	private String				contactPhoneNumber;
 
-	@Mandatory
-	// HINT: @Valid by default.
-	@Automapped
-	private boolean				draftMode;
-
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
