@@ -6,9 +6,11 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.flights.FlightSelfTransfer;
 import acme.entities.legs.Leg;
 import acme.realms.airlineManager.AirlineManager;
 
@@ -70,8 +72,10 @@ public class AirlineManagerFlightDeleteService extends AbstractGuiService<Airlin
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
+		SelectChoices selfTransfers = SelectChoices.from(FlightSelfTransfer.class, flight.getSelfTransfer());
 		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "draftMode");
 
+		dataset.put("selfTransfers", selfTransfers);
 		dataset.put("scheduledDeparture", flight.getScheduledDeparture());
 		dataset.put("scheduledArrival", flight.getScheduledArrival());
 		dataset.put("originCity", flight.getOriginCity());

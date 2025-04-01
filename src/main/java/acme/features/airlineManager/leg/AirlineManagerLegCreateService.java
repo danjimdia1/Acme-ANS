@@ -1,12 +1,15 @@
 
 package acme.features.airlineManager.leg;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.aircraft.Aircraft;
 import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.entities.legs.LegStatus;
@@ -54,10 +57,12 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 	public void unbind(final Leg leg) {
 		Dataset dataset;
 
+		Collection<Aircraft> aircraftsByLegAirline = this.repository.findAircraftsByLegAirline(leg.getId()).stream().filter(x -> x.getAirline().equals(leg.getFlight().getManager().getAirline())).toList();
+
 		SelectChoices statuses = SelectChoices.from(LegStatus.class, leg.getStatus());
 		SelectChoices departureAirports = SelectChoices.from(this.repository.findAllAirports(), "iataCode", leg.getDepartureAirport());
 		SelectChoices arrivalAirports = SelectChoices.from(this.repository.findAllAirports(), "iataCode", leg.getArrivalAirport());
-		SelectChoices aircrafts = SelectChoices.from(this.repository.findAircraftsByLegAirline(leg.getId()), "registrationNumber", leg.getAircraft());
+		SelectChoices aircrafts = SelectChoices.from(aircraftsByLegAirline, "registrationNumber", leg.getAircraft());
 
 		dataset = super.unbindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status", "departureAirport", "arrivalAirport", "aircraft");
 

@@ -1,4 +1,21 @@
 
+#AirlineManager validations
+acme.validation.airlineManager.identifier.invalid-identifier.message = Invalid identifier, Must have the initials of the name followed by 6 digits
+acme.validation.airlineManager.identifier.repeatedIdentifier.message = This identifier already exists
+
+#Flight validations
 acme.validation.airline-manager.flight.no-legs = Must have any leg
+
+# Legs validations
+acme.validation.leg.flightNumber.validFlightNumber.message = Invalid flight number, it must start with the airline's IATA code followed by 4 digits
+acme.validation.leg.scheduledArrival.must-be-after.message = Scheduled arrival must be after the scheduled departure
+acme.validation.leg.flightNumber.repeatedflightNumber.message = The flight number already exists
+acme.validation.leg.aircraft.overlapping.message = Another leg is using this aircraft
+acme.validation.leg.aircraft.no-same-airline.message = The aircraft must belong to the same airline
+acme.validation.leg.aircraft.no-same-airport.message = The departure and arrival airport cannot be the same
+
+#Airline validations
+acme.validation.airline.repeatedAirlineIATA.message = This IATA code is already in use
+acme.validation.airline.iata.wrong-pattern.message = Wrong format, must be 3 capital letters
 
 acme.validation.leg.aircraft.maintenance.message = This aircraft is under maintenance
