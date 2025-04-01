@@ -29,12 +29,12 @@ public class BookingValidator extends AbstractValidator<ValidBooking, Booking> {
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 
 		String locatorCode = booking.getLocatorCode();
-		if (!StringHelper.isBlank(locatorCode)) {
-			Optional<Booking> foundBooking = SpringHelper.getBean(BookingRepository.class).findByLocatorCodeAnNotBookingId(locatorCode, booking.getId());
-			if (foundBooking.isPresent())
-				super.state(context, false, "locatorCode", "acme.validation.locatorCode.not-unique");
-		} else
+		if (StringHelper.isBlank(locatorCode))
 			super.state(context, false, "locatorCode", "acme.validation.locatorCode.is-blank");
+
+		Optional<Booking> foundBooking = SpringHelper.getBean(BookingRepository.class).findByLocatorCodeAnNotBookingId(locatorCode, booking.getId());
+		if (foundBooking.isPresent())
+			super.state(context, false, "locatorCode", "acme.validation.locatorCode.not-unique");
 
 		result = !super.hasErrors(context);
 		return result;

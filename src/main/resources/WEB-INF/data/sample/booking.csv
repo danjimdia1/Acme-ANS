@@ -6,7 +6,6 @@ booking-02,666666,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
 booking-03,RZX3P0I,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
 booking-04,AAA9999,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
 booking-05,7Q47YQS8,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
-# purchaseMoment - variations
 booking-06,88TS0L6K,2000/01/01 00:00,ECONOMY,4999,false,customer-01,flight-01
 booking-07,EH4EUF71,2000/01/01 00:01,ECONOMY,4999,false,customer-01,flight-01
 booking-08,XOEXWOZ8,2024/12/30 23:59,ECONOMY,4999,false,customer-01,flight-01
@@ -16,7 +15,7 @@ booking-10,NDJWZBPV,2012/07/02 00:00,BUSINESS,4999,false,customer-01,flight-01
 # LastNibble - variations
 booking-11,JPJUEUVU,2012/07/02 00:00,ECONOMY,0000,false,customer-01,flight-01
 booking-12,YSJYFPR6,2012/07/02 00:00,ECONOMY,0001,false,customer-01,flight-01
-booking-13,RPL9I3G5,2012/07/02 00:00,ECONOMY,,false,customer-01,flight-01
+booking-13,RPL9I3G5,2012/07/02 00:00,ECONOMY,null,false,customer-01,flight-01
 booking-14,SPGN7J7J,2012/07/02 00:00,ECONOMY,9999,false,customer-01,flight-01
 # draftMode - variations
 booking-23,AYUUUUUU,2012/07/02 00:00,ECONOMY,4999,true,customer-01,flight-01
