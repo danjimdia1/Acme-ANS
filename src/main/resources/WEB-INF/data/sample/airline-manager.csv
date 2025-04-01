@@ -13,7 +13,7 @@ manager-09,user-account-manager-09,HG111111,60,2000/01/01 0:01,http://lorem.com/
 manager-10,user-account-manager-10,FF111111,60,2024/12/31 23:58,http://lorem.com/ipsum,airline-01
 manager-11,user-account-manager-11,AA111111,60,2024/12/31 23:59,http://lorem.com/ipsum,airline-01
 #Probando pictureLink
-manager-12,user-account-manager-12,JM222222,60,2012/07/02 0:00,"",airline-01
+manager-12,user-account-manager-12,JM222222,60,2012/07/02 0:00,null,airline-01
 manager-13,user-account-manager-13,RD111111,60,2012/07/02 0:00,ftp://a,airline-01
 manager-14,user-account-manager-14,TS111111,60,2012/07/02 0:00,ftp://a.b,airline-01
 manager-15,user-account-manager-15,CG111111,60,2012/07/02 0:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",airline-01
