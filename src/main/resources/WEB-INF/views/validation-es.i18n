@@ -1,2 +1,4 @@
 
 acme.validation.airline-manager.flight.no-legs = Debe tener algún tramo
+
+acme.validation.leg.aircraft.maintenance.message = Este avión está en mantenimiento

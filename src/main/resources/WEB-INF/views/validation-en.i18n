@@ -1,2 +1,4 @@
 
 acme.validation.airline-manager.flight.no-legs = Must have any leg
+
+acme.validation.leg.aircraft.maintenance.message = This aircraft is under maintenance
