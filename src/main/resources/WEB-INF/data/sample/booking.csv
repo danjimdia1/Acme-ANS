@@ -21,7 +21,7 @@ booking-14,7OX28T9D,2012/07/02 00:00,ECONOMY,EUR 1000000.00,4999,customer-01,fli
 # LastCreditCardNibble - variations
 booking-15,JPJUEUVU,2012/07/02 00:00,ECONOMY,EUR 40.00,0000,customer-01,flight-01
 booking-16,YSJYFPR6,2012/07/02 00:00,ECONOMY,EUR 40.00,0001,customer-01,flight-01
-booking-17,RPL9I3G5,2012/07/02 00:00,ECONOMY,EUR 40.00,,customer-01,flight-01
+booking-17,RPL9I3G5,2012/07/02 00:00,ECONOMY,EUR 40.00,null,customer-01,flight-01
 booking-18,SPGN7J7J,2012/07/02 00:00,ECONOMY,EUR 40.00,9999,customer-01,flight-01
 # key:customer - variations
 booking-19,O8GYSM02,2012/07/02 00:00,ECONOMY,EUR 40.00,4999,customer-02,flight-01

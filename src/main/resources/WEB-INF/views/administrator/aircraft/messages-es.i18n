@@ -1,23 +1,33 @@
-administrator.aircraft.list.title = Lista de aeronaves
+
+administrator.aircraft.list.title = Listado de aviones
+administrator.aircraft.form.title = Detalles del avión
 
 administrator.aircraft.list.label.model = Modelo
-administrator.aircraft.list.label.registrationNumber = Número de registro
+administrator.aircraft.list.label.registrationNumber = Número de Registro
 administrator.aircraft.list.label.capacity = Capacidad
-administrator.aircraft.list.label.cargoWeight = Peso 
-administrator.aircraft.list.label.status = Estado
-administrator.aicraft.list.button.create = Crear aeronave
+administrator.aircraft.list.label.cargoWeight = Peso de la carga
+administrator.aircraft.list.label.status = Estatus
 
-administrator.aircraft.form.button.create = Confirmar nueva aeronave
-administrator.aicraft.form.label.airline = Aerolínea
+administrator.aicraft.list.button.create = Crear
+
+administrator.aircraft.form.title = Información de la aeronave
+
+administrator.aicraft.form.label.model = Modelo
+administrator.aicraft.form.label.registrationNumber = Número de registro
+administrator.aicraft.form.label.capacity = Capacidad
+administrator.aicraft.form.label.cargoWeight = Peso de la carga
+administrator.aicraft.form.label.status = Estado
 administrator.aicraft.form.label.details = Detalles
-administrator.announcement.form.label.confirmation = Confirmar
-administrator.aircraft.form.title = Aeronave
-administrator.aircraft.form.label.model = Modelo
-administrator.aircraft.form.label.registrationNumber = Número de registro
-administrator.aircraft.form.label.capacity = Capacidad
-administrator.aircraft.form.label.cargoWeight = Peso 
-administrator.aircraft.form.label.details = Detalles
-administrator.aircraft.form.label.confirmation = Confirmar
-administrator.aircraft.form.label.status = Estado
-administrator.aircraft.form.label.airline = Aerolínea
+administrator.aicraft.form.label.airline = Aerolínea
+
+administrator.aircraft.form.label.confirmation = Confirma que los datos están correctos.
+administrator.aircraft.form.button.create = Crear
+
+administrator.aircraft.form.button.duties = Deberes
 administrator.aircraft.form.button.update = Actualizar
+administrator.aircraft.form.button.disable = Deshabilitar
+administrator.aircraft.form.button.enable = Habilitar
+
+acme.validation.capacity.message= La capacidad debe estar entre 1 y 255
+acme.validation.cargoWeight.message= El peso de la carga debe estar 2000 y 50000
+administrator.aircraft.form.error.duplicateRegistrationNumber= Ese número de registro ya está asignado
