@@ -23,12 +23,11 @@ booking-23,AYUUUUUU,2012/07/02 00:00,ECONOMY,4999,true,customer-01,flight-01
 booking-15,O8GYSM02,2012/07/02 00:00,ECONOMY,4999,false,customer-02,flight-01
 booking-16,FBE9Z9TX,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
 # key:flight - variations
-booking-17,ZH8SGLR0,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-02
-booking-18,GU614MD3,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-03
+booking-17,ZH8SGLR0,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-00
 #extra for booking record sample
-booking-19,AYCCCCCC,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
-booking-20,AYBBBBBB,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
-booking-21,AYDDDDDD,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
-booking-22,AYAAAAAA,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
+booking-18,AYCCCCCC,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
+booking-19,AYBBBBBB,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
+booking-20,AYDDDDDD,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
+booking-21,AYAAAAAA,2012/07/02 00:00,ECONOMY,4999,false,customer-01,flight-01
 
 
