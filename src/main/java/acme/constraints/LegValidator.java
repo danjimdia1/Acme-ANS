@@ -10,6 +10,7 @@ import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
 import acme.client.helpers.SpringHelper;
 import acme.client.helpers.StringHelper;
+import acme.entities.aircraft.Status;
 import acme.entities.airlines.Airline;
 import acme.entities.legs.Leg;
 import acme.entities.legs.LegRepository;
@@ -47,8 +48,10 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 					LegRepository repository = SpringHelper.getBean(LegRepository.class);
 					boolean repeatedFlightNumber = repository.findByFlightNumber(leg.getFlightNumber(), leg.getId()).isEmpty();
 					super.state(context, repeatedFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.repeatedflightNumber.message");
-
+          
 					if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
+             if (leg.getAircraft().getStatus().equals(Status.MAINTENANCE))
+							super.state(context, false, "aircraft", "acme.validation.leg.aircraft.maintenance.message");
 						List<Leg> otherLegs = repository.findByAircraftId(leg.getAircraft().getId(), leg.getId());
 						for (Leg otherLeg : otherLegs)
 							if (otherLeg.getScheduledArrival() != null && otherLeg.getScheduledDeparture() != null) {
