@@ -66,10 +66,10 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 					}
 			}
 
-			if (leg.getAircraft() != null && leg.getFlight() != null && leg.getFlight().getManager() != null) {
+			if (leg.getAircraft() != null) {
 				Airline legAirline = leg.getFlight().getManager().getAirline();
 				Airline aircraftAirline = leg.getAircraft().getAirline();
-				if (legAirline != null && aircraftAirline != null && !legAirline.equals(aircraftAirline))
+				if (!legAirline.equals(aircraftAirline))
 					super.state(context, false, "aircraft", "acme.validation.leg.aircraft.no-same-airline.message");
 			}
 

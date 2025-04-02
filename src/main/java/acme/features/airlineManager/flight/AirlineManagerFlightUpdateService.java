@@ -22,15 +22,12 @@ public class AirlineManagerFlightUpdateService extends AbstractGuiService<Airlin
 	public void authorise() {
 		int flightId;
 		Flight flight;
-		AirlineManager manager;
 
 		flightId = super.getRequest().getData("id", int.class);
 
 		flight = this.repository.findFlightById(flightId);
 
-		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
-
-		boolean status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealm(manager) && flight.getManager().equals(manager);
+		boolean status = flight != null && flight.isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == flight.getManager().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}
