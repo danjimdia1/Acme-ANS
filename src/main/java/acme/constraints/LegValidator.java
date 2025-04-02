@@ -47,24 +47,23 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				super.state(context, validScheduledArrival, "scheduledArrival", "acme.validation.leg.scheduledArrival.must-be-after.message");
 			}
 
-			{
-				if (!StringHelper.isBlank(leg.getFlightNumber())) {
-					LegRepository repository = SpringHelper.getBean(LegRepository.class);
-					boolean repeatedFlightNumber = repository.findByFlightNumber(leg.getFlightNumber(), leg.getId()).isEmpty();
-					super.state(context, repeatedFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.repeatedflightNumber.message");
-          
-					if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
-						if (leg.getAircraft().getStatus().equals(Status.MAINTENANCE))
-							super.state(context, false, "aircraft", "acme.validation.leg.aircraft.maintenance.message");
-						List<Leg> otherLegs = repository.findByAircraftId(leg.getAircraft().getId(), leg.getId());
-						for (Leg otherLeg : otherLegs)
-							if (otherLeg.getScheduledArrival() != null && otherLeg.getScheduledDeparture() != null) {
-								boolean isOverlapping = MomentHelper.isBefore(leg.getScheduledDeparture(), otherLeg.getScheduledArrival()) && MomentHelper.isAfter(leg.getScheduledArrival(), otherLeg.getScheduledDeparture());
-								if (isOverlapping)
-									super.state(context, false, "aircraft", "acme.validation.leg.aircraft.overlapping.message");
-							}
+			if (!StringHelper.isBlank(leg.getFlightNumber())) {
+				LegRepository repository = SpringHelper.getBean(LegRepository.class);
+				boolean repeatedFlightNumber = repository.findByFlightNumber(leg.getFlightNumber(), leg.getId()).isEmpty();
+				super.state(context, repeatedFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.repeatedflightNumber.message");
+			}
+			if (leg.getAircraft() != null)
+				if (leg.getAircraft().getStatus().equals(Status.MAINTENANCE))
+					super.state(context, false, "aircraft", "acme.validation.leg.aircraft.maintenance.message");
+			if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
+				LegRepository repository = SpringHelper.getBean(LegRepository.class);
+				List<Leg> otherLegs = repository.findByAircraftId(leg.getAircraft().getId(), leg.getId());
+				for (Leg otherLeg : otherLegs)
+					if (otherLeg.getScheduledArrival() != null && otherLeg.getScheduledDeparture() != null) {
+						boolean isOverlapping = MomentHelper.isBefore(leg.getScheduledDeparture(), otherLeg.getScheduledArrival()) && MomentHelper.isAfter(leg.getScheduledArrival(), otherLeg.getScheduledDeparture());
+						if (isOverlapping)
+							super.state(context, false, "aircraft", "acme.validation.leg.aircraft.overlapping.message");
 					}
-				}
 			}
 
 			if (leg.getAircraft() != null && leg.getFlight() != null && leg.getFlight().getManager() != null) {

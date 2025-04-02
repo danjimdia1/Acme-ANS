@@ -16,6 +16,5 @@ acme.validation.leg.aircraft.no-same-airport.message = El aeropuerto de salida y
 
 #Airline validations
 acme.validation.airline.repeatedAirlineIATA.message = Este código IATA ya está en uso
-acme.validation.airline.iata.wrong-pattern.message = Formato inválido, deben ser 3 letras mayúsculas
 
 acme.validation.leg.aircraft.maintenance.message = Este avión está en mantenimiento
