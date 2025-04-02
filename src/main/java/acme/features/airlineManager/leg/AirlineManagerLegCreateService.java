@@ -34,7 +34,7 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
 
-		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && flight.getManager().equals(manager);
+		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && super.getRequest().getPrincipal().getAccountId() == flight.getManager().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}

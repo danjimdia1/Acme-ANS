@@ -23,18 +23,14 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 
 	@Override
 	public void authorise() {
-
 		int legId;
 		Leg leg;
-		AirlineManager manager;
-
-		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
 
 		legId = super.getRequest().getData("id", int.class);
 
 		leg = this.repository.findLegById(legId);
 
-		boolean status = leg != null && super.getRequest().getPrincipal().hasRealm(manager) && leg.getFlight().getManager().equals(manager);
+		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}

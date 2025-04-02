@@ -20,11 +20,7 @@ public class AirlineManagerFlightListService extends AbstractGuiService<AirlineM
 
 	@Override
 	public void authorise() {
-		AirlineManager manager;
-
-		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
-
-		boolean status = super.getRequest().getPrincipal().hasRealm(manager);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class);
 
 		super.getResponse().setAuthorised(status);
 	}

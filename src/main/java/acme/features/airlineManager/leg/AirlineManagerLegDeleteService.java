@@ -10,7 +10,6 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
-import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
 import acme.entities.legs.LegStatus;
 import acme.realms.airlineManager.AirlineManager;
@@ -25,22 +24,13 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 	@Override
 	public void authorise() {
 		int legId;
-		int flightId;
 		Leg leg;
-		Flight flight;
-		AirlineManager manager;
-
-		flightId = super.getRequest().getData("flightId", int.class);
-
-		flight = this.repository.findFlightById(flightId);
-
-		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
 
 		legId = super.getRequest().getData("id", int.class);
 
 		leg = this.repository.findLegById(legId);
 
-		boolean status = flight != null && leg != null && leg.getFlight().equals(flight) && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealm(manager) && leg.getFlight().getManager().equals(manager);
+		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}
