@@ -59,6 +59,12 @@ master.menu.user-account.consumer-profile = Consumer profile
 master.menu.airline-manager = Airline Manager
 master.menu.airline-manager.list-flights = Listing of flights
 
+# master.menu.assistance-agent ####################################################
+
+master.menu.assistance-agent = Assistance Agent
+master.menu.assistance-agent.list-claims = Claims List
+
 # master.menu.technician ####################################################
+
 master.menu.technician = Technician
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Maintenance Records List
