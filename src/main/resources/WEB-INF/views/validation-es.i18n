@@ -19,7 +19,6 @@ acme.validation.airport.iataCode.repeatedIATACode = Este código IATA ya está e
 
 #Airline validations
 acme.validation.airline.repeatedAirlineIATA.message = Este código IATA ya está en uso
-acme.validation.airline.iata.wrong-pattern.message = Formato inválido, deben ser 3 letras mayúsculas
 
 #Aircraft validations
 acme.validation.leg.aircraft.maintenance.message = Este avión está en mantenimiento

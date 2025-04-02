@@ -20,6 +20,5 @@ acme.validation.airport.iataCode.repeatedIATACode = This IATA code is already in
 
 #Airline validations
 acme.validation.airline.repeatedAirlineIATA.message = This IATA code is already in use
-acme.validation.airline.iata.wrong-pattern.message = Wrong format, must be 3 capital letters
 
 acme.validation.leg.aircraft.maintenance.message = This aircraft is under maintenance
