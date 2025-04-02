@@ -22,3 +22,16 @@ acme.validation.airline.repeatedAirlineIATA.message = Este código IATA ya está
 
 #Aircraft validations
 acme.validation.leg.aircraft.maintenance.message = Este avión está en mantenimiento
+
+# Validaciones para Técnico
+acme.validation.technician.identifier.message = Formato de identificador no válido.
+acme.validation.technician.maintenance-record.noStatus.message = Debes seleccionar un estado.
+acme.validation.technician.maintenance-record.nextInspectionDate.message = La próxima inspección debe programarse después de la fecha del mantenimiento.
+acme.validation.technician.maintenance-record.estimatedCost.message = El coste estimado debe estar entre 0,00 y 1.000.000,00.
+acme.validation.technician.maintenance-record.notes.message = Las anotaciones no pueden superar los 255 caracteres.
+acme.validation.technician.maintenance-record.aircraft.message = El avión seleccionado no se encuentra registrado.
+acme.validation.technician.maintenance-record.published.message = Para publicar un registro debe haber al menos una tarea publicada vinculada.
+acme.validation.technician.task.noType.message = Debes seleccionar un tipo de tarea.
+acme.validation.technician.task.description.message = La descripción no puede superar los 255 caracteres.
+acme.validation.technician.task.priority.message = La prioridad debe estar entre 0 y 10.
+acme.validation.technician.task.estimatedDuration.message = La duración estimada debe estar entre 0 y 1000 horas.

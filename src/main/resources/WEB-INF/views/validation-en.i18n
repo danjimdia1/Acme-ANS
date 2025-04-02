@@ -22,3 +22,16 @@ acme.validation.airport.iataCode.repeatedIATACode = This IATA code is already in
 acme.validation.airline.repeatedAirlineIATA.message = This IATA code is already in use
 
 acme.validation.leg.aircraft.maintenance.message = This aircraft is under maintenance
+
+# Technician validations
+acme.validation.technician.identifier.message = Invalid license number format.
+acme.validation.technician.maintenance-record.noStatus.message = A status must be selected.
+acme.validation.technician.maintenance-record.nextInspectionDate.message = The next inspection must be scheduled after the maintenance date.
+acme.validation.technician.maintenance-record.estimatedCost.message = The estimated cost must be between 0.00 and 1,000,000.00.
+acme.validation.technician.maintenance-record.notes.message = Notes must not exceed 255 characters.
+acme.validation.technician.maintenance-record.aircraft.message = The selected aircraft does not exist.
+acme.validation.technician.maintenance-record.published.message = At least one published task must be associated with this record in order to publish it.
+acme.validation.technician.task.noType.message = A task type must be selected.
+acme.validation.technician.task.description.message = The task description must not exceed 255 characters.
+acme.validation.technician.task.priority.message = Priority must be between 0 and 10.
+acme.validation.technician.task.estimatedDuration.message = Estimated duration must be between 0 and 1000 hours.
