@@ -20,7 +20,13 @@ public class AdministratorAirlineUpdateService extends AbstractGuiService<Admini
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		Administrator administrator;
+
+		administrator = (Administrator) super.getRequest().getPrincipal().getActiveRealm();
+
+		boolean status = super.getRequest().getPrincipal().hasRealm(administrator);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

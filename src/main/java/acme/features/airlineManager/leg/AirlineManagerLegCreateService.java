@@ -24,7 +24,19 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int flightId;
+		Flight flight;
+		AirlineManager manager;
+
+		flightId = super.getRequest().getData("flightId", int.class);
+
+		flight = this.repository.findFlightById(flightId);
+
+		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
+
+		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && flight.getManager().equals(manager);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
