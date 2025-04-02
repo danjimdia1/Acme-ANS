@@ -1,0 +1,41 @@
+key,type,description,priority,estimatedDuration,published,key:technician
+
+## Tarea base válida
+task-01,MAINTENANCE,Revisión general del avión,2,22,FALSE,technician-01
+
+## Validación del tipo de tarea
+task-02,MAINTENANCE,Revisión general del avión,2,22,FALSE,technician-01
+task-03,INSPECTION,Chequeo rutinario de cabina,2,22,FALSE,technician-01
+task-04,REPAIR,Sustitución de componentes,2,22,FALSE,technician-01
+task-05,SYSTEM_CHECK,Diagnóstico de sistemas,2,22,FALSE,technician-01
+
+## Validación de la descripción
+task-06,MAINTENANCE,A,2,22,FALSE,technician-01
+task-07,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2,22,FALSE,technician-01
+task-08,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2,22,FALSE,technician-01
+
+# Descripciones en otros alfabetos
+task-09,MAINTENANCE,โลเร็ม อิปซัม,2,22,FALSE,technician-01
+task-10,MAINTENANCE,при,2,22,FALSE,technician-01
+task-11,MAINTENANCE,洛伦·伊普森,2,22,FALSE,technician-01
+
+# Intentos de inyección
+task-12,MAINTENANCE,<marquee>Atención</marquee>,2,22,FALSE,technician-01
+task-13,MAINTENANCE,<script>alert(‘Alerta!’);</script>,2,22,FALSE,technician-01
+task-14,MAINTENANCE,' OR '1'='1,2,22,FALSE,technician-01
+
+## Validación de prioridad (rango 0-10)
+task-15,MAINTENANCE,Revisión del fuselaje,0,22,FALSE,technician-01
+task-16,MAINTENANCE,Verificación de instrumentación,5,22,FALSE,technician-01
+task-17,MAINTENANCE,Chequeo completo,10,22,FALSE,technician-01
+
+## Validación de duración estimada (rango 0-1000)
+task-18,MAINTENANCE,Revisión rápida,2,0,FALSE,technician-01
+task-19,MAINTENANCE,Tarea estándar,2,500,FALSE,technician-01
+task-20,MAINTENANCE,Tarea extensa,2,1000,FALSE,technician-01
+
+## Otra relación con técnico
+task-21,MAINTENANCE,Revisión con otro técnico,2,1000,FALSE,technician-02
+
+## Tarea publicada
+task-22,MAINTENANCE,Trabajo ya publicado,2,22,TRUE,technician-01

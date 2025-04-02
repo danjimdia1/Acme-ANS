@@ -58,3 +58,8 @@ master.menu.user-account.consumer-profile = Perfil de consumidor
 
 master.menu.airline-manager = Manager de Aerolínea
 master.menu.airline-manager.list-flights = Lista de vuelos
+
+
+# master.menu.technician ########################################################
+master.menu.technician = Técnico
+master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de los documentos de Mantenimiento

@@ -5,7 +5,7 @@ import java.util.List;
 
 import acme.client.components.basis.AbstractForm;
 import acme.client.components.datatypes.Money;
-import acme.entities.maintenanceRecords.MaintenanceRecord;
+import acme.entities.maintenanceRecord.MaintenanceRecord;
 import lombok.Getter;
 import lombok.Setter;
 
