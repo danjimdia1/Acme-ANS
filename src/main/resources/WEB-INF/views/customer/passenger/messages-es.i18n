@@ -1,0 +1,17 @@
+customer.passenger.list.title = Mis pasajeros
+customer.passenger.list.fullName = Nombre completo
+customer.passenger.list.passportNumber = Número de pasaporte
+customer.passenger.list.dateOfBirth = Fecha de nacimiento
+customer.passenger.list.specialNeeds = Necesidades especiales
+customer.passenger.list.button.create = Crear nuevo pasajero
+
+customer.passenger.form.title = Información del pasajero
+customer.passenger.form.fullName = Nombre completo
+customer.passenger.form.email = Correo electrónico
+customer.passenger.form.passportNumber = Número de pasaporte
+customer.passenger.form.dateOfBirth = Fecha de nacimiento
+customer.passenger.form.specialNeeds = Necesidades especiales
+
+customer.passenger.form.button.create = Crear
+customer.passenger.form.button.update = Actualizar
+customer.passenger.form.button.publish = Publicar

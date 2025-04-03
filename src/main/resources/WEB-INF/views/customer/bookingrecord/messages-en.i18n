@@ -1,0 +1,8 @@
+customer.booking-record.list.button.create = Add passengers
+
+customer.booking-record.form.title = Booking's passengers
+
+customer.booking-record.form.button.create = Add
+customer.booking-record.form.button.update = Update
+customer.booking-record.form.button.delete = Delete
+customer.booking-record.form.button.publish = Publish

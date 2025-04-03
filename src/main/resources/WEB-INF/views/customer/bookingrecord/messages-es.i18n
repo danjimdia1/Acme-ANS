@@ -1,0 +1,10 @@
+customer.booking-record.list.title = Pasajeros de la reserva
+
+customer.booking-record.list.button.create = Añadir pasajeros
+
+customer.booking-record.form.title = Reserva
+
+customer.booking-record.form.button.create = Añadir
+customer.booking-record.form.button.update = Actualizar
+customer.booking-record.form.button.publish = Publicar
+customer.booking-record.form.button.delete = Eliminar

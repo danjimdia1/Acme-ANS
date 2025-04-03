@@ -14,6 +14,7 @@ import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
 import acme.entities.bookings.TravelClass;
 import acme.entities.flights.Flight;
+import acme.entities.passengers.Passenger;
 import acme.realms.customer.Customer;
 
 @GuiService
@@ -61,10 +62,16 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void validate(final Booking booking) {
-		// Falta que tenga al menos un pasajero y que esten todos publicados
 
-		boolean hasFlight = booking.getFlight() != null;
-		super.state(hasFlight, "flight", "acme.validation.booking.flight.message");
+		Collection<Flight> validFlights = this.repository.findAllFlights().stream().filter(flight -> flight.getScheduledDeparture() != null && !flight.isDraftMode() && flight.getScheduledDeparture().after(MomentHelper.getCurrentMoment())
+			&& this.repository.findLegsByFlightId(flight.getId()).stream().allMatch(leg -> leg.getScheduledDeparture().after(MomentHelper.getCurrentMoment()))).collect(Collectors.toList());
+
+		boolean isFlightValid = booking.getFlight() != null && validFlights.contains(booking.getFlight());
+		super.state(isFlightValid, "flight", "acme.validation.booking.flight.message");
+
+		Collection<Passenger> passengers = this.repository.findPassengersByBookingId(booking.getId());
+		boolean hasPassengersInDraftModeOrEmpty = passengers.isEmpty() || passengers.stream().anyMatch(Passenger::isDraftMode);
+		super.state(!hasPassengersInDraftModeOrEmpty, "flight", "acme.validation.booking.passengers.message");
 
 		boolean hasLastNibble = booking.getLastNibble() != null && !booking.getLastNibble().trim().isEmpty();
 		super.state(hasLastNibble, "lastNibble", "acme.validation.lastNibble.message");

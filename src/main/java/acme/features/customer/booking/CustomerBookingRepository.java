@@ -13,6 +13,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.bookings.Booking;
 import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
+import acme.entities.passengers.Passenger;
 
 @Repository
 public interface CustomerBookingRepository extends AbstractRepository {
@@ -43,5 +44,8 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("select b.locatorCode from Booking b where b.id = :bookingId")
 	String getLocatorCodeByBookingId(int bookingId);
+
+	@Query("select distinct br.passenger from BookingRecord br where br.booking.id = :bookingId")
+	Collection<Passenger> findPassengersByBookingId(int bookingId);
 
 }
