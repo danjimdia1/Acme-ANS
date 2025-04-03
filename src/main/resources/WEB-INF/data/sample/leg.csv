@@ -21,3 +21,5 @@ leg-11,AAB5555,2133/01/01 17:00,2133/01/01 18:00,ON_TIME,FALSE,flight-00,airport
 #Probando draftMode,"","","","","","","","",""
 leg-12,AAB4231,2120/01/01 17:00,2120/01/01 18:00,ON_TIME,TRUE,flight-29,airport-13,airport-14,aircraft-01
 leg-13,AAB9999,2120/01/01 18:00,2120/01/01 20:00,ON_TIME,TRUE,flight-05,airport-13,airport-14,aircraft-01
+#
+leg-14,AAB0000,2132/01/01 0:00,2132/01/01 5:00,ON_TIME,FALSE,flight-30,airport-01,airport-02,aircraft-00

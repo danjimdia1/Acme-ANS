@@ -17,7 +17,7 @@ import acme.entities.flights.Flight;
 import acme.realms.customer.Customer;
 
 @GuiService
-public class CustomerBookingShowService extends AbstractGuiService<Customer, Booking> {
+public class CustomerBookingUpdateService extends AbstractGuiService<Customer, Booking> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -29,23 +29,27 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 
 	@Override
 	public void authorise() {
-		int bookingId = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.getBookingById(bookingId);
-		Customer customer = booking != null ? booking.getCustomer() : null;
+		boolean status;
+		int bookingId;
+		Customer customer;
+		Booking booking;
 
-		boolean status = booking != null && super.getRequest().getPrincipal().hasRealm(customer);
+		bookingId = super.getRequest().getData("id", int.class);
+		booking = this.repository.getBookingById(bookingId);
+		customer = booking == null ? null : booking.getCustomer();
+		status = super.getRequest().getPrincipal().hasRealm(customer) && booking != null && booking.isDraftMode();
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int bookingId;
-		Booking booking;
+		super.getBuffer().addData(this.repository.getBookingById(super.getRequest().getData("id", int.class)));
+	}
 
-		bookingId = super.getRequest().getData("id", int.class);
-		booking = this.repository.getBookingById(bookingId);
-
-		this.getBuffer().addData(booking);
+	@Override
+	public void bind(final Booking booking) {
+		super.bindObject(booking, "flight", "locatorCode", "travelClass", "lastNibble");
 	}
 
 	@Override
@@ -54,42 +58,34 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 	}
 
 	@Override
+	public void perform(final Booking booking) {
+		booking.setPurchaseMoment(MomentHelper.getCurrentMoment());
+		booking.setDraftMode(true);
+		this.repository.save(booking);
+	}
+
+	@Override
 	public void unbind(final Booking booking) {
 		Collection<Flight> flights;
-		Collection<Flight> generalFlights;
 		SelectChoices choices;
-		SelectChoices generalChoices;
-		SelectChoices classChoices;
+		SelectChoices classes;
 		Dataset dataset;
 
 		flights = this.repository.findAllFlights().stream().filter(flight -> flight.getScheduledDeparture() != null && !flight.isDraftMode() && flight.getScheduledDeparture().after(MomentHelper.getCurrentMoment())
 			&& this.repository.findLegsByFlightId(flight.getId()).stream().allMatch(leg -> leg.getScheduledDeparture().after(MomentHelper.getCurrentMoment()))).collect(Collectors.toList());
-		generalFlights = this.repository.findAllFlights();
 
-		classChoices = SelectChoices.from(TravelClass.class, booking.getTravelClass());
+		choices = SelectChoices.from(flights, "label", booking.getFlight());
+		classes = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
-		dataset = super.unbindObject(booking, "locatorCode", "travelClass", "purchaseMoment", "price", "lastNibble", "draftMode");
-
-		if (!booking.isDraftMode()) {
-			generalChoices = SelectChoices.from(generalFlights, "label", booking.getFlight());
-			dataset.put("flight", generalChoices.getSelected() != null ? generalChoices.getSelected().getKey() : "0");
-			dataset.put("flights", generalChoices);
-
-		} else {
-			boolean flightStillValid = flights.contains(booking.getFlight());
-
-			if (!flightStillValid)
-				booking.setFlight(null);
-			choices = SelectChoices.from(flights, "label", booking.getFlight());
-
-			dataset.put("flight", booking.getFlight() != null && choices.getSelected() != null ? choices.getSelected().getKey() : "0");
-			dataset.put("flights", choices);
-		}
-
-		dataset.put("classes", classChoices);
-		dataset.put("bookingId", booking.getId());
+		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "lastNibble", "draftMode");
+		dataset.put("flights", choices);
+		if (booking.isDraftMode() && (choices.getSelected() == null || choices.getSelected().getKey() == null))
+			dataset.put("flight", "0");
+		else
+			dataset.put("flight", booking.getFlight() != null ? choices.getSelected().getKey() : "0");
+		dataset.put("classes", classes);
+		dataset.put("travelClass", classes.getSelected().getKey());
 
 		super.getResponse().addData(dataset);
 	}
-
 }

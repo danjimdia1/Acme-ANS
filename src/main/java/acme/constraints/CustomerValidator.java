@@ -30,18 +30,18 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 		String identifier = customer.getIdentifier();
 		DefaultUserIdentity identity = customer.getUserAccount().getIdentity();
 
-		if (StringHelper.isBlank(identifier))
+		if (customer != null && StringHelper.isBlank(identifier))
 			super.state(context, false, "identifier", "acme.validation.identifier.is-blank");
 
 		String name = identity.getName();
 		String surname = identity.getSurname();
-		if (StringHelper.isBlank(name) && StringHelper.isBlank(surname))
+		if (customer != null && StringHelper.isBlank(name) && StringHelper.isBlank(surname))
 			super.state(context, false, "identifier", "acme.validation.identifier.blank-name-surname");
 
-		if (!StringHelper.isBlank(identifier) && !StringHelper.isBlank(name) && !StringHelper.isBlank(surname) && !StringHelper.startsWith(identifier, name.substring(0, 1) + surname.substring(0, 1), true))
+		if (customer != null && !StringHelper.isBlank(identifier) && !StringHelper.isBlank(name) && !StringHelper.isBlank(surname) && !StringHelper.startsWith(identifier, name.substring(0, 1) + surname.substring(0, 1), true))
 			super.state(context, false, "identifier", "java.validation.customer.identifier.invalidPrefix");
 
-		if (!StringHelper.isBlank(identifier) && SpringHelper.getBean(CustomerRepository.class).findByIdentifierAnNotCustomerId(identifier, customer.getId()).isPresent())
+		if (customer != null && !StringHelper.isBlank(identifier) && SpringHelper.getBean(CustomerRepository.class).findByIdentifierAnNotCustomerId(identifier, customer.getId()).isPresent())
 			super.state(context, false, "identifier", "acme.validation.identifier.not-unique");
 
 		result = !super.hasErrors(context);
