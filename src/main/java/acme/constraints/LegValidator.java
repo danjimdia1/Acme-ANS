@@ -11,7 +11,6 @@ import acme.client.helpers.MomentHelper;
 import acme.client.helpers.SpringHelper;
 import acme.client.helpers.StringHelper;
 import acme.entities.aircraft.Status;
-import acme.entities.airlines.Airline;
 import acme.entities.legs.Leg;
 import acme.entities.legs.LegRepository;
 
@@ -64,13 +63,6 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 						if (isOverlapping)
 							super.state(context, false, "aircraft", "acme.validation.leg.aircraft.overlapping.message");
 					}
-			}
-
-			if (leg.getAircraft() != null) {
-				Airline legAirline = leg.getFlight().getManager().getAirline();
-				Airline aircraftAirline = leg.getAircraft().getAirline();
-				if (!legAirline.equals(aircraftAirline))
-					super.state(context, false, "aircraft", "acme.validation.leg.aircraft.no-same-airline.message");
 			}
 
 			if (leg.getDepartureAirport() != null && leg.getArrivalAirport() != null) {
