@@ -28,7 +28,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		if (log == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 
-		if (MomentHelper.isAfterOrEqual(log.getCreationMoment(), log.getLastUpdateMoment()))
+		if (MomentHelper.isAfter(log.getCreationMoment(), log.getLastUpdateMoment()))
 			super.state(context, false, "moment", "acme.validation.trackingLog.wrongMoments.message");
 
 		if (log.getResolutionPercentage() == 100.00) {
