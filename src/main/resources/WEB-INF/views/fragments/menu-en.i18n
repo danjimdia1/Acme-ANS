@@ -34,6 +34,7 @@ master.menu.administrator.shut-system-down = Shut system down
 
 master.menu.customer = Customer
 master.menu.customer.list-bookings= My Bookings
+master.menu.customer.passenger= My Passengers
 
 # master.menu.provider ########################################################
 

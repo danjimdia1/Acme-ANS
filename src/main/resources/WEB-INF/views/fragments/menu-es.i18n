@@ -34,6 +34,7 @@ master.menu.administrator.shut-system-down = Parar el sistema
 
 master.menu.customer = Cliente
 master.menu.customer.list-bookings = Mis Reservas
+master.menu.customer.passenger= Mis Pasajeros
 
 # master.menu.provider ########################################################
 
