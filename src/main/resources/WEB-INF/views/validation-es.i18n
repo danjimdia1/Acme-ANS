@@ -35,3 +35,6 @@ acme.validation.technician.task.noType.message = Debes seleccionar un tipo de ta
 acme.validation.technician.task.description.message = La descripción no puede superar los 255 caracteres.
 acme.validation.technician.task.priority.message = La prioridad debe estar entre 0 y 10.
 acme.validation.technician.task.estimatedDuration.message = La duración estimada debe estar entre 0 y 1000 horas.
+
+#Claim validations
+acme.validation.leg.nullLeg.message = Debe tener un tramo
