@@ -1,0 +1,19 @@
+authenticated.technician.form.title = Formulario de Técnico
+
+authenticated.technician.form.label.licenseNumber = Número de licencia:
+authenticated.technician.form.label.phoneNumber = Número de teléfono:
+authenticated.technician.form.label.specialisation = Especialización:
+authenticated.technician.form.label.annualHealthTestPassed = Ha pasado el examen médico anual:
+authenticated.technician.form.label.yearsOfExperience = Años de experiencia:
+authenticated.technician.form.label.certifications = Certificaciones:
+
+authenticated.technician.form.placeholder.licenseNumber = AB123456
+authenticated.technician.form.placeholder.phoneNumber = 123456789
+authenticated.technician.form.placeholder.specialisation = Sistemas Eléctricos
+authenticated.technician.form.placeholder.yearsOfExperience = 5
+authenticated.technician.form.placeholder.certifications = Técnico Certificado
+
+authenticated.technician.form.button.create = Registrar
+authenticated.technician.form.button.update = Actualizar
+
+authenticated.technician.create.not-unique-license = Este número de licencia ya está en uso
