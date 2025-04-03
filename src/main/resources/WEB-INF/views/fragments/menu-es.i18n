@@ -72,3 +72,4 @@ master.menu.assistance-agent.list-claims = Lista de reclamaciones
 master.menu.technician = Técnico
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de los documentos de Mantenimiento
 master.menu.technician.tasks.tasks-list = Listado de tareas
+master.menu.technician.show-dashboard = Mostrar panel

@@ -71,3 +71,4 @@ master.menu.assistance-agent.list-claims = Claims List
 master.menu.technician = Technician
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Maintenance Records List
 master.menu.technician.tasks.tasks-list = Tasks List
+master.menu.technician.show-dashboard = Show dashboard
