@@ -8,3 +8,7 @@
 	<acme:list-column code='assistance-agent.claim.list.label.type' path="type" width="33.33%"/>
 	<acme:list-column code='assistance-agent.claim.list.label.status' path="status" width="33.33%"/>
 </acme:list>
+
+<jstl:if test="${_command == 'list'}">
+	<acme:button code="assistance-agent.claim.list.button.create" action="/assistance-agent/claim/create"/>
+</jstl:if>
