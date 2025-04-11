@@ -33,6 +33,30 @@ public class AirlineManagerLegUpdateService extends AbstractGuiService<AirlineMa
 
 		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
 
+		if (super.getRequest().getMethod().equals("POST")) {
+			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
+			Aircraft aircraft = null;
+
+			if (aircraftId != null && aircraftId != 0)
+				aircraft = this.repository.findAircraftById(aircraftId);
+
+			Integer arrivalAirportId = super.getRequest().getData("arrivalAirport", Integer.class);
+			Airport arrivalAirport = null;
+			if (arrivalAirportId != null && arrivalAirportId != 0)
+				arrivalAirport = this.repository.findAirportById(arrivalAirportId);
+
+			Integer departureAirportId = super.getRequest().getData("departureAirport", Integer.class);
+			Airport departureAirport = null;
+			if (departureAirportId != null && departureAirportId != 0)
+				departureAirport = this.repository.findAirportById(departureAirportId);
+
+			boolean aircraftAutorization = aircraftId != null && aircraftId != 0 && aircraft == null;
+			boolean departureAirportAutorization = departureAirportId != null && departureAirportId != 0 && departureAirport == null;
+			boolean arrivalAirportAutorization = arrivalAirportId != null && arrivalAirportId != 0 && arrivalAirport == null;
+			if (aircraftAutorization || departureAirportAutorization || arrivalAirportAutorization)
+				status = false;
+		}
+
 		super.getResponse().setAuthorised(status);
 	}
 

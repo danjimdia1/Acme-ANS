@@ -15,7 +15,7 @@
 	<acme:input-select code="airline-manager.leg.form.label.aircraftRegNumber" path="aircraft" choices="${aircrafts}"/>
 	
 	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
-		<acme:input-double code="airline-manager.leg.form.label.duration" path="duration"/>
+		<acme:input-double readonly="true" code="airline-manager.leg.form.label.duration" path="duration"/>
 	</jstl:if>
 	
 	<jstl:choose>
