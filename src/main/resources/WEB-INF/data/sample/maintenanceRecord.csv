@@ -1,0 +1,61 @@
+key,maintenanceMoment,status,nextInspectionDue,estimatedCost,published,notes,key:technician,key:aircraft
+
+## Datos básicos
+maintenanceRecord-01,2022/06/02 00:30,COMPLETED,2025/06/02 00:30,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+
+## Validación: maintenanceMoment
+# Fecha típica
+maintenanceRecord-02,2012/06/02 11:30,PENDING,2015/06/02 11:30,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+# Límite inferior
+maintenanceRecord-03,2000/01/01 00:00,COMPLETED,2002/12/31 23:59,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+# Un minuto después del límite inferior
+maintenanceRecord-04,2000/01/01 00:01,COMPLETED,2010/12/31 23:59,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+
+## Comprobación de estados
+maintenanceRecord-05,2024/01/01 09:00,PENDING,2026/12/31 23:59,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+maintenanceRecord-06,2024/01/01 09:00,IN_PROGRESS,2026/12/31 23:59,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+maintenanceRecord-07,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+
+## Validación: nextInspectionDue
+# Fecha media válida
+maintenanceRecord-08,2012/06/02 11:30,PENDING,2015/06/02 11:30,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+# Fecha mínima
+maintenanceRecord-09,2012/06/02 11:30,COMPLETED,2000/01/01 00:00,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+# Un minuto después de la fecha mínima
+maintenanceRecord-10,2012/06/02 11:30,COMPLETED,2000/01/01 00:01,EUR 500000.00,FALSE,"",technician-01,aircraft-01
+
+## Validación: estimatedCost
+# Coste cero
+maintenanceRecord-11,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,"",technician-01,aircraft-01
+# Coste mínimo + céntimo
+maintenanceRecord-12,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.01,FALSE,"",technician-01,aircraft-01
+# Justo debajo del máximo permitido
+maintenanceRecord-13,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 999999.99,FALSE,"",technician-01,aircraft-01
+# Coste en el límite superior
+maintenanceRecord-14,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 1000000.00,FALSE,"",technician-01,aircraft-01
+# Coste con divisa diferente
+maintenanceRecord-15,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,USD 500000.00,FALSE,"",technician-01,aircraft-01
+
+## Validación: notes
+# Sin texto
+maintenanceRecord-16,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,"",technician-01,aircraft-01
+# Un solo carácter
+maintenanceRecord-17,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,A,technician-01,aircraft-01
+# Cadena de texto en límite máximo (255)
+maintenanceRecord-18,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",technician-01,aircraft-01
+# Justo por debajo del límite máximo
+maintenanceRecord-19,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",technician-01,aircraft-01
+# Notas con caracteres especiales internacionales
+maintenanceRecord-20,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,โลเร็ม อิปซัม,technician-01,aircraft-01
+maintenanceRecord-21,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,при,technician-01,aircraft-01
+maintenanceRecord-22,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,洛伦·伊普森,technician-01,aircraft-01
+# Posibles intentos de inyección
+maintenanceRecord-23,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,<marquee>Hacked</marquee>,technician-01,aircraft-01
+maintenanceRecord-24,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,<script>alert(‘Hacked!’);</script>,technician-01,aircraft-01
+maintenanceRecord-25,2024/01/01 09:00,COMPLETED,2026/12/31 23:59,EUR 0.00,FALSE,' or 'A' = 'A,technician-01,aircraft-01
+
+## Variaciones de relaciones
+# Cambiar técnico
+maintenanceRecord-26,2022/06/02 00:30,COMPLETED,2025/06/02 00:30,EUR 500000.00,FALSE,"",technician-02,aircraft-01
+# Cambiar avión
+maintenanceRecord-27,2022/06/02 00:30,COMPLETED,2025/06/02 00:30,EUR 500000.00,FALSE,"",technician-01,aircraft-02

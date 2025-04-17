@@ -1,0 +1,19 @@
+authenticated.technician.form.title = Technician form
+
+authenticated.technician.form.label.licenseNumber = License number:
+authenticated.technician.form.label.phoneNumber = Phone number:
+authenticated.technician.form.label.specialisation = Specialisation:
+authenticated.technician.form.label.annualHealthTestPassed = Annual health test passed:
+authenticated.technician.form.label.yearsOfExperience = Years of experience:
+authenticated.technician.form.label.certifications = Certifications:
+
+authenticated.technician.form.placeholder.licenseNumber = AB123456
+authenticated.technician.form.placeholder.phoneNumber = 123456789
+authenticated.technician.form.placeholder.specialisation = Electrical Systems
+authenticated.technician.form.placeholder.yearsOfExperience = 5
+authenticated.technician.form.placeholder.certifications = Certified Technician
+
+authenticated.technician.form.button.create = Register
+authenticated.technician.form.button.update = Update
+
+authenticated.technician.create.not-unique-license = This license number is already in use

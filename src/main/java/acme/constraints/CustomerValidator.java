@@ -1,8 +1,6 @@
 
 package acme.constraints;
 
-import java.util.Optional;
-
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.principals.DefaultUserIdentity;
@@ -32,20 +30,20 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 		String identifier = customer.getIdentifier();
 		DefaultUserIdentity identity = customer.getUserAccount().getIdentity();
 
-		if (!StringHelper.isBlank(identifier)) {
-			String name = identity.getName();
-			String surname = identity.getSurname();
-			if (!StringHelper.isBlank(name) && !StringHelper.isBlank(surname)) {
-				if (!StringHelper.startsWith(identifier, name.substring(0, 1) + surname.substring(0, 1), true))
-					super.state(context, false, "identifier", "java.validation.customer.identifier.invalidPrefix");
-
-				Optional<Customer> foundCustomer = SpringHelper.getBean(CustomerRepository.class).findByIdentifierAnNotCustomerId(identifier, customer.getId());
-				if (foundCustomer.isPresent())
-					super.state(context, false, "identifier", "acme.validation.identifier.not-unique");
-			} else
-				super.state(context, false, "identifier", "acme.validation.identifier.blank-name-surname");
-		} else
+		if (customer != null && StringHelper.isBlank(identifier))
 			super.state(context, false, "identifier", "acme.validation.identifier.is-blank");
+
+		String name = identity.getName();
+		String surname = identity.getSurname();
+		if (customer != null && StringHelper.isBlank(name) && StringHelper.isBlank(surname))
+			super.state(context, false, "identifier", "acme.validation.identifier.blank-name-surname");
+
+		if (customer != null && !StringHelper.isBlank(identifier) && !StringHelper.isBlank(name) && !StringHelper.isBlank(surname) && !StringHelper.startsWith(identifier, name.substring(0, 1) + surname.substring(0, 1), true))
+			super.state(context, false, "identifier", "java.validation.customer.identifier.invalidPrefix");
+
+		if (customer != null && !StringHelper.isBlank(identifier) && SpringHelper.getBean(CustomerRepository.class).findByIdentifierAnNotCustomerId(identifier, customer.getId()).isPresent())
+			super.state(context, false, "identifier", "acme.validation.identifier.not-unique");
+
 		result = !super.hasErrors(context);
 		return result;
 	}

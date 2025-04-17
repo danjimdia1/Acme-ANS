@@ -4,9 +4,11 @@ package acme.features.airlineManager.flight;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flights.Flight;
+import acme.entities.flights.FlightSelfTransfer;
 import acme.realms.airlineManager.AirlineManager;
 
 @GuiService
@@ -18,15 +20,14 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId;
+		int flightId;
 		Flight flight;
-		AirlineManager manager;
 
-		masterId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findFlightById(masterId);
-		manager = flight == null ? null : flight.getManager();
-		status = super.getRequest().getPrincipal().hasRealm(manager) || flight != null;
+		flightId = super.getRequest().getData("id", int.class);
+
+		flight = this.repository.findFlightById(flightId);
+
+		boolean status = flight != null && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == flight.getManager().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -46,8 +47,11 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
+		SelectChoices selfTransfers = SelectChoices.from(FlightSelfTransfer.class, flight.getSelfTransfer());
+
 		dataset = super.unbindObject(flight, "tag", "selfTransfer", "cost", "description", "draftMode");
 
+		dataset.put("selfTransfers", selfTransfers);
 		dataset.put("scheduledDeparture", flight.getScheduledDeparture());
 		dataset.put("scheduledArrival", flight.getScheduledArrival());
 		dataset.put("originCity", flight.getOriginCity());

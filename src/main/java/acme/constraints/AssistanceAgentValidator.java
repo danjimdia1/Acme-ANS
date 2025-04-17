@@ -39,11 +39,11 @@ public class AssistanceAgentValidator extends AbstractValidator<ValidAssistanceA
 			initials += surname.charAt(0);
 
 			boolean validEmployeeCode = StringHelper.startsWith(agent.getEmployeeCode(), initials, true);
-			super.state(context, validEmployeeCode, "employeeCode", "java.validation.assistanceAgent.employeeCode.invalidEmployeeCode");
+			super.state(context, validEmployeeCode, "employeeCode", "acme.validation.assistanceAgent.employeeCode.invalidEmployeeCode");
 
 			Optional<AssistanceAgent> sameCode = SpringHelper.getBean(AssistanceAgentRepository.class).findByCode(agent.getEmployeeCode(), agent.getId());
 			boolean repeatedCode = !sameCode.isPresent();
-			super.state(context, repeatedCode, "employeeCode", "java.validation.assistanceAgent.employeeCode.repeatedEmployeeCode");
+			super.state(context, repeatedCode, "employeeCode", "acme.validation.assistanceAgent.employeeCode.repeatedEmployeeCode");
 		}
 
 		result = !super.hasErrors(context);

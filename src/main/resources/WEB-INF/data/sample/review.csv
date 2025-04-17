@@ -40,11 +40,11 @@ review-32,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,<m
 review-33,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,<script>alert(‘Hacked!’);</script>,5.00,TRUE
 review-34,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,' or 'A' = 'A,5.00,TRUE
 #Probando Score
-review-35,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","",TRUE
+review-35,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",null,TRUE
 review-36,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",0.00,TRUE
 review-37,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",0.01,TRUE
 review-38,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",9.99,TRUE
 review-39,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",10.00,TRUE
-#Probando isRecommended
-review-40,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5.00,""
+#Probando isRecommended,"","","","",""
+review-40,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5.00,null
 review-41,Lorem ipsum dolor sit ame,2012/07/02 0:00,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",5.00,FALSE

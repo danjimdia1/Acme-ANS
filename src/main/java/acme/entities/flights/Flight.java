@@ -93,6 +93,12 @@ public class Flight extends AbstractEntity {
 		return layovers == null || layovers == 0 ? 0 : layovers - 1;
 	}
 
+	@Transient()
+	public String getLabel() {
+		String origin = this.getOriginCity();
+		String destination = this.getDestinationCity();
+		return origin + "-" + destination;
+	}
 	// Relationships ----------------------------------------------------------
 
 

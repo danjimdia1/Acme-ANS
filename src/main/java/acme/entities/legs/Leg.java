@@ -68,7 +68,7 @@ public class Leg extends AbstractEntity {
 	public Double getDuration() {
 		if (this.scheduledArrival == null && this.scheduledDeparture == null)
 			return 0.;
-		double duration = MomentHelper.computeDuration(this.scheduledDeparture, this.scheduledArrival).toHours();
+		double duration = MomentHelper.computeDuration(this.scheduledDeparture, this.scheduledArrival).toMinutes() / 60.0;
 
 		return duration;
 	}

@@ -1,8 +1,6 @@
 
 package acme.constraints;
 
-import java.util.Optional;
-
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.validation.AbstractValidator;
@@ -29,16 +27,14 @@ public class ServiceValidator extends AbstractValidator<ValidService, Service> {
 		if (service == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		String promotionCode = service.getPromotionCode();
-		if (!StringHelper.isBlank(promotionCode)) {
-			if (!StringHelper.endsWith(promotionCode, String.valueOf(MomentHelper.getCurrentMoment().getYear() % 100), true))
-				super.state(context, false, "PromotionCode", "acme.validation.promotion-code.not-current-year");
-
-			Optional<Service> foundService = SpringHelper.getBean(ServiceRepository.class).findByPromotionCodeAndNotServiceId(promotionCode, service.getId());
-
-			if (foundService.isPresent())
-				super.state(context, false, "PromotionCode", "acme.validation.promotion-code.not-unique");
-		} else
+		if (StringHelper.isBlank(promotionCode))
 			super.state(context, false, "PromotionCode", "acme.validation.promotion-code.is-blank");
+
+		if (!StringHelper.endsWith(promotionCode, String.valueOf(MomentHelper.getCurrentMoment().getYear() % 100), true))
+			super.state(context, false, "PromotionCode", "acme.validation.promotion-code.not-current-year");
+
+		if (!StringHelper.isBlank(promotionCode) && SpringHelper.getBean(ServiceRepository.class).findByPromotionCodeAndNotServiceId(promotionCode, service.getId()).isPresent())
+			super.state(context, false, "PromotionCode", "acme.validation.promotion-code.not-unique");
 
 		result = !super.hasErrors(context);
 		return result;
