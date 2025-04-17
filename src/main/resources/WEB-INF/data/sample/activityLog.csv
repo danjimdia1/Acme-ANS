@@ -1,4 +1,4 @@
-key,registrationMoment,typeIncident,description,severityLevel,key:assignment
+key,registrationMoment,typeIncident,description,severityLevel,key:flightAssignment
 #Base-Entity
 activityLog-01,2012/07/02 00:00,L,L,5,assignment-01
 #Probrando RegistrationMoment

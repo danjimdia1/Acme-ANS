@@ -1,43 +1,37 @@
-key,duty,lastUpdate,currentStatus,remarks,key:crewMember,key:leg
+key,duty,lastUpdate,currentStatus,remarks,draftMode,key:crewMember,key:leg
 #Base-Entity
-assignment-01,PILOT,2012/07/02 00:00,CONFIRMED,null,member-01,leg-01
-
+assignment-01,PILOT,2012/07/02 00:00,CONFIRMED,null,True,member-01,leg-01
 #Probando Duty
-assignment-02,CO_PILOT,2025/01/01 00:00,CONFIRMED,null,member-02,leg-01
-assignment-03,LEAD_ATTENDANT,2025/01/01 00:00,CONFIRMED,null,member-03,leg-01
-assignment-04,CABIN_ATTENDANT,2025/01/01 00:00,CONFIRMED,null,member-04,leg-01
-
-#Probando Moment 
-assignment-05,PILOT,2000/01/01 00:00,CONFIRMED,null,member-01,leg-01
-assignment-06,PILOT,2000/01/01 00:01,CONFIRMED,null,member-01,leg-01
-assignment-07,PILOT,2024/12/31 23:59,CONFIRMED,null,member-01,leg-01
-
+assignment-02,CO_PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-02,leg-01
+assignment-03,LEAD_ATTENDANT,2025/01/01 00:00,CONFIRMED,null,True,member-03,leg-01
+assignment-04,CABIN_ATTENDANT,2025/01/01 00:00,CONFIRMED,null,True,member-04,leg-01
+#Probando Moment
+assignment-05,PILOT,2000/01/01 00:00,CONFIRMED,null,True,member-01,leg-01
+assignment-06,PILOT,2000/01/01 00:01,CONFIRMED,null,True,member-01,leg-01
+assignment-07,PILOT,2024/12/31 23:59,CONFIRMED,null,True,member-01,leg-01
 #Probando CurrentStatus
-assignment-09,PILOT,2025/01/01 00:00,PENDING,null,member-01,leg-01
-assignment-10,PILOT,2025/01/01 00:00,CANCELLED,null,member-01,leg-01
-
-#Probando Remarks 
-assignment-11,PILOT,2025/01/01 00:00,CONFIRMED,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,member-01,leg-01
-assignment-12,PILOT,2025/01/01 00:00,CONFIRMED,"",member-01,leg-01
-assignment-13,PILOT,2025/01/01 00:00,CONFIRMED,L,member-01,leg-01
-assignment-14,PILOT,2025/01/01 00:00,CONFIRMED,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,member-01,leg-01
-assignment-15,PILOT,2025/01/01 00:00,CONFIRMED,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,member-01,leg-01
-assignment-16,PILOT,2025/01/01 00:00,CONFIRMED,โลเร็ม อิปซัม,member-01,leg-01
-assignment-17,PILOT,2025/01/01 00:00,CONFIRMED,لوريم إيبسوم,member-01,leg-01
-assignment-18,PILOT,2025/01/01 00:00,CONFIRMED,洛伦·伊普森,member-01,leg-01
-assignment-19,PILOT,2025/01/01 00:00,CONFIRMED,<marquee>Hacked</marquee>,member-01,leg-01
-assignment-20,PILOT,2025/01/01 00:00,CONFIRMED,<script>alert(‘Hacked!’);</script>,member-01,leg-01
-assignment-21,PILOT,2025/01/01 00:00,CONFIRMED,' or 'A' = 'A,member-01,leg-01
-
+assignment-09,PILOT,2025/01/01 00:00,PENDING,null,True,member-01,leg-01
+assignment-10,PILOT,2025/01/01 00:00,CANCELLED,null,True,member-01,leg-01
+#Probando Remarks
+assignment-11,PILOT,2025/01/01 00:00,CONFIRMED,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,True,member-01,leg-01
+assignment-12,PILOT,2025/01/01 00:00,CONFIRMED,"",True,member-01,leg-01
+assignment-13,PILOT,2025/01/01 00:00,CONFIRMED,L,True,member-01,leg-01
+assignment-14,PILOT,2025/01/01 00:00,CONFIRMED,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,True,member-01,leg-01
+assignment-15,PILOT,2025/01/01 00:00,CONFIRMED,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,True,member-01,leg-01
+assignment-16,PILOT,2025/01/01 00:00,CONFIRMED,โลเร็ม อิปซัม,True,member-01,leg-01
+assignment-17,PILOT,2025/01/01 00:00,CONFIRMED,لوريم إيبسوم,True,member-01,leg-01
+assignment-18,PILOT,2025/01/01 00:00,CONFIRMED,洛伦·伊普森,True,member-01,leg-01
+assignment-19,PILOT,2025/01/01 00:00,CONFIRMED,<marquee>Hacked</marquee>,True,member-01,leg-01
+assignment-20,PILOT,2025/01/01 00:00,CONFIRMED,<script>alert(‘Hacked!’);</script>,True,member-01,leg-01
+assignment-21,PILOT,2025/01/01 00:00,CONFIRMED,' or 'A' = 'A,True,member-01,leg-01
 #Probando Crew Member
-assignment-22,PILOT,2025/01/01 00:00,CONFIRMED,null,member-02,leg-01
-assignment-23,PILOT,2025/01/01 00:00,CONFIRMED,null,member-15,leg-01
-assignment-24,PILOT,2025/01/01 00:00,CONFIRMED,null,member-35,leg-01
-assignment-25,PILOT,2025/01/01 00:00,CONFIRMED,null,member-36,leg-01
-
+assignment-22,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-02,leg-01
+assignment-23,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-15,leg-01
+assignment-24,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-35,leg-01
+assignment-25,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-36,leg-01
 #Probando Leg
-assignment-26,PILOT,2025/01/01 00:00,CONFIRMED,null,member-01,leg-01
-assignment-27,PILOT,2025/01/01 00:00,CONFIRMED,null,member-01,leg-05
-assignment-28,PILOT,2025/01/01 00:00,CONFIRMED,null,member-01,leg-09
-assignment-29,PILOT,2025/01/01 00:00,CONFIRMED,null,member-01,leg-10
-assignment-30,PILOT,2025/01/01 00:00,CONFIRMED,null,member-01,leg-11
+assignment-26,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-01
+assignment-27,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-05
+assignment-28,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-09
+assignment-29,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-10
+assignment-30,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-11
