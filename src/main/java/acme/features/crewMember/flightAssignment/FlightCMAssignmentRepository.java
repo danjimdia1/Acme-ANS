@@ -43,7 +43,7 @@ public interface FlightCMAssignmentRepository extends AbstractRepository {
 	Collection<Leg> findLegsByCrewMember(int id);
 
 	@Query("SELECT cm FROM CrewMember cm WHERE cm.id = ?1")
-	CrewMember findFlightCrewMemberById(int id);
+	CrewMember findCrewMemberById(int id);
 
 	@Query("SELECT cm FROM CrewMember cm")
 	Collection<CrewMember> findAllCrewMembers();
@@ -68,5 +68,8 @@ public interface FlightCMAssignmentRepository extends AbstractRepository {
 
 	@Query("SELECT case when count(fa) > 0 then true else false end from FlightAssignment fa where fa.id = :flightAssignmentId and fa.leg.scheduledArrival < :currentMoment")
 	boolean isLegCompletedByFlightAssignment(int flightAssignmentId, Date currentMoment);
+
+	@Query("select count(fa) > 0 from FlightAssignment fa where fa.id = :flightAssignmentId and fa.crewMember.id = :crewMemberId")
+	boolean thatFlightAssignmentIsOf(int flightAssignmentId, int crewMemberId);
 
 }
