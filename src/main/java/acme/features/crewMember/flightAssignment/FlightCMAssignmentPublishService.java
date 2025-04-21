@@ -59,7 +59,6 @@ public class FlightCMAssignmentPublishService extends AbstractGuiService<CrewMem
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		;
 	}
 
 	@Override
