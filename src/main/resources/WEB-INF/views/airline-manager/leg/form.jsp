@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-
+	<acme:input-textbox readonly="true" code="airline-manager.leg.form.label.airlineIata" path="airlineIata"/>
 	<acme:input-textbox code="airline-manager.leg.form.label.flightNumber" path="flightNumber"/>
 	<acme:input-moment code="airline-manager.leg.form.label.scheduledDeparture" path="scheduledDeparture"/>
 	<acme:input-moment code="airline-manager.leg.form.label.scheduledArrival" path="scheduledArrival"/>
@@ -14,8 +14,8 @@
 	<acme:input-select code="airline-manager.leg.form.label.arrivalAirportIata" path="arrivalAirport" choices="${arrivalAirports}" />
 	<acme:input-select code="airline-manager.leg.form.label.aircraftRegNumber" path="aircraft" choices="${aircrafts}"/>
 	
-	<jstl:if test="${acme:anyOf(_command, 'show|update|delete')}">
-		<acme:input-double code="airline-manager.leg.form.label.duration" path="duration"/>
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+		<acme:input-double readonly="true" code="airline-manager.leg.form.label.duration" path="duration"/>
 	</jstl:if>
 	
 	<jstl:choose>

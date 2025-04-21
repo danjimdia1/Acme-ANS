@@ -58,6 +58,11 @@ public class Claim extends AbstractEntity {
 	@Automapped
 	private ClaimType			type;
 
+	@Mandatory
+	// HINT: @Valid by default.
+	@Automapped
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 
@@ -68,7 +73,7 @@ public class Claim extends AbstractEntity {
 
 		repository = SpringHelper.getBean(TrackingLogRepository.class);
 		List<TrackingLogStatus> statuses = repository.findLastStatus(this.getId());
-		result = statuses.isEmpty() ? null : statuses.get(0);
+		result = statuses.isEmpty() ? TrackingLogStatus.PENDING : statuses.get(0);
 
 		return result;
 	}

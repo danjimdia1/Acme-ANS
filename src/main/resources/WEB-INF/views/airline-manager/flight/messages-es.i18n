@@ -24,7 +24,7 @@ airline-manager.flight.form.label.numberOfLayovers = Number of layovers
 airline-manager.flight.list.button.create = Crear
 airline-manager.flight.form.button.create = Crear
 airline-manager.flight.form.button.update = Actualizar
-airline-manager.flight.form.button.update = Eliminar
+airline-manager.flight.form.button.delete = Eliminar
 airline-manager.flight.form.button.publish = Publicar
 
 airline-manager.flight.publish.error.no-legs = Debe haber algún tramo

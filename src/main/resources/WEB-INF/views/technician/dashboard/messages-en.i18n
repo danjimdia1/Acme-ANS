@@ -1,0 +1,14 @@
+technician.dashboard.form.title.general-indicators = General indicators
+technician.dashboard.form.label.number-maintenance-status.COMPLETED = Completed maintenances
+technician.dashboard.form.label.number-maintenance-status.PENDING = Pending maintenances
+technician.dashboard.form.label.number-maintenance-status.IN_PROGRESS = In-progress maintenances
+technician.dashboard.form.label.nearest-next-inspection = Nearest next inspection due
+technician.dashboard.form.label.most-tasks-aircrafts = Aircrafts with most tasks
+technician.dashboard.form.label.cost-statistics.avg = Average cost
+technician.dashboard.form.label.cost-statistics.min = Minimum cost
+technician.dashboard.form.label.cost-statistics.max = Maximum cost
+technician.dashboard.form.label.cost-statistics.dev = Standard deviation of cost
+technician.dashboard.form.label.duration-statistics.avg = Average duration
+technician.dashboard.form.label.duration-statistics.min = Minimum duration
+technician.dashboard.form.label.duration-statistics.max = Maximum duration
+technician.dashboard.form.label.duration-statistics.dev = Standard deviation of duration

@@ -6,6 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.client.helpers.SpringHelper;
+import acme.client.helpers.StringHelper;
 import acme.entities.airlines.Airline;
 import acme.entities.airlines.AirlineRepository;
 
@@ -26,18 +27,12 @@ public class AirlineValidator extends AbstractValidator<ValidAirline, Airline> {
 
 		if (airline == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-		else {
-			String iataCode = airline.getIATA();
+		else if (!StringHelper.isBlank(airline.getIATA()) && StringHelper.matches(airline.getIATA(), "^[A-Z]{3}")) {
 
-			if (iataCode == null || iataCode.isBlank() || !iataCode.matches("^[A-Z]{3}$"))
-				super.state(context, false, "identifier", "java.validation.airline.identifier.identifier-couldnt-be-blank");
-
-			{
-				AirlineRepository repository;
-				repository = SpringHelper.getBean(AirlineRepository.class);
-				boolean repeatedAirlineIATA = repository.findByIATA(airline.getIATA(), airline.getId()).isEmpty();
-				super.state(context, repeatedAirlineIATA, "identifier", "java.validation.airline.repeatedAirlineIATA.message");
-			}
+			AirlineRepository repository;
+			repository = SpringHelper.getBean(AirlineRepository.class);
+			boolean repeatedAirlineIATA = repository.findByIATA(airline.getIATA(), airline.getId()).isEmpty();
+			super.state(context, repeatedAirlineIATA, "IATA", "acme.validation.airline.repeatedAirlineIATA.message");
 		}
 
 		result = !super.hasErrors(context);

@@ -1,2 +1,40 @@
 
+#AirlineManager validations
+acme.validation.airlineManager.identifier.invalid-identifier.message = Identificador inválido, debe tener contener las iniciales seguidas de 6 dígitos
+acme.validation.airlineManager.identifier.repeatedIdentifier.message = El identificador ya existe
+
 acme.validation.airline-manager.flight.no-legs = Debe tener algún tramo
+
+# Legs validations
+acme.validation.leg.flightNumber.validFlightNumber.message = Número de vuelo inválido, debe comenzar por el IATA de la aerolínea seguido de 4 dígitos
+acme.validation.leg.scheduledArrival.must-be-after.message = La llegada planificada debe ser posterior a la salida planificada
+acme.validation.leg.scheduledArrival.must-be-after-current-moment.message = La salida planificada debe ser posterior al momento actual
+acme.validation.leg.flightNumber.repeatedflightNumber.message = El número de vuelo ya existe
+acme.validation.leg.aircraft.overlapping.message = Otro tramo esta usando esta aeronave
+acme.validation.leg.aircraft.no-same-airline.message = La aeronave debe ser de la misma aerlínea
+acme.validation.leg.aircraft.no-same-airport.message = El aeropuerto de salida y llegada no pueden ser el mismo
+
+#Airport validations
+acme.validation.airport.iataCode.repeatedIATACode = Este código IATA ya está en uso
+
+#Airline validations
+acme.validation.airline.repeatedAirlineIATA.message = Este código IATA ya está en uso
+
+#Aircraft validations
+acme.validation.leg.aircraft.maintenance.message = Este avión está en mantenimiento
+
+# Validaciones para Técnico
+acme.validation.technician.identifier.message = Formato de identificador no válido.
+acme.validation.technician.maintenance-record.noStatus.message = Debes seleccionar un estado.
+acme.validation.technician.maintenance-record.nextInspectionDate.message = La próxima inspección debe programarse después de la fecha del mantenimiento.
+acme.validation.technician.maintenance-record.estimatedCost.message = El coste estimado debe estar entre 0,00 y 1.000.000,00.
+acme.validation.technician.maintenance-record.notes.message = Las anotaciones no pueden superar los 255 caracteres.
+acme.validation.technician.maintenance-record.aircraft.message = El avión seleccionado no se encuentra registrado.
+acme.validation.technician.maintenance-record.published.message = Para publicar un registro debe haber al menos una tarea publicada vinculada.
+acme.validation.technician.task.noType.message = Debes seleccionar un tipo de tarea.
+acme.validation.technician.task.description.message = La descripción no puede superar los 255 caracteres.
+acme.validation.technician.task.priority.message = La prioridad debe estar entre 0 y 10.
+acme.validation.technician.task.estimatedDuration.message = La duración estimada debe estar entre 0 y 1000 horas.
+
+#Claim validations
+acme.validation.leg.nullLeg.message = Debe tener un tramo

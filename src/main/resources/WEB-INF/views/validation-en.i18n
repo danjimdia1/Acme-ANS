@@ -1,2 +1,40 @@
 
+#AirlineManager validations
+acme.validation.airlineManager.identifier.invalid-identifier.message = Invalid identifier, Must have the initials of the name followed by 6 digits
+acme.validation.airlineManager.identifier.repeatedIdentifier.message = This identifier already exists
+
+#Flight validations
 acme.validation.airline-manager.flight.no-legs = Must have any leg
+
+# Legs validations
+acme.validation.leg.flightNumber.validFlightNumber.message = Invalid flight number, it must start with the airline's IATA code followed by 4 digits
+acme.validation.leg.scheduledArrival.must-be-after.message = Scheduled arrival must be after the scheduled departure
+acme.validation.leg.scheduledArrival.must-be-after-current-moment.message = Scheduled departure must be after current moment
+acme.validation.leg.flightNumber.repeatedflightNumber.message = The flight number already exists
+acme.validation.leg.aircraft.overlapping.message = Another leg is using this aircraft
+acme.validation.leg.aircraft.no-same-airline.message = The aircraft must belong to the same airline
+acme.validation.leg.aircraft.no-same-airport.message = The departure and arrival airport cannot be the same
+
+#Airport validations
+acme.validation.airport.iataCode.repeatedIATACode = This IATA code is already in use
+
+#Airline validations
+acme.validation.airline.repeatedAirlineIATA.message = This IATA code is already in use
+
+acme.validation.leg.aircraft.maintenance.message = This aircraft is under maintenance
+
+# Technician validations
+acme.validation.technician.identifier.message = Invalid license number format.
+acme.validation.technician.maintenance-record.noStatus.message = A status must be selected.
+acme.validation.technician.maintenance-record.nextInspectionDate.message = The next inspection must be scheduled after the maintenance date.
+acme.validation.technician.maintenance-record.estimatedCost.message = The estimated cost must be between 0.00 and 1,000,000.00.
+acme.validation.technician.maintenance-record.notes.message = Notes must not exceed 255 characters.
+acme.validation.technician.maintenance-record.aircraft.message = The selected aircraft does not exist.
+acme.validation.technician.maintenance-record.published.message = At least one published task must be associated with this record in order to publish it.
+acme.validation.technician.task.noType.message = A task type must be selected.
+acme.validation.technician.task.description.message = The task description must not exceed 255 characters.
+acme.validation.technician.task.priority.message = Priority must be between 0 and 10.
+acme.validation.technician.task.estimatedDuration.message = Estimated duration must be between 0 and 1000 hours.
+
+#Claim validations
+acme.validation.leg.nullLeg.message = Must have a leg
