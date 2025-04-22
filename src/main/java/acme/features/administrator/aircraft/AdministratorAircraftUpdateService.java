@@ -22,9 +22,9 @@ public class AdministratorAircraftUpdateService extends AbstractGuiService<Admin
 
 	@Override
 	public void authorise() {
-		boolean status = true;
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class);
 
-		if (super.getRequest().getMethod().equals("POST")) {
+		if (status && super.getRequest().getMethod().equals("POST")) {
 			Integer airlineId = super.getRequest().getData("airline", Integer.class);
 			Airline airline = null;
 

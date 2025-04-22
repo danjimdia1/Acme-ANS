@@ -29,26 +29,16 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int bookingId;
-		Customer customer;
-		Booking booking;
+		int bookingId = super.getRequest().getData("id", int.class);
+		Booking booking = this.repository.getBookingById(bookingId);
+		Customer customer = booking == null ? null : booking.getCustomer();
 
-		bookingId = super.getRequest().getData("id", int.class);
-		booking = this.repository.getBookingById(bookingId);
-		customer = booking == null ? null : booking.getCustomer();
+		boolean status = booking != null && super.getRequest().getPrincipal().hasRealmOfType(Customer.class) && super.getRequest().getPrincipal().hasRealm(customer) && booking.isDraftMode();
 
-		status = super.getRequest().getPrincipal().hasRealm(customer) && booking != null && booking.isDraftMode();
-
-		if (super.getRequest().getMethod().equals("POST")) {
+		if (status && super.getRequest().getMethod().equals("POST")) {
 			Integer flightId = super.getRequest().getData("flight", Integer.class);
-			Flight flight = null;
-
-			if (flightId != null && flightId != 0)
-				flight = this.repository.findFlightById(flightId);
-
-			boolean invalidFlight = flightId != null && flightId != 0 && flight == null;
-			if (invalidFlight)
+			Flight flight = flightId != null && flightId != 0 ? this.repository.findFlightById(flightId) : null;
+			if (flightId != null && flightId != 0 && flight == null)
 				status = false;
 		}
 
