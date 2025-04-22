@@ -39,7 +39,13 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 			booking = this.repository.findBookingById(bookingId);
 
 			if (booking != null && booking.getCustomer().equals(customer))
-				status = true;
+				if (super.getRequest().hasData("draftMode")) {
+					boolean requestDraftMode = super.getRequest().getData("draftMode", boolean.class);
+					boolean bookingDraftMode = booking.isDraftMode();
+					if (requestDraftMode == bookingDraftMode)
+						status = true;
+				} else
+					status = true;
 		}
 
 		super.getResponse().setAuthorised(status);

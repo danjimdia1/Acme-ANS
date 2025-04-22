@@ -33,23 +33,27 @@ public class BookingValidator extends AbstractValidator<ValidBooking, Booking> {
 		if (booking != null && !StringHelper.isBlank(booking.getLocatorCode()) && SpringHelper.getBean(BookingRepository.class).findByLocatorCodeAnNotBookingId(booking.getLocatorCode(), booking.getId()).isPresent())
 			super.state(context, false, "locatorCode", "acme.validation.locatorCode.not-unique");
 
-		if (booking != null && !SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent())
+		if (booking != null && booking.getFlight() == null)
 			super.state(context, false, "flight", "acme.validation.flight.is-null");
 
-		if (booking != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode())
+		if (booking != null && booking.getFlight() != null && !SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent())
+			super.state(context, false, "flight", "acme.validation.flight.is-null");
+
+		if (booking != null && booking.getFlight() != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent()
+			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode())
 			super.state(context, false, "flight", "acme.validation.flight.isDraftMode");
 
-		if (booking != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode()
-			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture() == null)
+		if (booking != null && booking.getFlight() != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent()
+			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture() == null)
 			super.state(context, false, "flight", "acme.validation.flight.null-scheduled-departure");
 
-		if (booking != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode()
-			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture() != null
+		if (booking != null && booking.getFlight() != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent()
+			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture() != null
 			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture().after(MomentHelper.getCurrentMoment()))
 			super.state(context, false, "flight", "acme.validation.flight.null-scheduled-departure");
 
-		if (booking != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode()
-			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture() != null
+		if (booking != null && booking.getFlight() != null && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).isPresent()
+			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().isDraftMode() && SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture() != null
 			&& SpringHelper.getBean(BookingRepository.class).findFlightById(booking.getFlight().getId()).get().getScheduledDeparture().after(MomentHelper.getCurrentMoment()))
 			super.state(context, false, "flight", "acme.validation.flight.null-scheduled-departure");
 
