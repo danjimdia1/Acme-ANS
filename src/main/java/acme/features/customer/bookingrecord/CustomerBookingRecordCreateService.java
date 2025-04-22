@@ -23,12 +23,24 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void authorise() {
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		int bookingId = super.getRequest().getData("bookingId", int.class);
 		Booking booking = this.repository.getBookingById(bookingId);
+		Customer customer = booking == null ? null : booking.getCustomer();
 
-		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+		boolean status = booking != null && super.getRequest().getPrincipal().hasRealm(customer) && booking.isDraftMode();
 
+		if (super.getRequest().getMethod().equals("POST")) {
+			Integer passengerId = super.getRequest().getData("passenger", Integer.class);
+			Passenger passenger = null;
+			if (passengerId != null && passengerId != 0)
+				passenger = this.repository.findPassengerById(passengerId);
+
+			boolean invalidPassenger = passenger == null || passenger.isDraftMode() || passenger.getCustomer().getId() != customer.getId();
+			if (invalidPassenger)
+				status = false;
+		}
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -66,7 +78,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		int bookingId = super.getRequest().getData("bookingId", int.class);
 		Collection<Passenger> addedPassengers = this.repository.getPassengersInBooking(bookingId);
 
-		Collection<Passenger> passengers = this.repository.getAllPassengersOf(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
+		Collection<Passenger> passengers = this.repository.getAllPassengersNotDraftOf(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
 		SelectChoices passengerChoices = SelectChoices.from(passengers, "fullName", bookingRecord.getPassenger());
 		dataset.put("passengers", passengerChoices);
 
