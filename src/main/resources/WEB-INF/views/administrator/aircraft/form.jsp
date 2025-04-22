@@ -9,7 +9,20 @@
 
 	<acme:input-integer code="administrator.aicraft.form.label.capacity" path="capacity"/>
 	
-	<acme:input-textbox readonly="true" code="administrator.aicraft.form.label.status" path="status"/>
+<jstl:choose>
+  <jstl:when test="${_command == 'create'}">
+    <acme:input-select
+      code="administrator.aicraft.form.label.status"
+      path="status"
+      choices="${statuses}"/>
+  </jstl:when>
+  <jstl:otherwise>
+    <acme:input-textbox
+      readonly="true"
+      code="administrator.aicraft.form.label.status"
+      path="status"/>
+  </jstl:otherwise>
+</jstl:choose>
 	<acme:input-integer code="administrator.aicraft.form.label.cargoWeight" path="cargoWeight" />
 	
 	<acme:input-textbox code="administrator.aicraft.form.label.details" path="details"/>
@@ -28,7 +41,7 @@
 			<acme:submit code="administrator.aircraft.form.button.enable" action="/administrator/aircraft/disable"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmaton"/>
+			<acme:input-checkbox code="administrator.aircraft.form.label.confirmation" path="confirmation"/>
 			<acme:submit code="administrator.aircraft.form.button.create" action="/administrator/aircraft/create"/>
 		</jstl:when>		
 	</jstl:choose>

@@ -22,7 +22,21 @@ public class AdministratorAircraftUpdateService extends AbstractGuiService<Admin
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status = true;
+
+		if (super.getRequest().getMethod().equals("POST")) {
+			Integer airlineId = super.getRequest().getData("airline", Integer.class);
+			Airline airline = null;
+
+			if (airlineId != null && airlineId != 0)
+				airline = this.repository.findAirlineById(airlineId);
+
+			boolean invalidAirline = airlineId != null && airlineId != 0 && airline == null;
+			if (invalidAirline)
+				status = false;
+		}
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -38,7 +52,7 @@ public class AdministratorAircraftUpdateService extends AbstractGuiService<Admin
 
 	@Override
 	public void bind(final Aircraft aircraft) {
-		super.bindObject(aircraft, "model", "registrationNumber", "capacity", "status", "cargoWeight", "details", "airline");
+		super.bindObject(aircraft, "model", "registrationNumber", "capacity", "cargoWeight", "details", "airline");
 	}
 
 	@Override

@@ -25,15 +25,12 @@ public class CustomerPassengerUpdateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void authorise() {
-		int passengerId;
-		Passenger passenger;
 		Customer customer;
-		boolean status;
-
-		passengerId = super.getRequest().getData("id", int.class);
-		passenger = this.repository.findPassengerById(passengerId);
+		int passengerId = super.getRequest().getData("id", int.class);
+		Passenger passenger = this.repository.findPassengerById(passengerId);
 		customer = passenger == null ? null : passenger.getCustomer();
-		status = customer != null && super.getRequest().getPrincipal().hasRealm(customer) && passenger.isDraftMode();
+
+		boolean status = passenger != null && super.getRequest().getPrincipal().getActiveRealm().getId() == passenger.getCustomer().getId() && super.getRequest().getPrincipal().hasRealm(customer) && passenger.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -66,8 +63,6 @@ public class CustomerPassengerUpdateService extends AbstractGuiService<Customer,
 		customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 
 		passengerId = super.getRequest().getData("id", int.class);
-		existsDuplicate = this.repository.existsAnotherPassengerWithSamePassport(passenger.getPassportNumber(), customer.getId(), passengerId);
-		super.state(!existsDuplicate, "passportNumber", "acme.validation.passenger.duplicate-passport");
 
 		dateOfBirthValue = super.getRequest().getData("dateOfBirth", Date.class);
 		isDateOfBirthPast = dateOfBirthValue != null && dateOfBirthValue.before(MomentHelper.getCurrentMoment());

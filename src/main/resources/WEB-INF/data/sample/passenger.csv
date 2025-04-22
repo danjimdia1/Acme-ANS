@@ -37,3 +37,5 @@ passenger-28,Marco Polo,marco@gmail.com,AAAA1234,2004/02/24 06:54,<marquee>Hacke
 passenger-29,Marco Polo,marco@gmail.com,AAAA1234,2004/02/24 06:54,<script>alert(‘Hacked!’);</script>,false,customer-01
 passenger-30,Marco Polo,marco@gmail.com,AAAA1234,2004/02/24 06:54,' or 'A' = 'A,false,customer-01
 passenger-31,Marco Polo,marco@gmail.com,AAAA1234,2004/02/24 06:54,null,false,customer-01
+# draftMode - variations
+passenger-32,Juan Magan,marco@gmail.com,AAAA1234,2004/02/24 06:54,Is blind,true,customer-01
