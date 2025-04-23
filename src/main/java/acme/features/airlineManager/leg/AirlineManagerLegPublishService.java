@@ -83,6 +83,16 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 
 		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
 
+		System.out.println("Flight seteado: " + leg.getFlight());
+
+		if (leg.getFlight() == null) {
+			int id = super.getRequest().getData("id", int.class);
+			Leg original = this.repository.findLegById(id);
+			leg.setFlight(original.getFlight());
+		}
+
+		System.out.println("Flight seteado: " + leg.getFlight());
+
 		leg.setAircraft(aircraft);
 		leg.setArrivalAirport(arrivalAirport);
 		leg.setDepartureAirport(departureAirport);
