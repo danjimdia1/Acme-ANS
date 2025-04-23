@@ -31,12 +31,12 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		if (leg == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			if (!StringHelper.isBlank(leg.getFlightNumber())) {
-				String airlineIataCode = leg.getFlight().getManager().getAirline().getIATA();
-				boolean validFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineIataCode, true);
-				super.state(context, validFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.validFlightNumber.message");
-			}
-
+			if (!StringHelper.isBlank(leg.getFlightNumber()))
+				if (leg.getFlight() != null) {
+					String airlineIataCode = leg.getFlight().getManager().getAirline().getIATA();
+					boolean validFlightNumber = StringHelper.startsWith(leg.getFlightNumber(), airlineIataCode, true);
+					super.state(context, validFlightNumber, "flightNumber", "acme.validation.leg.flightNumber.validFlightNumber.message");
+				}
 			if (leg.getScheduledDeparture() != null) {
 				boolean isAfterCurrent = MomentHelper.isAfter(leg.getScheduledDeparture(), MomentHelper.getCurrentMoment());
 				super.state(context, isAfterCurrent, "scheduledDeparture", "acme.validation.leg.scheduledArrival.must-be-after-current-moment.message");
@@ -54,6 +54,20 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			if (leg.getAircraft() != null)
 				if (leg.getAircraft().getStatus().equals(Status.MAINTENANCE))
 					super.state(context, false, "aircraft", "acme.validation.leg.aircraft.maintenance.message");
+
+			if (leg.getFlight() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
+				LegRepository repository = SpringHelper.getBean(LegRepository.class);
+				List<Leg> otherLegsSameFlight = repository.findByFlightId(leg.getFlight().getId(), leg.getId());
+
+				for (Leg otherLeg : otherLegsSameFlight)
+					if (otherLeg.getScheduledArrival() != null && otherLeg.getScheduledDeparture() != null) {
+						boolean isOverlapping = !(MomentHelper.isBefore(leg.getScheduledArrival(), otherLeg.getScheduledDeparture()) || MomentHelper.isAfter(leg.getScheduledDeparture(), otherLeg.getScheduledArrival()));
+
+						if (isOverlapping)
+							super.state(context, false, "scheduledArrival", "acme.validation.leg.flight.overlapping.message");
+					}
+			}
+
 			if (leg.getAircraft() != null && leg.getScheduledArrival() != null && leg.getScheduledDeparture() != null) {
 				LegRepository repository = SpringHelper.getBean(LegRepository.class);
 				List<Leg> otherLegs = repository.findByAircraftId(leg.getAircraft().getId(), leg.getId());

@@ -14,6 +14,7 @@ acme.validation.leg.flightNumber.repeatedflightNumber.message = The flight numbe
 acme.validation.leg.aircraft.overlapping.message = Another leg is using this aircraft
 acme.validation.leg.aircraft.no-same-airline.message = The aircraft must belong to the same airline
 acme.validation.leg.aircraft.no-same-airport.message = The departure and arrival airport cannot be the same
+acme.validation.leg.flight.overlapping.message = The departure and arrival dates overlap with another leg of the flight.
 
 #Airport validations
 acme.validation.airport.iataCode.repeatedIATACode = This IATA code is already in use
