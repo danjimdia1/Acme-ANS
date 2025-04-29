@@ -6,10 +6,10 @@
     <acme:input-textbox code="customer.booking.list.label.locatorCode" path="locatorCode"/>
     <acme:input-textbox code="customer.booking.list.label.lastNibble" path="lastNibble"/>
     <acme:input-select code="customer.booking.list.label.travelClass" path="travelClass" choices="${classes}"/>
-   
+	<acme:input-textbox code="customer.booking.list.label.purchaseMoment" path="purchaseMoment" readonly="true"/>
+	<acme:input-textbox code="customer.booking.list.label.price" path="price" readonly="true"/>
 
-	
-	
+   
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|publish')}">
 		<jstl:if test="${draftMode}">
