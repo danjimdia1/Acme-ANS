@@ -44,7 +44,7 @@ airport-36,Lorem ipsum dolor sit ame,AIC,INTERNATIONAL,Lorem ipsum dolor sit ame
 airport-37,Lorem ipsum dolor sit ame,AJC,INTERNATIONAL,Lorem ipsum dolor sit ame,<script>alert(‘Hacked!’);</script>,http://lorem.com/ipsum,acme@lorem-ipsum.org,+123456789
 airport-38,Lorem ipsum dolor sit ame,AKC,INTERNATIONAL,Lorem ipsum dolor sit ame,' or 'A' = 'A,http://lorem.com/ipsum,acme@lorem-ipsum.org,+123456789
 # website - variations
-airport-39,Lorem ipsum dolor sit ame,ALC,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://a,acme@lorem-ipsum.org,+123456789
+airport-39,Lorem ipsum dolor sit ame,ALC,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://a.bc,acme@lorem-ipsum.org,+123456789
 airport-40,Lorem ipsum dolor sit ame,AMC,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://a.b,acme@lorem-ipsum.org,+123456789
 airport-41,Lorem ipsum dolor sit ame,ANC,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",acme@lorem-ipsum.org,+123456789
 airport-42,Lorem ipsum dolor sit ame,AOC,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",acme@lorem-ipsum.org,+123456789
