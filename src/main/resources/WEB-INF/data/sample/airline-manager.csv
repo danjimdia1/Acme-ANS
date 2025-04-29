@@ -14,11 +14,11 @@ manager-10,user-account-manager-10,FF111111,60,2024/12/31 23:58,http://lorem.com
 manager-11,user-account-manager-11,AA111111,60,2024/12/31 23:59,http://lorem.com/ipsum,airline-01
 #Probando pictureLink
 manager-12,user-account-manager-12,JM222222,60,2012/07/02 0:00,null,airline-01
-manager-13,user-account-manager-13,RD111111,60,2012/07/02 0:00,ftp://a,airline-01
-manager-14,user-account-manager-14,TS111111,60,2012/07/02 0:00,ftp://a.b,airline-01
+manager-13,user-account-manager-13,RD111111,60,2012/07/02 0:00,https://acme.com/a,airline-01
+manager-14,user-account-manager-14,TS111111,60,2012/07/02 0:00,https://acme.com/a.b,airline-01
 manager-15,user-account-manager-15,CG111111,60,2012/07/02 0:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",airline-01
 manager-16,user-account-manager-16,PV111111,60,2012/07/02 0:00,https://www.lorem-ipsum.org,airline-01
-manager-17,user-account-manager-17,SG111111,60,2012/07/02 0:00,ftp://www.lorem-ipsum.org,airline-01
+manager-17,user-account-manager-17,SG111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org,airline-01
 manager-18,user-account-manager-18,HS111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org/dolor/sit.html,airline-01
 manager-19,user-account-manager-19,GZ111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org/dolor/sit.html#dolor,airline-01
 manager-20,user-account-manager-20,KR111111,60,2012/07/02 0:00,http://example.org?a=1&b=2,airline-01
@@ -30,7 +30,7 @@ manager-25,user-account-manager-25,HM111111,60,2012/07/02 0:00,http://example.or
 manager-26,user-account-manager-26,WB111111,60,2012/07/02 0:00,http://example.org/a/b,airline-01
 manager-27,user-account-manager-27,ES111111,60,2012/07/02 0:00,http://example.org/a/b?,airline-01
 manager-28,user-account-manager-28,MW111111,60,2012/07/02 0:00,http://example.org/a/b?a&b,airline-01
-manager-29,user-account-manager-29,SB111111,60,2012/07/02 0:00,ftp://,airline-01
+manager-29,user-account-manager-29,SB111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/ABC,airline-01
 manager-30,user-account-manager-30,JL111111,60,2012/07/02 0:00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/XYZ,airline-01
 #Probando airline
 manager-31,user-account-manager-31,AK111111,60,2012/07/02 0:00,http://lorem.com/ipsum,airline-02
