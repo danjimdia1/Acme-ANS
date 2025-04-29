@@ -12,6 +12,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
 import acme.entities.bookings.TravelClass;
+import acme.entities.flights.Flight;
 import acme.realms.customer.Customer;
 
 @GuiService
@@ -27,7 +28,18 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+
+		if (status && super.getRequest().getMethod().equals("POST")) {
+			Integer flightId = super.getRequest().getData("flight", Integer.class);
+			Flight flight = flightId != null && flightId != 0 ? this.repository.findFlightById(flightId) : null;
+			if (flightId != null && flightId != 0 && flight == null)
+				status = false;
+		}
+
 		super.getResponse().setAuthorised(status);
 	}
 
