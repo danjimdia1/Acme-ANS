@@ -19,5 +19,6 @@ customer.booking.list.label.locatorCode= Localizador de vuelo
 customer.booking.list.label.lastNibble= Últimos 4 dígitos de la tarjeta
 customer.booking.list.label.travelClass= Clase de viaje
 
+
 acme.validation.lastNibble.message = Debe completar los dígitos de su tarjeta para confirmar
 customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
