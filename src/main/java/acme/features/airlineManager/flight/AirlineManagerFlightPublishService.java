@@ -59,12 +59,17 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 	public void validate(final Flight flight) {
 		int flightId = flight.getId();
 		Collection<Leg> legs = this.repository.findLegsByFlightId(flightId);
-		Collection<Leg> publishedLegs = this.repository.findPublishedLegsByFlightId(flightId);
+		//Collection<Leg> publishedLegs = this.repository.findPublishedLegsByFlightId(flightId);
 
-		boolean hasLegs = !legs.isEmpty();
-		boolean hasPublishedLegs = !publishedLegs.isEmpty();
-		super.state(hasLegs, "*", "airline-manager.flight.publish.error.no-legs");
-		super.state(hasPublishedLegs, "*", "airline-manager.flight.publish.error.no-legs-published");
+		if (legs.isEmpty())
+			super.state(false, "*", "airline-manager.flight.publish.error.no-legs");
+		else
+			for (Leg leg : legs)
+				if (leg.isDraftMode()) {
+					super.state(false, "*", "airline-manager.flight.publish.error.no-legs-published");
+					return;
+				}
+
 	}
 
 	@Override
