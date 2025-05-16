@@ -31,7 +31,9 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 
 		leg = this.repository.findLegById(legId);
 
-		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
+		boolean status = leg != null && //
+			leg.isDraftMode() && //
+			super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -79,7 +81,7 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 		Collection<Airport> airports = this.repository.findAllAirports();
 		Collection<Aircraft> aircrafts = this.repository.findAllAircrafts();
 
-		dataset = super.unbindObject(leg, "flightNumber", "scheduledArrival", "scheduledDeparture", "status");
+		dataset = super.unbindObject(leg, "flightNumber", "scheduledArrival", "scheduledDeparture", "status", "draftMode");
 		SelectChoices choiceAircrafts = SelectChoices.from(aircrafts, "registrationNumber", leg.getAircraft());
 		SelectChoices choiceDepartureAirports = SelectChoices.from(airports, "iataCode", leg.getDepartureAirport());
 		SelectChoices choiceArrivalAirports = SelectChoices.from(airports, "iataCode", leg.getArrivalAirport());
@@ -96,8 +98,6 @@ public class AirlineManagerLegDeleteService extends AbstractGuiService<AirlineMa
 		dataset.put("duration", leg.getDuration());
 
 		dataset.put("flightId", leg.getFlight().getId());
-
-		System.out.println(dataset);
 
 		super.getResponse().addData(dataset);
 	}

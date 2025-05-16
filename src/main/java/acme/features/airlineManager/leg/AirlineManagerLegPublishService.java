@@ -32,7 +32,9 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 
 		leg = this.repository.findLegById(legId);
 
-		boolean status = leg != null && leg.isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class) && super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
+		boolean status = leg != null && //
+			leg.isDraftMode() && //
+			super.getRequest().getPrincipal().getAccountId() == leg.getFlight().getManager().getUserAccount().getId();
 
 		if (super.getRequest().getMethod().equals("POST")) {
 			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
@@ -82,16 +84,6 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		Airport departureAirport = this.repository.findAirportById(departureAirportId);
 
 		super.bindObject(leg, "flightNumber", "scheduledDeparture", "scheduledArrival", "status");
-
-		System.out.println("Flight seteado: " + leg.getFlight());
-
-		if (leg.getFlight() == null) {
-			int id = super.getRequest().getData("id", int.class);
-			Leg original = this.repository.findLegById(id);
-			leg.setFlight(original.getFlight());
-		}
-
-		System.out.println("Flight seteado: " + leg.getFlight());
 
 		leg.setAircraft(aircraft);
 		leg.setArrivalAirport(arrivalAirport);

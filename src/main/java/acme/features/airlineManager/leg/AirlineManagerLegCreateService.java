@@ -27,13 +27,13 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 	public void authorise() {
 		int flightId;
 		Flight flight;
-		AirlineManager manager;
 
 		flightId = super.getRequest().getData("flightId", int.class);
 		flight = this.repository.findFlightById(flightId);
-		manager = (AirlineManager) super.getRequest().getPrincipal().getActiveRealm();
 
-		boolean status = flight != null && super.getRequest().getPrincipal().hasRealm(manager) && super.getRequest().getPrincipal().getAccountId() == flight.getManager().getUserAccount().getId();
+		boolean status = flight != null && //
+			flight.isDraftMode() && //
+			super.getRequest().getPrincipal().getAccountId() == flight.getManager().getUserAccount().getId();
 
 		if (super.getRequest().getMethod().equals("POST")) {
 			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
@@ -94,7 +94,6 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void validate(final Leg leg) {
-		;
 	}
 
 	@Override
