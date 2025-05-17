@@ -32,7 +32,8 @@ public class AirlineManagerFlightDeleteService extends AbstractGuiService<Airlin
 
 		manager = flight == null ? null : flight.getManager();
 
-		boolean status = flight != null && manager != null && // 
+		boolean status = flight != null && // 
+			manager != null && // 
 			flight.isDraftMode() && //
 			super.getRequest().getPrincipal().getAccountId() == flight.getManager().getUserAccount().getId();
 
