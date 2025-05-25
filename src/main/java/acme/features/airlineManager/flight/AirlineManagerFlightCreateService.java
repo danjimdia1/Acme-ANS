@@ -22,6 +22,9 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 	public void authorise() {
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AirlineManager.class);
 
+		if (status && super.getRequest().getMethod().equals("POST"))
+			status = super.getRequest().getData("id", int.class) == 0;
+
 		super.getResponse().setAuthorised(status);
 	}
 
