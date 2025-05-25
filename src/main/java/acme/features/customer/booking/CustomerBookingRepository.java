@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.bookingrecords.BookingRecord;
 import acme.entities.bookings.Booking;
 import acme.entities.flights.Flight;
 import acme.entities.legs.Leg;
@@ -47,5 +48,11 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("select distinct br.passenger from BookingRecord br where br.booking.id = :bookingId")
 	Collection<Passenger> findPassengersByBookingId(int bookingId);
+
+	@Query("select f from Flight f where f.draftMode = false")
+	Collection<Flight> findValidFlights();
+
+	@Query("select br from BookingRecord br where br.booking.id = :bookingId")
+	Collection<BookingRecord> findBookingRecordByBookingId(int bookingId);
 
 }

@@ -8,7 +8,9 @@ customer.booking.form.button.publish= Publicar
 customer.booking.form.button.return = Volver
 customer.booking.form.show.passengers = Mostrar pasajeros
 customer.booking.form.add.passenger = Añadir Pasajero
+customer.booking.form.button.passenger.delete = Eliminar Pasajero
 customer.booking.list.button.create = Crear
+customer.booking.form.button.delete = Cancelar reserva
 
 customer.booking.list.label.flight=Vuelo
 customer.booking.list.label.purchaseMoment=Momento de la compra
@@ -22,3 +24,5 @@ customer.booking.list.label.travelClass= Clase de viaje
 
 acme.validation.lastNibble.message = Debe completar los dígitos de su tarjeta para confirmar
 customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
+
+acme.validation.booking.passengers.message = Debes tener al menos pasajero para publicar tu reserva

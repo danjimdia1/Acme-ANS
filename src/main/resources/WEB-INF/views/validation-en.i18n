@@ -39,3 +39,21 @@ acme.validation.technician.task.estimatedDuration.message = Estimated duration m
 
 #Claim validations
 acme.validation.leg.nullLeg.message = Must have a leg
+
+#Passenger validations
+
+acme.validation.dateOfBirth.null-or-invalid = Debe cumplir el patron regular yyyy/mm/dd Hh:mm
+acme.validation.dateOfBirth.notPast.message = La fecha no puede estar en el futuro
+acme.validation.dateOfBirth.invalid-format = Debe seguir el patrón dd/mm/yyyy HH:mm
+typeMismatch.date=Debe seguir el patrón dd/mm/yyyy HH:mm
+typeMismatch.java.util.Date=Debe seguir el patrón dd/mm/yyyy HH:mm
+
+
+#BookingRecord
+
+customer.booking-record.delete.passenger.not-null = Must select one passenger to delete
+
+
+#Booking
+
+acme.validation.locatorCode.not-unique = This locator code already exist

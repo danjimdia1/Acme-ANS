@@ -38,3 +38,25 @@ acme.validation.technician.task.estimatedDuration.message = La duración estimad
 
 #Claim validations
 acme.validation.leg.nullLeg.message = Debe tener un tramo
+
+#Validaciones para Pasajero
+
+
+acme.validation.dateOfBirth.null-or-invalid = Debe cumplir el patron regular yyyy/mm/dd Hh:mm
+acme.validation.dateOfBirth.notPast.message = La fecha no puede estar en el futuro
+acme.validation.dateOfBirth.invalid-format = Debe seguir el patrón dd/mm/yyyy HH:mm
+
+typeMismatch.date=Debe seguir el patrón dd/mm/yyyy HH:mm
+typeMismatch.java.util.Date=Debe seguir el patrón dd/mm/yyyy HH:mm
+
+
+#Validaciones Record de Reserva
+
+#BookingRecord
+
+customer.booking-record.delete.passenger.not-null = Debe seleccionar un pasajero para eliminar
+
+
+#Validaciones Booking
+
+ acme.validation.locatorCode.not-unique = Este código localizador ya existe

@@ -3,6 +3,7 @@ customer.passenger.list.fullName = Nombre completo
 customer.passenger.list.passportNumber = Número de pasaporte
 customer.passenger.list.dateOfBirth = Fecha de nacimiento
 customer.passenger.list.specialNeeds = Necesidades especiales
+customer.passenger.list.draftMode = Modo borrador
 customer.passenger.list.button.create = Crear nuevo pasajero
 
 customer.passenger.form.title = Información del pasajero
@@ -15,3 +16,35 @@ customer.passenger.form.specialNeeds = Necesidades especiales
 customer.passenger.form.button.create = Crear
 customer.passenger.form.button.update = Actualizar
 customer.passenger.form.button.publish = Publicar
+
+
+
+
+
+
+
+
+customer.passenger.list.title = Tus Pasajeros
+
+customer.passenger.list.label.name = Nombre:
+customer.passenger.list.label.email = Email:
+customer.passenger.list.label.passport = Pasaporte:
+
+customer.passenger.list.button.create = Crear un nuevo pasajero
+customer.passenger.list.button.addPassenger = Añadir un nuevo pasajero
+
+customer.passenger.form.title = Pasajero
+
+customer.passenger.form.label.name = Nombre
+customer.passenger.form.label.email = Email:
+customer.passenger.form.label.passport = Pasaporte:
+customer.passenger.form.label.dateOfBirth = Fecha de Nacimiento:
+customer.passenger.form.label.specialNeeds = Necesidades especiales:
+
+customer.passenger.form.button.create = Crear Pasajero
+customer.passenger.form.button.delete = Eliminar Pasajero
+
+
+customer.passenger.update.draft-mode = Un pasajero no se puede actualizar si ha sido publicado
+
+

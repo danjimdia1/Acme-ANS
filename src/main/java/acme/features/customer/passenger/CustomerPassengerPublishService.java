@@ -1,12 +1,9 @@
 
 package acme.features.customer.passenger;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.passengers.Passenger;
@@ -54,21 +51,6 @@ public class CustomerPassengerPublishService extends AbstractGuiService<Customer
 
 	@Override
 	public void validate(final Passenger passenger) {
-		int passengerId;
-		boolean existsDuplicate;
-		Date dateOfBirthValue;
-		boolean isDateOfBirthPast;
-		Customer customer;
-
-		customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
-
-		passengerId = super.getRequest().getData("id", int.class);
-		existsDuplicate = this.repository.existsAnotherPassengerWithSamePassport(passenger.getPassportNumber(), customer.getId(), passengerId);
-		super.state(!existsDuplicate, "passportNumber", "acme.validation.passenger.duplicate-passport");
-
-		dateOfBirthValue = super.getRequest().getData("dateOfBirth", Date.class);
-		isDateOfBirthPast = dateOfBirthValue != null && dateOfBirthValue.before(MomentHelper.getCurrentMoment());
-		super.state(isDateOfBirthPast, "dateOfBirth", "acme.validation.passenger.dateOfBirth.message");
 	}
 
 	@Override

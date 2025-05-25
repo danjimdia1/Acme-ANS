@@ -1,69 +1,75 @@
 
 package acme.features.customer.passenger;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.bookingrecords.BookingRecord;
 import acme.entities.passengers.Passenger;
 import acme.realms.customer.Customer;
 
 @GuiService
-public class CustomerPassengerUpdateService extends AbstractGuiService<Customer, Passenger> {
-
-	// Internal state ---------------------------------------------------------
+public class CustomerPassengerDeleteService extends AbstractGuiService<Customer, Passenger> {
 
 	@Autowired
 	private CustomerPassengerRepository repository;
 
-	// AbstractGuiService interface -------------------------------------------
-
 
 	@Override
 	public void authorise() {
+		Integer passengerId;
 		Customer customer;
-		int passengerId = super.getRequest().getData("id", int.class);
-		Passenger passenger = this.repository.findPassengerById(passengerId);
-		customer = passenger == null ? null : passenger.getCustomer();
+		Passenger passenger;
+		boolean status;
 
-		boolean status = passenger != null && super.getRequest().getPrincipal().getActiveRealm().getId() == passenger.getCustomer().getId() && super.getRequest().getPrincipal().hasRealm(customer) && passenger.isDraftMode();
+		passengerId = super.getRequest().getData("id", int.class);
+		passenger = this.repository.findPassengerById(passengerId);
+
+		customer = passenger.getCustomer();
+		status = super.getRequest().getPrincipal().hasRealm(customer) && passenger.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int passengerId;
 		Passenger passenger;
+		int id;
 
-		passengerId = super.getRequest().getData("id", int.class);
-		passenger = this.repository.findPassengerById(passengerId);
+		id = super.getRequest().getData("id", int.class);
+		passenger = this.repository.findPassengerById(id);
 
 		super.getBuffer().addData(passenger);
 	}
 
 	@Override
 	public void bind(final Passenger passenger) {
-		super.bindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds");
-
+		;
 	}
 
 	@Override
 	public void validate(final Passenger passenger) {
+		;
 	}
 
 	@Override
 	public void perform(final Passenger passenger) {
-		this.repository.save(passenger);
+		Collection<BookingRecord> bookingRecords;
+		bookingRecords = this.repository.findBookingRecordsByPassengerId(passenger.getId());
+		for (final BookingRecord bookingRecord : bookingRecords)
+			this.repository.delete(bookingRecord);
+		this.repository.delete(passenger);
 	}
 
 	@Override
 	public void unbind(final Passenger passenger) {
 		Dataset dataset;
-
 		dataset = super.unbindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds", "draftMode");
-
 		super.getResponse().addData(dataset);
 	}
+
 }

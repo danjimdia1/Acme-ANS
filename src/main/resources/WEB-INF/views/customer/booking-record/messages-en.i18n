@@ -1,10 +1,11 @@
 
+customer.booking-record.form.title = Manage passengers from your booking
 
-customer.booking-record.form.title = Add new passenger to booking
 
 
 customer.bookingRecord.form.button.create = Add to booking
 customer.passenger.form.link.create = Create new passenger
+customer.bookingRecord.form.button.delete = Delete passenger
 
 customer.bookingRecord.list.label.passenger = Passenger
 customer.bookingRecord.list.label.booking = Booking
