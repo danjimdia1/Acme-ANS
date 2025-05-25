@@ -7,7 +7,9 @@
 	<acme:list-column code="customer.passenger.list.fullName" path="fullName" width="30%"/>
 	<acme:list-column code="customer.passenger.list.passportNumber" path="passportNumber" width="20%"/>
 	<acme:list-column code="customer.passenger.list.dateOfBirth" path="dateOfBirth" width="20%"/>
-	<acme:list-column code="customer.passenger.list.specialNeeds" path="specialNeeds" width="30%"/>
+	<acme:list-column code="customer.passenger.list.specialNeeds" path="specialNeeds" width="15%"/>
+	<acme:list-column code="customer.passenger.list.draftMode" path="draftMode" width="15%"/>
+	
 	
 	<acme:list-payload path="payload"/>
 </acme:list>

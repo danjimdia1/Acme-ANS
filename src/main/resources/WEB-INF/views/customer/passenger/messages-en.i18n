@@ -3,7 +3,9 @@ customer.passenger.list.fullName = Full name
 customer.passenger.list.passportNumber = Passport number
 customer.passenger.list.dateOfBirth = Date of birth
 customer.passenger.list.specialNeeds = Special needs
+customer.passenger.list.draftMode = Draft Mode
 customer.passenger.list.button.create = Create new passenger
+
 
 customer.passenger.form.title =  Passenger information
 customer.passenger.form.fullName = Full name
@@ -15,3 +17,30 @@ customer.passenger.form.specialNeeds = Special needs
 customer.passenger.form.button.create = Create
 customer.passenger.form.button.update = Update
 customer.passenger.form.button.publish = Publish
+
+
+
+
+
+
+customer.passenger.list.title = Your Passengers
+
+customer.passenger.list.label.email = Email:
+customer.passenger.list.label.passport = Passport:
+
+customer.passenger.list.button.create = Create a new passenger
+customer.passenger.list.button.addPassenger = Add a new Passenger
+
+customer.passenger.form.title = Passenger
+
+customer.passenger.form.label.name = Name:
+customer.passenger.form.label.email = Email:
+customer.passenger.form.label.passport = Passport:
+customer.passenger.form.label.dateOfBirth = Date of Birth:
+customer.passenger.form.label.specialNeeds = Special Needs:
+
+customer.passenger.form.button.create = Create Passenger
+customer.passenger.form.button.delete = Delete Passenger
+
+
+customer.passenger.update.draft-mode = A passenger cannot be updated if it has been published

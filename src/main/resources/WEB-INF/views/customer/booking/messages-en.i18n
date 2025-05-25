@@ -7,7 +7,9 @@ customer.booking.form.button.publish= Publish
 customer.booking.form.button.return = Return
 customer.booking.form.show.passengers = Show passengers
 customer.booking.form.add.passenger = Add Passenger
+customer.booking.form.button.passenger.delete = Delete Passenger
 customer.booking.list.button.create = Create
+customer.booking.form.button.delete = Cancel booking
 
 customer.booking.list.label.flight=Flight
 customer.booking.list.label.purchaseMoment=Purchase Moment
@@ -21,3 +23,5 @@ customer.booking.list.label.travelClass= Travel Class
 
 acme.validation.lastNibble.message = You must complete the last digits of your card to publish
 customer.booking.form.error.duplicateLocatorCode = That locator Code is already in use
+
+acme.validation.booking.passengers.message = You must have at least one passenger to publish your booking

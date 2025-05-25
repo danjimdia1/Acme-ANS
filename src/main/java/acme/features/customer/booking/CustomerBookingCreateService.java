@@ -1,7 +1,7 @@
 
 package acme.features.customer.booking;
 
-import java.util.stream.Collectors;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,9 +34,17 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
 		if (status && super.getRequest().getMethod().equals("POST")) {
+			List<Flight> showedFlight = this.repository.findValidFlights().stream().filter(flight -> flight.getScheduledDeparture().after(MomentHelper.getCurrentMoment())).toList();
 			Integer flightId = super.getRequest().getData("flight", Integer.class);
 			Flight flight = flightId != null && flightId != 0 ? this.repository.findFlightById(flightId) : null;
-			if (flightId != null && flightId != 0 && flight == null)
+
+			if (flightId != null && flightId != 0 && !showedFlight.contains(flight))
+				status = false;
+		}
+
+		if (super.getRequest().hasData("id")) {
+			int id = super.getRequest().getData("id", int.class);
+			if (id != 0)
 				status = false;
 		}
 
@@ -79,8 +87,7 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "lastNibble", "price", "draftMode");
 
-		flights = SelectChoices.from(this.repository.findAllFlights().stream().filter(flight -> flight.getScheduledDeparture() != null && !flight.isDraftMode() && flight.getScheduledDeparture().after(MomentHelper.getCurrentMoment())
-			&& this.repository.findLegsByFlightId(flight.getId()).stream().allMatch(leg -> leg.getScheduledDeparture().after(MomentHelper.getCurrentMoment()))).collect(Collectors.toList()), "label", booking.getFlight());
+		flights = SelectChoices.from(this.repository.findValidFlights().stream().filter(flight -> flight.getScheduledDeparture().after(MomentHelper.getCurrentMoment())).toList(), "label", booking.getFlight());
 		classes = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
 		dataset.put("flights", flights);

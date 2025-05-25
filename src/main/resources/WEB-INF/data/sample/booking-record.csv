@@ -27,8 +27,6 @@ booking-record-25,booking-13,passenger-00
 booking-record-26,booking-13,passenger-02
 booking-record-27,booking-14,passenger-00
 booking-record-28,booking-14,passenger-02
-booking-record-29,booking-15,passenger-00
-booking-record-30,booking-15,passenger-02
 booking-record-31,booking-16,passenger-00
 booking-record-32,booking-16,passenger-02
 booking-record-33,booking-17,passenger-00
@@ -41,5 +39,8 @@ booking-record-39,booking-20,passenger-00
 booking-record-40,booking-20,passenger-02
 booking-record-41,booking-21,passenger-00
 booking-record-42,booking-21,passenger-02
+
+#Booking del customer 2
+booking-record-29,booking-15,passenger-33
 
 
