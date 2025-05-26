@@ -1,36 +1,36 @@
 key,registrationMoment,email,description,type,draftMode,key:assistanceAgent,key:leg
 # base entity
-claim-01,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
+claim-01,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
 # registrationMoment variations
-claim-02,2000/01/01 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-03,2000/01/01 00:01,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-04,2024/12/30 23:59,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-05,2025/01/01 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
+claim-02,2000/01/01 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-03,2000/01/01 00:01,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-04,2024/12/30 23:59,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-05,2025/01/01 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
 # email variations
-claim-06,2010/10/10 00:00,acmepassword@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-07,2010/10/10 00:00,a@b.e,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-08,2010/10/10 00:00,a@b.es,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-09,2010/10/10 00:00,a@b.esx,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-10,2010/10/10 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-11,2010/10/10 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
+claim-06,2010/10/10 00:00,acmepassword@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-07,2010/10/10 00:00,a@b.e,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-08,2010/10/10 00:00,a@b.es,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-09,2010/10/10 00:00,a@b.esx,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-10,2010/10/10 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-11,2010/10/10 00:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
 # description variations
-claim-12,2010/10/10 00:00,acme@lorem-ipsum.org,L,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-13,2010/10/10 00:00,acme@lorem-ipsum.org,Lo,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-14,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-15,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-16,2010/10/10 00:00,acme@lorem-ipsum.org,โลเร็ม อิปซัม,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-17,2010/10/10 00:00,acme@lorem-ipsum.org,لوريم إيبسوم,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-18,2010/10/10 00:00,acme@lorem-ipsum.org,洛伦·伊普森,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-19,2010/10/10 00:00,acme@lorem-ipsum.org,<marquee>Hacked</marquee>,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-20,2010/10/10 00:00,acme@lorem-ipsum.org,<script>alert(‘Hacked!’);</script>,FLIGHT_ISSUES,TRUE,agent-01,leg-01
-claim-21,2010/10/10 00:00,acme@lorem-ipsum.org,' or 'A' = 'A,FLIGHT_ISSUES,TRUE,agent-01,leg-01
+claim-12,2010/10/10 00:00,acme@lorem-ipsum.org,L,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-13,2010/10/10 00:00,acme@lorem-ipsum.org,Lo,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-14,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-15,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-16,2010/10/10 00:00,acme@lorem-ipsum.org,โลเร็ม อิปซัม,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-17,2010/10/10 00:00,acme@lorem-ipsum.org,لوريم إيبسوم,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-18,2010/10/10 00:00,acme@lorem-ipsum.org,洛伦·伊普森,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-19,2010/10/10 00:00,acme@lorem-ipsum.org,<marquee>Hacked</marquee>,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-20,2010/10/10 00:00,acme@lorem-ipsum.org,<script>alert(‘Hacked!’);</script>,FLIGHT_ISSUES,TRUE,agent-01,leg-08
+claim-21,2010/10/10 00:00,acme@lorem-ipsum.org,' or 'A' = 'A,FLIGHT_ISSUES,TRUE,agent-01,leg-08
 # type variations
-claim-22,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",LUGGAGE_ISSUES,TRUE,agent-01,leg-01
-claim-23,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",SECURITY_INCIDENT,TRUE,agent-01,leg-01
-claim-24,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",OTHER_ISSUES,TRUE,agent-01,leg-01
+claim-22,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",LUGGAGE_ISSUES,TRUE,agent-01,leg-08
+claim-23,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",SECURITY_INCIDENT,TRUE,agent-01,leg-08
+claim-24,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",OTHER_ISSUES,TRUE,agent-01,leg-08
 # agent variations
-claim-26,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-02,leg-01
-claim-27,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-03,leg-01
+claim-26,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-02,leg-08
+claim-27,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-03,leg-08
 # leg variations
-claim-28,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-02
+claim-28,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-08
 claim-29,2010/10/10 00:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",FLIGHT_ISSUES,TRUE,agent-01,leg-03
