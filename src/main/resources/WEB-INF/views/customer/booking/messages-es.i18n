@@ -25,4 +25,6 @@ customer.booking.list.label.travelClass= Clase de viaje
 acme.validation.lastNibble.message = Debe completar los dígitos de su tarjeta para confirmar
 customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
 
-acme.validation.booking.passengers.message = Debes tener al menos pasajero para publicar tu reserva
+customer.booking.publish.no-passengers= Debes tener al menos pasajero para publicar tu reserva
+customer.booking.publish.no-card-nibble-stored = Introduzca los 4 ultimos digitos de su tarjeta de credito
+customer.booking.publish.no-passengers-published = Hay un pasajero sin publicar

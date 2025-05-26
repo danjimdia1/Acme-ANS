@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.bookingrecords.BookingRecord;
-import acme.entities.bookings.Booking;
 import acme.entities.passengers.Passenger;
 import acme.realms.customer.Customer;
 
@@ -24,22 +22,7 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void authorise() {
-		int bookingId;
-		Booking booking;
-		Customer customer;
-		boolean status = false;
-
-		customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
-
-		if (super.getRequest().getData().isEmpty() || super.getRequest().hasData("fullName"))
-			status = true;
-		else {
-			bookingId = super.getRequest().getData("bookingId", int.class);
-			booking = this.repository.findBookingById(bookingId);
-
-			if (booking != null && booking.getCustomer().equals(customer))
-				status = true;
-		}
+		boolean status = true;
 
 		if (super.getRequest().hasData("id")) {
 			int id = super.getRequest().getData("id", int.class);
@@ -54,8 +37,6 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 	public void load() {
 		Passenger passenger;
 		Customer customer;
-		Booking booking = null;
-		int bookingId;
 
 		customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 
@@ -63,14 +44,7 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 		passenger.setCustomer(customer);
 		passenger.setDraftMode(true);
 
-		if (super.getRequest().hasData("bookingId")) {
-			bookingId = super.getRequest().getData("bookingId", int.class);
-			booking = this.repository.findBookingById(bookingId);
-			super.getResponse().addGlobal("bookingId", bookingId);
-		}
-
 		super.getBuffer().addData(passenger);
-		super.getResponse().addGlobal("booking", booking);
 
 	}
 
@@ -88,17 +62,6 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 	public void perform(final Passenger passenger) {
 		this.repository.save(passenger);
 
-		if (super.getRequest().hasData("bookingId")) {
-			int bookingId = super.getRequest().getData("bookingId", int.class);
-			Booking booking = this.repository.findBookingById(bookingId);
-
-			if (booking != null) {
-				BookingRecord bookingRecord = new BookingRecord();
-				bookingRecord.setBooking(booking);
-				bookingRecord.setPassenger(passenger);
-				this.repository.save(bookingRecord);
-			}
-		}
 	}
 
 	@Override
