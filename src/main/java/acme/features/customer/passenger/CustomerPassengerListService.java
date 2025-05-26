@@ -25,27 +25,16 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 
 	@Override
 	public void authorise() {
-		int bookingId;
-		Booking booking;
-		Customer customer;
+		Customer customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 		boolean status = false;
-
-		customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 
 		if (super.getRequest().getData().isEmpty())
 			status = true;
 		else {
-			bookingId = super.getRequest().getData("bookingId", int.class);
-			booking = this.repository.findBookingById(bookingId);
-
+			int bookingId = super.getRequest().getData("bookingId", int.class);
+			Booking booking = this.repository.findBookingById(bookingId);
 			if (booking != null && booking.getCustomer().equals(customer))
-				if (super.getRequest().hasData("draftMode")) {
-					boolean requestDraftMode = super.getRequest().getData("draftMode", boolean.class);
-					boolean bookingDraftMode = booking.isDraftMode();
-					if (requestDraftMode == bookingDraftMode)
-						status = true;
-				} else
-					status = true;
+				status = true;
 		}
 
 		super.getResponse().setAuthorised(status);
@@ -65,10 +54,7 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 			bookingId = super.getRequest().getData("bookingId", int.class);
 			passengers = this.repository.findPassengersByBookingId(bookingId);
 			super.getResponse().addGlobal("bookingId", bookingId);
-			if (super.getRequest().hasData("draftMode")) {
-				boolean draftMode = super.getRequest().getData("draftMode", boolean.class);
-				super.getResponse().addGlobal("draftMode", draftMode);
-			}
+
 		}
 		super.getBuffer().addData(passengers);
 	}

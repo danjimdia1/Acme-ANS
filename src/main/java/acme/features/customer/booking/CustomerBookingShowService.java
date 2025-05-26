@@ -41,6 +41,7 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 
 	@Override
 	public void validate(final Booking booking) {
+		;
 	}
 
 	@Override

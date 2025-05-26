@@ -25,16 +25,16 @@ public class CustomerBookingDeleteService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void authorise() {
-		Integer bookingId;
-		Booking booking;
-		Customer customer;
-		boolean status;
+		Integer bookingId = super.getRequest().getData("id", int.class);
 
-		bookingId = super.getRequest().getData("id", int.class);
-		booking = this.repository.getBookingById(bookingId);
+		Booking booking = this.repository.getBookingById(bookingId);
+		if (booking == null) {
+			super.getResponse().setAuthorised(false);
+			return;
+		}
 
-		customer = booking.getCustomer();
-		status = super.getRequest().getPrincipal().hasRealm(customer) && booking.isDraftMode();
+		Customer customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
+		boolean status = super.getRequest().getPrincipal().hasRealm(customer) && booking.getCustomer().equals(customer) && booking.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}

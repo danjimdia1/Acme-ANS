@@ -1,6 +1,7 @@
 
 package acme.features.customer.booking;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
+import acme.client.helpers.StringHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.bookings.Booking;
 import acme.entities.bookings.TravelClass;
 import acme.entities.flights.Flight;
+import acme.entities.passengers.Passenger;
 import acme.realms.customer.Customer;
 
 @GuiService
@@ -57,6 +60,13 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void validate(final Booking booking) {
+		Collection<Passenger> passengers = this.repository.findPassengersByBookingId(booking.getId());
+		super.state(!passengers.isEmpty(), "*", "customer.booking.publish.no-passengers");
+
+		boolean allPublished = passengers.stream().allMatch(p -> !p.isDraftMode());
+		super.state(allPublished, "passenger", "customer.booking.publish.no-passengers-published");
+		Boolean lastNibble = !StringHelper.isBlank(booking.getLastNibble());
+		super.state(lastNibble, "lastNibble", "customer.booking.publish.no-card-nibble-stored");
 	}
 
 	@Override

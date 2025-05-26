@@ -24,4 +24,6 @@ customer.booking.list.label.travelClass= Travel Class
 acme.validation.lastNibble.message = You must complete the last digits of your card to publish
 customer.booking.form.error.duplicateLocatorCode = That locator Code is already in use
 
-acme.validation.booking.passengers.message = You must have at least one passenger to publish your booking
+customer.booking.publish.no-passengers = You must have at least one passenger to publish your booking
+customer.booking.publish.no-passengers-published = A passenger is no published
+customer.booking.publish.no-card-nibble-stored = May introduce your last credit card nibble
