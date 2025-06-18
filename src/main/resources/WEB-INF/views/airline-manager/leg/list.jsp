@@ -11,6 +11,6 @@
 	<acme:list-column sortable="false" code="airline-manager.leg.label.arrivalAirport" path="arrivalAirport" width="20%" />			
 </acme:list>
 
-<jstl:if test="${_command == 'list'}">
-	<acme:button code="airline-manager.leg.list.button.create" action="/airline-manager/leg/create?flightId=${flightId}"/>
+<jstl:if test="${_command == 'list' and masterDraftMode}">
+    <acme:button code="airline-manager.leg.list.button.create" action="/airline-manager/leg/create?flightId=${flightId}"/>
 </jstl:if>
