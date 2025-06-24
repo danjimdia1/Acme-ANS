@@ -1,6 +1,9 @@
 acme.validation.iataCode.message=El código IATA debe ser de 3 letras mayúsculas
 acme.validation.contactPhoneNumber.message= El número de teléfono debe tener entre 6 y 15 dígitos y puede empezar por '+'
 
+#Service
+acme.validation.promotionCode.message=El código debe tener 4 letras mayúsculas, un guion y 2 dígitos
+
 #AirlineManager validations
 acme.validation.airlineManager.identifier.invalid-identifier.message = Identificador inválido, debe tener contener las iniciales seguidas de 6 dígitos
 acme.validation.airlineManager.identifier.repeatedIdentifier.message = El identificador ya existe
