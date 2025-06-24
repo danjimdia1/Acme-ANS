@@ -27,8 +27,6 @@ public class AircraftValidator extends AbstractValidator<ValidAircraft, Aircraft
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 
 		String registrationNumber = aircraft.getRegistrationNumber();
-		if (StringHelper.isBlank(registrationNumber))
-			super.state(context, false, "registrationNumber", "acme.validation.registrationNumber.is-blank");
 		if (!StringHelper.isBlank(registrationNumber) && SpringHelper.getBean(AircraftRepository.class).findByRegistrationNumberAndNotAircraftId(registrationNumber, aircraft.getId()).isPresent())
 			super.state(context, false, "registrationNumber", "acme.validation.registrationNumber.not-unique");
 		result = !super.hasErrors(context);
