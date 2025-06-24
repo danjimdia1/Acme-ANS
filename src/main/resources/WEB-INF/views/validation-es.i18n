@@ -1,4 +1,3 @@
-#Airport 
 acme.validation.iataCode.message=El código IATA debe ser de 3 letras mayúsculas
 acme.validation.contactPhoneNumber.message= El número de teléfono debe tener entre 6 y 15 dígitos y puede empezar por '+'
 

@@ -1,3 +1,6 @@
+#Airline
+acme.validation.IATA.message=The IATA code must be 3 uppercase letters
+
 #Airport 
 acme.validation.iataCode.message=The IATA code must be 3 uppercase letters
 acme.validation.contactPhoneNumber.message= The phone number must be between 6 and 15 digits long and can start with a '+'
