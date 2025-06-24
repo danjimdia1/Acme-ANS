@@ -3,6 +3,7 @@ package acme.entities.flights;
 
 import java.beans.Transient;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Index;
@@ -29,7 +30,7 @@ import lombok.Setter;
 @Setter()
 @ValidFlight()
 @Table(indexes = {
-	@Index(columnList = "manager_id")
+	@Index(columnList = "draftMode")
 })
 public class Flight extends AbstractEntity {
 
@@ -70,25 +71,29 @@ public class Flight extends AbstractEntity {
 	@Transient()
 	public Date getScheduledDeparture() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findFirstScheduledDeparture(this.getId()).orElse(null);
+		List<Date> departures = repository.findFirstScheduledDeparture(this.getId());
+		return departures.isEmpty() ? null : departures.get(0);
 	}
 
 	@Transient()
 	public Date getScheduledArrival() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findLastScheduledArrival(this.getId()).orElse(null);
+		List<Date> arrivals = repository.findLastScheduledArrival(this.getId());
+		return arrivals.isEmpty() ? null : arrivals.get(0);
 	}
 
 	@Transient()
 	public String getOriginCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findFirstOriginCity(this.getId()).orElse("Desconocido");
+		List<String> origins = repository.findFirstOriginCity(this.getId());
+		return origins.isEmpty() ? "Desconocido" : origins.get(0);
 	}
 
 	@Transient()
 	public String getDestinationCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findLastDestinationCity(this.getId()).orElse("Desconocido");
+		List<String> destinations = repository.findLastDestinationCity(this.getId());
+		return destinations.isEmpty() ? "Desconocido" : destinations.get(0);
 	}
 
 	@Transient()
