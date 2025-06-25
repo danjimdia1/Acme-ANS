@@ -62,6 +62,7 @@ master.menu.user-account.technician-profile = Perfil de Técnico
 
 master.menu.airline-manager = Manager de Aerolínea
 master.menu.airline-manager.list-flights = Lista de vuelos
+master.menu.airline-manager.dashboard = Panel de control
 
 # master.menu.assistance-agent ####################################################
 
