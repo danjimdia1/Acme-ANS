@@ -1,0 +1,21 @@
+leg.leg.list.title = Lista de tramos
+
+leg.leg.label.flightNumber = Número de vuelo
+leg.leg.label.scheduledDeparture = Salida programada
+leg.leg.label.scheduledArrival = Llegada programada
+leg.leg.label.status = Estado
+leg.leg.label.departureAirport = Aeropuerto de salida
+leg.leg.label.arrivalAirport = Aeropuerto de llegada
+
+leg.leg.form.label.flightNumber = Número de vuelo
+leg.leg.form.label.scheduledDeparture = Salida programada
+leg.leg.form.label.scheduledArrival = Llegada programada
+leg.leg.form.label.status = Estado
+
+leg.leg.form.title = Tramo
+
+leg.leg.form.label.airlineIata = IATA code del airline
+leg.leg.form.label.duration = Duracion
+leg.leg.form.label.departureAirport= Aeropuerto de salida
+leg.leg.form.label.arrivalAirport = Aeropuerto de llegada
+leg.leg.form.label.aircraftRegNumber = Número de registro de aeronave

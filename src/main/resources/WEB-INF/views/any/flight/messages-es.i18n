@@ -1,0 +1,24 @@
+# messages-es.i18n
+
+any.flight.list.title = Lista de vuelos publicados
+
+any.flight.list.label.tag = Etiqueta
+any.flight.list.label.selfTransfer = Auto-trasbordo
+any.flight.list.label.cost = Precio
+any.flight.list.label.description = Descripcion
+any.flight.list.label.draft-mode = Modo borrador
+
+any.flight.form.title = Vuelo
+
+any.flight.form.label.tag = Etiqueta
+any.flight.form.label.selfTransfer = Auto-trasbordo
+any.flight.form.label.cost = Precio
+any.flight.form.label.description = Descripción
+any.flight.form.label.draftMode = Modo borrador
+any.flight.form.label.scheduledDeparture = Hora de Salida
+any.flight.form.label.scheduledArrival = Hora de Llegada
+any.flight.form.label.originCity = Ciudad de origen
+any.flight.form.label.destinationCity = Ciudad de destino
+any.flight.form.label.numberOfLayovers = Number of layovers
+
+any.flight.form.button.legs = Tramos

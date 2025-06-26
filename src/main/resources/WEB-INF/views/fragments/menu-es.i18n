@@ -75,3 +75,8 @@ master.menu.technician = Técnico
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de los documentos de Mantenimiento
 master.menu.technician.tasks.tasks-list = Listado de tareas
 master.menu.technician.show-dashboard = Mostrar panel
+
+# master.menu.any
+ 
+master.menu.any = Todos
+master.menu.any.flights = Vuelos Publicados
