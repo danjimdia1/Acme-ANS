@@ -74,3 +74,8 @@ master.menu.technician = Technician
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Maintenance Records List
 master.menu.technician.tasks.tasks-list = Tasks List
 master.menu.technician.show-dashboard = Show dashboard
+
+# master.menu.any 
+
+master.menu.any = Any
+master.menu.any.flights = Published Flights

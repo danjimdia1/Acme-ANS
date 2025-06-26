@@ -1,0 +1,25 @@
+# messages-en.i18n
+
+any.flight.list.title = Listing of published flights
+
+any.flight.list.label.tag = Tag
+any.flight.list.label.selfTransfer = Self Transfer
+any.flight.list.label.cost = Cost
+any.flight.list.label.description = Description
+any.flight.list.label.draft-mode = Draft Mode
+
+any.flight.form.title = Flight
+
+any.flight.form.label.tag = Tag
+any.flight.form.label.selfTransfer = Self Transfer
+any.flight.form.label.cost = Cost
+any.flight.form.label.description = Description
+any.flight.form.label.draftMode = Draft Mode
+any.flight.form.label.scheduledDeparture = Scheduled Airport
+any.flight.form.label.scheduledArrival = Scheduled Arrival
+any.flight.form.label.originCity = Origin City
+any.flight.form.label.destinationCity = Destination city
+any.flight.form.label.numberOfLayovers = Number of layovers
+
+any.flight.form.button.legs = Legs
+

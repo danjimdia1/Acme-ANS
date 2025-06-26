@@ -26,6 +26,10 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.manloppav" action="https://github.com/manloppav"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.marbarmar16" action="https://github.com/meryknows"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any">
+      		<acme:menu-suboption code="master.menu.any.flights" action="/any/flight/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
