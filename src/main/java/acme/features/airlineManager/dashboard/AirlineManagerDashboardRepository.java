@@ -30,18 +30,18 @@ public interface AirlineManagerDashboardRepository extends AbstractRepository {
 	@Query("SELECT l FROM Leg l WHERE l.flight.manager.id = :id")
 	Collection<Leg> findLegsByManagerId(int id);
 
-	@Query("select distinct f.cost.currency from Flight f where f.manager.id = :id")
+	@Query("SELECT DISTINCT f.cost.currency FROM Flight f WHERE f.manager.id = :id")
 	List<String> findCurrenciesByManagerId(int id);
 
-	@Query("select avg(f.cost.amount) from Flight f where f.cost.currency = :currency and f.manager.id = :id")
-	Double avgFlightCostByCurrency(String currency, int id);
+	@Query("SELECT avg(f.cost.amount) FROM Flight f WHERE f.cost.currency = :currency and f.manager.id = :id")
+	Double avgFlightCostByCurrency(int id, String currency);
 
-	@Query("select min(f.cost.amount) from Flight f where f.cost.currency = :currency and f.manager.id = :id")
-	Double minFlightCostByCurrency(String currency, int id);
+	@Query("SELECT min(f.cost.amount) FROM Flight f WHERE f.cost.currency = :currency and f.manager.id = :id")
+	Double minFlightCostByCurrency(int id, String currency);
 
-	@Query("select max(f.cost.amount) from Flight f where f.cost.currency = :currency and f.manager.id = :id")
-	Double maxFlightCostByCurrency(String currency, int id);
+	@Query("SELECT max(f.cost.amount) FROM Flight f WHERE f.cost.currency = :currency and f.manager.id = :id")
+	Double maxFlightCostByCurrency(int id, String currency);
 
-	@Query("select stddev(f.cost.amount) from Flight f where f.cost.currency = :currency and f.manager.id = :id")
-	Double devFlightCostByCurrency(String currency, int id);
+	@Query("SELECT stddev(f.cost.amount) FROM Flight f WHERE f.cost.currency = :currency and f.manager.id = :id")
+	Double devFlightCostByCurrency(int id, String currency);
 }
