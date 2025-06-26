@@ -30,7 +30,8 @@ import lombok.Setter;
 @Setter
 @ValidAirlineManager
 @Table(indexes = {
-	@Index(columnList = "identifier")
+	@Index(columnList = "identifier"), //
+	@Index(columnList = "yearsOfExperience")
 })
 public class AirlineManager extends AbstractRole {
 

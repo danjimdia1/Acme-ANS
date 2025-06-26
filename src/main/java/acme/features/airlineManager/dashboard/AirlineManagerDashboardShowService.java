@@ -93,10 +93,10 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 		Map<String, Double> standardDeviationFlightCost = new HashMap<>();
 
 		for (String currency : currencies) {
-			Double avg = this.repository.avgFlightCostByCurrency(currency, airlineManagerId);
-			Double min = this.repository.minFlightCostByCurrency(currency, airlineManagerId);
-			Double max = this.repository.maxFlightCostByCurrency(currency, airlineManagerId);
-			Double std = this.repository.devFlightCostByCurrency(currency, airlineManagerId);
+			Double avg = this.repository.avgFlightCostByCurrency(airlineManagerId, currency);
+			Double min = this.repository.minFlightCostByCurrency(airlineManagerId, currency);
+			Double max = this.repository.maxFlightCostByCurrency(airlineManagerId, currency);
+			Double std = this.repository.devFlightCostByCurrency(airlineManagerId, currency);
 
 			if (avg != null && min != null && max != null) {
 				averageFlightCost.put(currency, avg);
