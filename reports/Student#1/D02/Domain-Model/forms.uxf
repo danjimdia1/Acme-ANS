@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>290</y>
+      <w>360</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+Dashboard
+--
++ ranking: Integer
++ yearsToRetire: Integer
++ ratioOnTimeDelayedFlights: Double
++ mostPopularAirport: Airport
++ lessPopularAirport: Airport
++ legsByStatus: Map&lt;LegStatus, Integer&gt;
++ averageFlightCost: Map&lt;String,Double&gt;
++ minimumFlightCost: Map&lt;String,Double&gt;
++ maximunFlightCost: Map&lt;String,Double&gt;
++ standarDeviationFlightCost: Map&lt;String,Double&gt;
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

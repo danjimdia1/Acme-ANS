@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>230</y>
+      <w>600</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AirlineManager {ValidAirlineManager}
+--
++ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\\d{6}"), Column(unique=true)}
++ yearsOfExperience: Integer {Mandatory, ValidNumber(min=0,max=120), Automapped}
++ birthDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ pictureLink: String {Optional, ValidUrl, Automapped}
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
