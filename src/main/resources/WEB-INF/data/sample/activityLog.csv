@@ -1,38 +1,38 @@
-key,registrationMoment,typeIncident,description,severityLevel,key:flightAssignment
+key,registrationMoment,typeIncident,description,severityLevel,draftMode,key:flightAssignment
 #Base-Entity
-activityLog-01,2012/07/02 00:00,L,L,5,assignment-01
+activityLog-01,2012/07/02 00:00,L,L,5,true,assignment-01
 #Probrando RegistrationMoment
-activityLog-02,2000/01/01 00:01,L,L,5,assignment-01
-activityLog-03,2024/12/31 23:59,L,L,5,assignment-01
-activityLog-04,2025/01/01 00:00,L,L,5,assignment-01
+activityLog-02,2000/01/01 00:01,L,L,5,true,assignment-01
+activityLog-03,2024/12/31 23:59,L,L,5,true,assignment-01
+activityLog-04,2025/01/01 00:00,L,L,5,true,assignment-01
 #Probando typeIncident
-activityLog-05,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-06,2000/01/01 00:00,Lo,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-07,2000/01/01 00:00,Lorem ipsum dolor sit amet  consectetur adipiscin,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-08,2000/01/01 00:00,Lorem ipsum dolor sit amet  consectetur adipiscing,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-09,2000/01/01 00:00,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-10,2000/01/01 00:00,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-11,2000/01/01 00:00,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-12,2000/01/01 00:00,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-13,2000/01/01 00:00,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
-activityLog-14,2000/01/01 00:00,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,assignment-01
+activityLog-05,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-06,2000/01/01 00:00,Lo,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-07,2000/01/01 00:00,Lorem ipsum dolor sit amet  consectetur adipiscin,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-08,2000/01/01 00:00,Lorem ipsum dolor sit amet  consectetur adipiscing,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-09,2000/01/01 00:00,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-10,2000/01/01 00:00,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-11,2000/01/01 00:00,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-12,2000/01/01 00:00,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-13,2000/01/01 00:00,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
+activityLog-14,2000/01/01 00:00,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,5,true,assignment-01
 #Probando Description
-activityLog-15,2000/01/01 00:00,L,L,5,assignment-01
-activityLog-16,2000/01/01 00:00,L,Lo,5,assignment-01
-activityLog-17,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,5,assignment-01
-activityLog-18,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,5,assignment-01
-activityLog-19,2000/01/01 00:00,L,โลเร็ม อิปซัม,5,assignment-01
-activityLog-20,2000/01/01 00:00,L,لوريم إيبسوم,5,assignment-01
-activityLog-21,2000/01/01 00:00,L,洛伦·伊普森,5,assignment-01
-activityLog-22,2000/01/01 00:00,L,<marquee>Hacked</marquee>,5,assignment-01
-activityLog-23,2000/01/01 00:00,L,<script>alert(‘Hacked!’);</script>,5,assignment-01
-activityLog-24,2000/01/01 00:00,L,' or 'A' = 'A,5,assignment-01
+activityLog-15,2000/01/01 00:00,L,L,5,true,assignment-01
+activityLog-16,2000/01/01 00:00,L,Lo,5,true,assignment-01
+activityLog-17,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,5,true,assignment-01
+activityLog-18,2000/01/01 00:00,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,5,true,assignment-01
+activityLog-19,2000/01/01 00:00,L,โลเร็ม อิปซัม,5,true,assignment-01
+activityLog-20,2000/01/01 00:00,L,لوريم إيبسوم,5,true,assignment-01
+activityLog-21,2000/01/01 00:00,L,洛伦·伊普森,5,true,assignment-01
+activityLog-22,2000/01/01 00:00,L,<marquee>Hacked</marquee>,5,true,assignment-01
+activityLog-23,2000/01/01 00:00,L,<script>alert(‘Hacked!’);</script>,5,true,assignment-01
+activityLog-24,2000/01/01 00:00,L,' or 'A' = 'A,5,true,assignment-01
 #Probando SeverityLevel
-activityLog-25,2000/01/01 00:00,L,L,0,assignment-01
-activityLog-26,2000/01/01 00:00,L,L,1,assignment-01
-activityLog-27,2000/01/01 00:00,L,L,9,assignment-01
-activityLog-28,2000/01/01 00:00,L,L,10,assignment-01
+activityLog-25,2000/01/01 00:00,L,L,0,true,assignment-01
+activityLog-26,2000/01/01 00:00,L,L,1,true,assignment-01
+activityLog-27,2000/01/01 00:00,L,L,9,true,assignment-01
+activityLog-28,2000/01/01 00:00,L,L,10,true,assignment-01
 #Probando Assignment
-activityLog-29,2000/01/01 00:00,Lorem ipsum dolor sit ame,L,5,assignment-02
-activityLog-30,2000/01/01 00:00,Lorem ipsum dolor sit ame,L,5,assignment-03
-activityLog-31,2000/01/01 00:00,L,L,5,assignment-04
+activityLog-29,2000/01/01 00:00,Lorem ipsum dolor sit ame,L,5,true,assignment-02
+activityLog-30,2000/01/01 00:00,Lorem ipsum dolor sit ame,L,5,true,assignment-03
+activityLog-31,2000/01/01 00:00,L,L,5,true,assignment-04
