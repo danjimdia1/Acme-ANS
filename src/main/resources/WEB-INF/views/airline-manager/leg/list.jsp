@@ -8,7 +8,8 @@
 	<acme:list-column code="airline-manager.leg.label.scheduledDeparture" path="scheduledDeparture" width="20%" />
 	<acme:list-column code="airline-manager.leg.label.scheduledArrival" path="scheduledArrival" width="20%" />
 	<acme:list-column sortable="false" code="airline-manager.leg.label.departureAirport" path="departureAirport" width="20%" />
-	<acme:list-column sortable="false" code="airline-manager.leg.label.arrivalAirport" path="arrivalAirport" width="20%" />			
+	<acme:list-column sortable="false" code="airline-manager.leg.label.arrivalAirport" path="arrivalAirport" width="20%" />	
+	<acme:list-column sortable="false" code="airline-manager.leg.label.draftMode" path="draftMode" width="20%" />					
 </acme:list>
 
 <jstl:if test="${_command == 'list' and masterDraftMode}">

@@ -6,7 +6,7 @@ airline-manager.leg.label.scheduledArrival = Scheduled Arrival
 airline-manager.leg.label.status = Status
 airline-manager.leg.label.departureAirport = Departure airport
 airline-manager.leg.label.arrivalAirport = Arrival airport
-
+airline-manager.leg.label.draftMode = Draft Mmode
 airline-manager.leg.form.label.flightNumber = Flight number
 airline-manager.leg.form.label.scheduledDeparture = Scheduled departure
 airline-manager.leg.form.label.scheduledArrival = Scheduled arrival

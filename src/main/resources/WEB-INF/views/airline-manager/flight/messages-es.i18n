@@ -6,7 +6,7 @@ airline-manager.flight.list.label.tag = Etiqueta
 airline-manager.flight.list.label.selfTransfer = Auto-trasbordo
 airline-manager.flight.list.label.cost = Precio
 airline-manager.flight.list.label.description = Descripcion
-airline-manager.flight.list.label.draft-mode = Modo borrador
+airline-manager.flight.list.label.draftMode = Modo borrador
 
 airline-manager.flight.form.title = Vuelo
 
