@@ -6,6 +6,7 @@ airline-manager.leg.label.scheduledArrival = Llegada programada
 airline-manager.leg.label.status = Estado
 airline-manager.leg.label.departureAirport = Aeropuerto de salida
 airline-manager.leg.label.arrivalAirport = Aeropuerto de llegada
+airline-manager.leg.label.draftMode = Modo borrador
 
 airline-manager.leg.form.label.flightNumber = Número de vuelo
 airline-manager.leg.form.label.scheduledDeparture = Salida programada
