@@ -1,5 +1,5 @@
 
-package acme.forms.technician;
+package acme.forms;
 
 import java.util.Date;
 import java.util.List;
@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Dashboard extends AbstractForm {
+public class TechnicianDashboard extends AbstractForm {
 
 	private static final long		serialVersionUID	= 1L;
 

@@ -1,0 +1,11 @@
+airline-manager.airline-manager-dashboard.form.title= Dashboard
+airline-manager.dashboard.form.label.ranking=Ranking
+airline-manager.dashboard.form.label.yearsToRetire=Years to retire
+airline-manager.dashboard.form.label.ratioOfOntimeAndDelayedFlights=Ratio of on-time vs delayed flights
+airline-manager.dashboard.form.label.mostPopularAirport=Most popular airport
+airline-manager.dashboard.form.label.lessPopularAirport=Least popular airport
+airline-manager.dashboard.form.label.numberOfLegsByStatus=Number of legs by status
+airline-manager.dashboard.form.label.averageFlightCost=Average flight cost
+airline-manager.dashboard.form.label.minimumFlightCost=Minimum flight cost
+airline-manager.dashboard.form.label.maximumFlightCost=Maximum flight cost
+airline-manager.dashboard.form.label.deviationFlightCost=Flight cost standard deviation

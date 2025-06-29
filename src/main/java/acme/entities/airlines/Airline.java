@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -25,6 +27,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @ValidAirline
+@Table(indexes = {
+	@Index(columnList = "IATA")
+})
 public class Airline extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -39,7 +44,7 @@ public class Airline extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	@ValidString(min = 3, max = 3, pattern = "^[A-Z]{3}")
+	@ValidString(pattern = "^[A-Z]{3}", message = "{acme.validation.iataCode.message}")
 	@Column(unique = true)
 	private String				IATA;
 
@@ -64,7 +69,7 @@ public class Airline extends AbstractEntity {
 	private String				email;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$", message = "{acme.validation.contactPhoneNumber.message}")
 	@Automapped
 	private String				phoneNumber;
 

@@ -1,3 +1,8 @@
+acme.validation.iataCode.message=The IATA code must be 3 uppercase letters
+acme.validation.contactPhoneNumber.message= The phone number must be between 6 and 15 digits long and can start with a '+'
+
+#Service
+acme.validation.promotionCode.message=The code must consist of 4 uppercase letters, a hyphen, and 2 digits
 
 #AirlineManager validations
 acme.validation.airlineManager.identifier.invalid-identifier.message = Invalid identifier, Must have the initials of the name followed by 6 digits

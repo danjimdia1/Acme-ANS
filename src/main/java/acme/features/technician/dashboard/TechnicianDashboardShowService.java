@@ -15,11 +15,11 @@ import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.maintenanceRecord.MaintenanceRecordStatus;
-import acme.forms.technician.Dashboard;
+import acme.forms.TechnicianDashboard;
 import acme.realms.technician.Technician;
 
 @GuiService
-public class TechnicianDashboardShowService extends AbstractGuiService<Technician, Dashboard> {
+public class TechnicianDashboardShowService extends AbstractGuiService<Technician, TechnicianDashboard> {
 
 	@Autowired
 	private TechnicianDashboardRepository repository;
@@ -32,7 +32,7 @@ public class TechnicianDashboardShowService extends AbstractGuiService<Technicia
 
 	@Override
 	public void load() {
-		Dashboard dashboard = new Dashboard();
+		TechnicianDashboard dashboard = new TechnicianDashboard();
 		int technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		Date oneYearAgo = MomentHelper.deltaFromCurrentMoment(-1, java.time.temporal.ChronoUnit.YEARS);
 
@@ -76,7 +76,7 @@ public class TechnicianDashboardShowService extends AbstractGuiService<Technicia
 	}
 
 	@Override
-	public void unbind(final Dashboard dashboard) {
+	public void unbind(final TechnicianDashboard dashboard) {
 		Dataset dataset = new Dataset();
 
 		// Estados

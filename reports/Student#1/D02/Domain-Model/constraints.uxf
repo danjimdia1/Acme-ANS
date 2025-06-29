@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>170</y>
+      <w>350</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidAirlineManager
+--
++ The identifier must begin with the manager's initials.
++ The identifier cannot be repeated
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>300</y>
+      <w>350</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidFlight
+--
++ scheduledArrival of each Leg must be before 
+scheduledDeparture of the next Leg in the Flight.
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>420</y>
+      <w>480</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLeg
+--
++ flightNumber must start with the airline's IATA code.
++ flightNumber must be unique.
++ scheduledDeparture must be after the current time.
++ scheduledArrival must be after scheduledDeparture.
++ Aircraft must not be under maintenance.
++ A Leg must not overlap in time with other Legs of the same Flight.
++ A Leg must not overlap in time with other Legs using the same Aircraft.
++ departureAirport and arrivalAirport must be different.
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

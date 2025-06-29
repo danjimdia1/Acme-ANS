@@ -3,6 +3,8 @@ package acme.entities.services;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -20,6 +22,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @ValidService
+@Table(indexes = {
+	@Index(columnList = "promotionCode")
+})
 public class Service extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -44,7 +49,7 @@ public class Service extends AbstractEntity {
 	private Double				avgDwellTime;
 
 	@Optional
-	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
+	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$", message = "{acme.validation.promotionCode.message}")
 	@Column(unique = true)
 	private String				promotionCode;
 

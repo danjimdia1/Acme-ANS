@@ -62,6 +62,7 @@ master.menu.user-account.technician-profile = Perfil de Técnico
 
 master.menu.airline-manager = Manager de Aerolínea
 master.menu.airline-manager.list-flights = Lista de vuelos
+master.menu.airline-manager.dashboard = Panel de control
 
 # master.menu.assistance-agent ####################################################
 
@@ -74,3 +75,8 @@ master.menu.technician = Técnico
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de los documentos de Mantenimiento
 master.menu.technician.tasks.tasks-list = Listado de tareas
 master.menu.technician.show-dashboard = Mostrar panel
+
+# master.menu.any
+ 
+master.menu.any = Todos
+master.menu.any.flights = Vuelos Publicados
