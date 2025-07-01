@@ -115,20 +115,20 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 	}
 
 	@Override
-	public void unbind(final AirlineManagerDashboard object) {
-		assert object != null;
+	public void unbind(final AirlineManagerDashboard dashboard) {
+		assert dashboard != null;
 
 		Dataset dataset;
 
-		dataset = super.unbindObject(object, "ranking", "yearsToRetire", "ratioOnTimeDelayedFlights");
+		dataset = super.unbindObject(dashboard, "ranking", "yearsToRetire", "ratioOnTimeDelayedFlights");
 
-		dataset.put("mostPopularAirport", object.getMostPopularAirport() != null ? object.getMostPopularAirport().getIataCode() : "N/A");
-		dataset.put("lessPopularAirport", object.getLessPopularAirport() != null ? object.getLessPopularAirport().getIataCode() : "N/A");
+		dataset.put("mostPopularAirport", dashboard.getMostPopularAirport() != null ? dashboard.getMostPopularAirport().getIataCode() : "N/A");
+		dataset.put("lessPopularAirport", dashboard.getLessPopularAirport() != null ? dashboard.getLessPopularAirport().getIataCode() : "N/A");
 
 		StringBuilder legsStatusString = new StringBuilder();
-		for (LegStatus status : object.getLegsByStatus().keySet())
-			legsStatusString.append(status).append(": ").append(object.getLegsByStatus().get(status)).append(", ");
-		if (!object.getLegsByStatus().isEmpty())
+		for (LegStatus status : dashboard.getLegsByStatus().keySet())
+			legsStatusString.append(status).append(": ").append(dashboard.getLegsByStatus().get(status)).append(", ");
+		if (!dashboard.getLegsByStatus().isEmpty())
 			legsStatusString.setLength(legsStatusString.length() - 2);
 		dataset.put("numberofLegsByStatus", legsStatusString.toString());
 
@@ -137,11 +137,11 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 		StringBuilder max = new StringBuilder();
 		StringBuilder std = new StringBuilder();
 
-		for (String currency : object.getAverageFlightCost().keySet()) {
-			Double a = object.getAverageFlightCost().get(currency);
-			Double mi = object.getMinimumFlightCost().get(currency);
-			Double ma = object.getMaximumFlightCost().get(currency);
-			Double s = object.getStandardDeviationFlightCost().get(currency);
+		for (String currency : dashboard.getAverageFlightCost().keySet()) {
+			Double a = dashboard.getAverageFlightCost().get(currency);
+			Double mi = dashboard.getMinimumFlightCost().get(currency);
+			Double ma = dashboard.getMaximumFlightCost().get(currency);
+			Double s = dashboard.getStandardDeviationFlightCost().get(currency);
 
 			avg.append(currency).append(": ").append(String.format("%.2f", a)).append(", ");
 			min.append(currency).append(": ").append(String.format("%.2f", mi)).append(", ");
@@ -149,7 +149,7 @@ public class AirlineManagerDashboardShowService extends AbstractGuiService<Airli
 			std.append(currency).append(": ").append(s != null ? String.format("%.2f", s) : "N/A").append(", ");
 		}
 
-		if (!object.getAverageFlightCost().isEmpty()) {
+		if (!dashboard.getAverageFlightCost().isEmpty()) {
 			avg.setLength(avg.length() - 2);
 			min.setLength(min.length() - 2);
 			max.setLength(max.length() - 2);
