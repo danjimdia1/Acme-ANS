@@ -6,7 +6,7 @@ airline-manager.flight.list.label.tag = Tag
 airline-manager.flight.list.label.selfTransfer = Self Transfer
 airline-manager.flight.list.label.cost = Cost
 airline-manager.flight.list.label.description = Description
-airline-manager.flight.list.label.draft-mode = Draft Mode
+airline-manager.flight.list.label.draftMode = Draft Mode
 
 airline-manager.flight.form.title = Flight
 

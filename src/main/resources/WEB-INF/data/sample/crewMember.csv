@@ -5,7 +5,7 @@ member-01,JP123456,+123456789,Español e Inglés,AVAILABLE,EUR 10000.00,14,airli
 member-02,MJ000000,+123456789,Español e Inglés,AVAILABLE,EUR 10000.00,14,airline-01,user-account-member-02
 member-03,MG222222,+123456789,Español e Inglés,AVAILABLE,EUR 10000.00,14,airline-01,user-account-member-03
 member-04,LR123456,+123456789,Español e Inglés,AVAILABLE,EUR 10000.00,14,airline-01,user-account-member-04
-member-05,RM555555,+123456789,Español e Inglés,AVAILABLE,EUR 10000.00,14,airline-01,user-account-member-05
+member,RM555555,+123456789,Español e Inglés,AVAILABLE,EUR 10000.00,null,airline-01,user-account-member
 #Probando PhoneNumber
 member-06,EV123457,+000000,Español e Inglés,AVAILABLE,EUR 10000.00,14,airline-01,user-account-member-06
 member-07,PA123458,+000000000000000,Español e Inglés,AVAILABLE,EUR 10000.00,14,airline-01,user-account-member-07
