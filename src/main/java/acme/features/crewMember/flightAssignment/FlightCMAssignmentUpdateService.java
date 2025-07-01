@@ -42,10 +42,9 @@ public class FlightCMAssignmentUpdateService extends AbstractGuiService<CrewMemb
 			boolean legExists = legId == 0 || this.repository.existsLeg(legId);
 			boolean memberExists = this.repository.existsCrewMemberById(crewMemberId);
 			boolean isOwner = this.repository.thatFlightAssignmentIsOf(assignmentId, crewMemberId);
-			boolean isLeadAttendant = assignment != null && assignment.getDuty() == Duty.LEAD_ATTENDANT;
 
 			isHis = assignment != null && assignment.getCrewMember().getId() == crewMemberId;
-			authorised = legExists && memberExists && isOwner && isLeadAttendant;
+			authorised = legExists && memberExists && isOwner;
 		}
 
 		super.getResponse().setAuthorised(authorised && assignment != null && assignment.isDraftMode() && isHis);
