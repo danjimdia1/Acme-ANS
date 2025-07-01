@@ -6,9 +6,9 @@ assignment-02,CO_PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-02,leg-08
 assignment-03,LEAD_ATTENDANT,2025/01/01 00:00,CONFIRMED,null,True,member-03,leg-08
 assignment-04,CABIN_ATTENDANT,2025/01/01 00:00,CONFIRMED,null,True,member-04,leg-08
 #Probando Moment
-assignment-05,PILOT,2000/01/01 00:00,CONFIRMED,null,True,member-01,leg-08
-assignment-06,PILOT,2000/01/01 00:01,CONFIRMED,null,True,member-01,leg-08
-assignment-07,PILOT,2024/12/31 23:59,CONFIRMED,null,True,member-01,leg-08
+assignment-05,PILOT,2000/01/01 00:00,CONFIRMED,null,False,member-01,leg-08
+assignment-06,PILOT,2000/01/01 00:01,CONFIRMED,null,False,member-01,leg-08
+assignment-07,PILOT,2024/12/31 23:59,CONFIRMED,null,False,member-01,leg-08
 #Probando CurrentStatus
 assignment-09,PILOT,2025/01/01 00:00,PENDING,null,True,member-01,leg-08
 assignment-10,PILOT,2025/01/01 00:00,CANCELLED,null,True,member-01,leg-08
@@ -32,6 +32,6 @@ assignment-25,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-36,leg-08
 #Probando Leg
 assignment-26,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-03
 assignment-27,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-08
-assignment-28,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-08
-assignment-29,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-04
-assignment-30,PILOT,2025/01/01 00:00,CONFIRMED,null,True,member-01,leg-08
+assignment-28,PILOT,2025/01/01 00:00,CONFIRMED,null,False,member-01,leg-08
+assignment-29,PILOT,2025/01/01 00:00,CONFIRMED,null,False,member-01,leg-04
+assignment-30,PILOT,2025/01/01 00:00,CONFIRMED,null,False,member-01,leg-08

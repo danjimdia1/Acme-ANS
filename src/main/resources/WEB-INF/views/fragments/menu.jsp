@@ -62,9 +62,9 @@
 			<acme:menu-suboption code="master.menu.airline-manager.dashboard" action="/airline-manager/airline-manager-dashboard/show"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.crewMember" access="hasRealm('CrewMember')">
-			<acme:menu-suboption code="List flight-assignment" action="/crew-member/flight-assignment/list"/>
-			<acme:menu-suboption code="List planned flight-assignment" action="/crew-member/flight-assignment/planned-list"/>
+		<acme:menu-option code="master.menu.crew-member" access="hasRealm('CrewMember')">
+			<acme:menu-suboption code="master.menu.crew-member.flight-assignment.completedlist" action="/crew-member/flight-assignment/completed-list"/>
+			<acme:menu-suboption code="master.menu.crew-member.flight-assignment.plannedlist" action="/crew-member/flight-assignment/planned-list"/>
     </acme:menu-option>
 
 		<acme:menu-option code="master.menu.assistance-agent" access="hasRealm('AssistanceAgent')">

@@ -8,12 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+master.menu.crew-member = Miembro tripulacion
+master.menu.crew-member.flight-assignment.completedlist = Tramos de vuelo completados
+master.menu.crew-member.flight-assignment.plannedlist = Tramos de vuelo planeados
+
 crew-member.flight-assignment.list.title = Lista de asignaciones de vuelo
 crew-member.flight-assignment.form.title = Formulario de asignaciones de vuelo
 
 # Etiquetas
 crew-member.flight-assignment.form.label.duty = Cargo
-crew-member.flight-assignment.form.label.lastUpdate = Última actualización
+crew-member.flight-assignment.form.label.last-update = Última actualización
 crew-member.flight-assignment.form.label.assignmentStatus = Estado de la asignación
 crew-member.flight-assignment.form.label.remarks = Observaciones
 crew-member.flight-assignment.form.label.draftMode = Borrador
@@ -28,7 +32,8 @@ crew-member.flight-assignment.form.button.publish = Publicar
 crew-member.flight-assignment.form.button.activity-log = Registro de actividad
 
 crew-member.flight-assignment.list.label.duty = Cargo
-crew-member.flight-assignment.list.label.lastUpdate = Última actualización
+crew-member.flight-assignment.list.label.last-update = Última actualización
 crew-member.flight-assignment.list.label.current-status = Estado de la asignación
 crew-member.flight-assignment.list.label.remarks = Observaciones
+crew-member.flight-assignment.list.label.draft-mode = Modo borrador
 crew-member.flight-assignment.list.button.create = Crear

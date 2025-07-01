@@ -63,7 +63,7 @@ public class FlightCMActivityLogPublishService extends AbstractGuiService<CrewMe
 		super.state(activityLogMomentIsAfterscheduledArrival, "WrongActivityLogDate", "acme.validation.activityLog.wrongMoment.message");
 		System.out.println("El moment está despues de la fecha de llegada (el flightAssignament se completo)? " + activityLogMomentIsAfterscheduledArrival);
 		boolean flightAssignamentIsPublished = this.repository.isFlightAssignmentAlreadyPublishedByActivityLogId(activityLogId);
-		System.out.println("Se publico el flightAssignament? " + flightAssignament.getDraftMode() + " lo que devuelve la llamada a db es: " + flightAssignamentIsPublished);
+		System.out.println("Se publico el flightAssignament? " + flightAssignament.isDraftMode() + " lo que devuelve la llamada a db es: " + flightAssignamentIsPublished);
 		super.state(flightAssignamentIsPublished, "activityLog", "acme.validation.ActivityLog.FlightAssignamentNotPublished.message");
 	}
 
@@ -91,10 +91,10 @@ public class FlightCMActivityLogPublishService extends AbstractGuiService<CrewMe
 		Dataset dataset = super.unbindObject(al, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
 		dataset.put("masterId", flightAssignament.getId());
 		dataset.put("draftMode", al.isDraftMode());
-		System.out.println("Soy publish, el activity log tiene draftMode? " + al.isDraftMode() + " y el flightAssignament? " + flightAssignament.getDraftMode());
+		System.out.println("Soy publish, el activity log tiene draftMode? " + al.isDraftMode() + " y el flightAssignament? " + flightAssignament.isDraftMode());
 
 		dataset.put("readonly", false);
-		dataset.put("masterDraftMode", flightAssignament.getDraftMode());
+		dataset.put("masterDraftMode", flightAssignament.isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}
