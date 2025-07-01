@@ -27,7 +27,7 @@ public interface FlightCMAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fa from FlightAssignment fa where fa.leg.scheduledArrival >= :currentMoment and fa.crewMember.id = :crewMemberId")
 	Collection<FlightAssignment> findAllFAByPlannedLeg(Date currentMoment, int crewMemberId);
 
-	@Query("SELECT l FROM Leg l")
+	@Query("SELECT l FROM Leg l WHERE l.flight.draftMode = false")
 	Collection<Leg> findAllLegs();
 
 	@Query("SELECT l from Leg l where l.id = ?1")
@@ -66,10 +66,19 @@ public interface FlightCMAssignmentRepository extends AbstractRepository {
 	@Query("SELECT count(fa) > 0 from FlightAssignment fa where fa.id = :flightAssignmentId and fa.crewMember.id = :crewMemberId")
 	boolean isFlightAssignmentOfCrewMember(int flightAssignmentId, int crewMemberId);
 
+	@Query("SELECT CASE when count(l) > 0 THEN true else false END from Leg l where l.id = :id")
+	boolean existsLeg(int id);
+
 	@Query("SELECT case when count(fa) > 0 then true else false end from FlightAssignment fa where fa.id = :flightAssignmentId and fa.leg.scheduledArrival < :currentMoment")
 	boolean isLegCompletedByFlightAssignment(int flightAssignmentId, Date currentMoment);
 
 	@Query("select count(fa) > 0 from FlightAssignment fa where fa.id = :flightAssignmentId and fa.crewMember.id = :crewMemberId")
 	boolean thatFlightAssignmentIsOf(int flightAssignmentId, int crewMemberId);
+
+	@Query("select case when count(fa) > 0 then true else false end from FlightAssignment fa where fa.id = :flightAssignmentId and fa.leg.scheduledArrival < :currentMoment")
+	boolean areLegsCompletedByFlightAssignament(int flightAssignmentId, Date currentMoment);
+
+	@Query("SELECT CASE WHEN COUNT(fa) > 0 THEN true ELSE false END FROM FlightAssignment fa WHERE fa.id = :id")
+	boolean existsFlightAssignment(int id);
 
 }

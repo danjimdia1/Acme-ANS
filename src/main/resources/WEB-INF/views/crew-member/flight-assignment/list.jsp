@@ -16,12 +16,13 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="Duty" path="duty" width="20%"/>
-	<acme:list-column code="Last update" path="lastUpdate" width="20%"/>
-	<acme:list-column code="Current status" path="currentStatus" width="20%"/>	
+	<acme:list-column code="crew-member.flight-assignment.list.label.duty" path="duty" width="20%"/>
+	<acme:list-column code="crew-member.flight-assignment.list.label.last-update" path="lastUpdate" width="20%"/>
+	<acme:list-column code="crew-member.flight-assignment.list.label.current-status" path="currentStatus" width="20%"/>	
+	<acme:list-column code="crew-member.flight-assignment.list.label.draft-mode" path="draftMode" width="20%"/>	
 	<acme:list-payload path="payload"/>
 </acme:list>	
 	
 <jstl:if test="${_command == 'planned-list'}">
-	<acme:button code="Create" action="/crew-member/flight-assignment/create"/>
+	<acme:button code="crew-member.flight-assignment.list.button.create" action="/crew-member/flight-assignment/create"/>
 </jstl:if>	

@@ -50,7 +50,7 @@ public class FlightCMActivityLogShowService extends AbstractGuiService<CrewMembe
 		dataset.put("masterId", flightAssignment.getId());
 		dataset.put("readonly", false);
 		dataset.put("draftMode", al.isDraftMode());
-		dataset.put("masterDraftMode", flightAssignment.getDraftMode());
+		dataset.put("masterDraftMode", flightAssignment.isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

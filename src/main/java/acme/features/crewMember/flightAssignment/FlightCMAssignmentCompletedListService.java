@@ -23,24 +23,23 @@ public class FlightCMAssignmentCompletedListService extends AbstractGuiService<C
 	@Override
 	public void authorise() {
 		int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		boolean isAuthorised = this.repository.existsCrewMemberById(crewMemberId);
+		boolean authorised = this.repository.existsCrewMemberById(crewMemberId);
 
-		super.getResponse().setAuthorised(isAuthorised);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
 	public void load() {
 		int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		Date now = MomentHelper.getCurrentMoment();
+		Date currentMoment = MomentHelper.getCurrentMoment();
 
-		Collection<FlightAssignment> completedLegAssignments = this.repository.findAllFAByCompletedLeg(now, crewMemberId);
-
-		super.getBuffer().addData(completedLegAssignments);
+		Collection<FlightAssignment> fas = this.repository.findAllFAByCompletedLeg(currentMoment, crewMemberId);
+		super.getBuffer().addData(fas);
 	}
 
 	@Override
-	public void unbind(final FlightAssignment flightAssignment) {
-		Dataset dataset = super.unbindObject(flightAssignment, "duty", "lastUpdate", "currentStatus", "remarks");
+	public void unbind(final FlightAssignment fa) {
+		Dataset dataset = super.unbindObject(fa, "duty", "lastUpdate", "currentStatus", "remarks", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}

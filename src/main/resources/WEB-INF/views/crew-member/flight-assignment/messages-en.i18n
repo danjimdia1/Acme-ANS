@@ -8,11 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+master.menu.crew-member = Crew Member
+master.menu.crew-member.flight-assignment.completedlist = Completed flight legs 
+master.menu.crew-member.flight-assignment.plannedlist = Planned flight legs 
+
 crew-member.flight-assignment.list.title = List of flight assignments
 crew-member.flight-assignment.form.title = Flight assignment form 
 
 crew-member.flight-assignment.form.label.duty = Duty
-crew-member.flight-assignment.form.label.lastUpdate = Last Update
+crew-member.flight-assignment.form.label.last-update = Last Update
 crew-member.flight-assignment.form.label.current-status = Current Status
 crew-member.flight-assignment.form.label.remarks = Remarks
 crew-member.flight-assignment.form.label.leg = Leg
@@ -27,7 +31,8 @@ crew-member.flight-assignment.form.button.publish = Publish
 crew-member.flight-assignment.form.button.activity-log = Activity Logs
 
 crew-member.flight-assignment.list.label.duty = Duty
-crew-member.flight-assignment.list.label.lastUpdate = Last Update
+crew-member.flight-assignment.list.label.last-update = Last Update
 crew-member.flight-assignment.list.label.current-status = Current Status
 crew-member.flight-assignment.list.label.remarks = Remarks
+crew-member.flight-assignment.list.label.draft-mode = Draft Mode
 crew-member.flight-assignment.list.button.create = Create
