@@ -46,9 +46,8 @@ public class FlightCMAssignmentPublishService extends AbstractGuiService<CrewMem
 
 			status = authorised3 && authorised1 && authorised && flightAssignment.isDraftMode() && MomentHelper.isFuture(flightAssignment.getLeg().getScheduledArrival());
 			boolean authorised4 = flightAssignment.getCrewMember().getId() == crewMemberId;
-			boolean authorised5 = flightAssignment.getDuty() == Duty.LEAD_ATTENDANT;
 
-			status = status && authorised4 && authorised5;
+			status = status && authorised4;
 
 		}
 		super.getResponse().setAuthorised(status);
