@@ -20,16 +20,28 @@ public class FlightCMActivityLogCreateService extends AbstractGuiService<CrewMem
 
 	@Override
 	public void authorise() {
-		int masterId = super.getRequest().getData("masterId", int.class);
-		int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean status = false;
+		int masterId;
+		FlightAssignment flightAssignment;
 
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(masterId);
+		if (super.getRequest().hasData("masterId", int.class)) {
+			masterId = super.getRequest().getData("masterId", int.class);
+			int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			boolean authorised = this.repository.existsCrewMember(crewMemberId);
 
-		boolean authorised1 = flightAssignment != null;
-		boolean authorised2 = authorised1 && this.repository.existsCrewMember(crewMemberId);
-		boolean authorised = authorised2 && flightAssignment.getCrewMember().getId() == crewMemberId;
+			flightAssignment = this.repository.findFlightAssignmentById(masterId);
+			boolean authorised2 = false;
+			if (flightAssignment != null) {
+				authorised2 = this.repository.existsFlightAssignment(masterId);
+				status = authorised && authorised2;
+				boolean isHis = flightAssignment.getCrewMember().getId() == crewMemberId;
 
-		super.getResponse().setAuthorised(authorised);
+				status = status && this.repository.isFlightAssignmentCompleted(MomentHelper.getCurrentMoment(), masterId) && isHis;
+			}
+		}
+
+		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -38,42 +50,45 @@ public class FlightCMActivityLogCreateService extends AbstractGuiService<CrewMem
 		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(masterId);
 
 		ActivityLog activityLog = new ActivityLog();
-		activityLog.setFlightAssignment(flightAssignment);
-		activityLog.setTypeIncident("");
-		activityLog.setDraftMode(true);
-		activityLog.setSeverityLevel(0);
 		activityLog.setDescription("");
+		activityLog.setFlightAssignment(flightAssignment);
 		activityLog.setRegistrationMoment(MomentHelper.getCurrentMoment());
+		activityLog.setSeverityLevel(0);
+		activityLog.setDraftMode(true);
+		activityLog.setTypeIncident("");
 
 		super.getBuffer().addData(activityLog);
+
 	}
 
 	@Override
-	public void bind(final ActivityLog al) {
-		super.bindObject(al, "registrationMoment", "typeIncident", "description", "severityLevel");
+	public void bind(final ActivityLog activityLog) {
+		super.bindObject(activityLog, "typeIncident", "description", "severityLevel");
+
 	}
 
 	@Override
-	public void validate(final ActivityLog al) {
-		;
+	public void validate(final ActivityLog activityLog) {
+
 	}
 
 	@Override
-	public void perform(final ActivityLog al) {
-		this.repository.save(al);
+	public void perform(final ActivityLog activityLog) {
+		this.repository.save(activityLog);
 	}
 
 	@Override
-	public void unbind(final ActivityLog al) {
+	public void unbind(final ActivityLog activityLog) {
 		int masterId = super.getRequest().getData("masterId", int.class);
 
-		Dataset dataset = super.unbindObject(al, "registrationMoment", "typeIncident", "description", "severityLevel", "draftMode");
+		Dataset dataset = super.unbindObject(activityLog, "registrationMoment", "typeIncident", "description", "severityLevel", "draftMode");
 		dataset.put("masterId", masterId);
-		dataset.put("readonly", false);
-		dataset.put("draftMode", al.isDraftMode());
 		dataset.put("masterDraftMode", !this.repository.isFlightAssignmentAlreadyPublishedById(masterId));
+		dataset.put("draftMode", activityLog.isDraftMode());
+		dataset.put("readonly", false);
 
 		super.getResponse().addData(dataset);
+
 	}
 
 }

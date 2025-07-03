@@ -15,10 +15,11 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="crew-member.activity-log.list.label.registrationMoment" path="registrationMoment" width="25%"/>
-	<acme:list-column code="crew-member.activity-log.list.label.typeIncident" path="typeIncident" width="25%"/>
-	<acme:list-column code="crew-member.activity-log.list.label.description" path="description" width="25%"/>
-	<acme:list-column code="crew-member.activity-log.list.label.severityLevel" path="severityLevel" width="25%"/>
+	<acme:list-column code="crew-member.activity-log.list.label.registrationMoment" path="registrationMoment" width="20%"/>
+	<acme:list-column code="crew-member.activity-log.list.label.typeIncident" path="typeIncident" width="20%"/>
+	<acme:list-column code="crew-member.activity-log.list.label.description" path="description" width="20%"/>
+	<acme:list-column code="crew-member.activity-log.list.label.severityLevel" path="severityLevel" width="20%"/>
+	<acme:list-column code="crew-member.activity-log.list.label.draftMode" path="draftMode" width="20%"/>
 	<acme:list-payload path="payload"/>
 </acme:list>
 
