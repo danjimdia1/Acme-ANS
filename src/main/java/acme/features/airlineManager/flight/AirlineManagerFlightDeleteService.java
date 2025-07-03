@@ -26,6 +26,7 @@ public class AirlineManagerFlightDeleteService extends AbstractGuiService<Airlin
 		int flightId;
 		Flight flight;
 		AirlineManager manager;
+
 		flightId = super.getRequest().getData("id", int.class);
 
 		flight = this.repository.findFlightById(flightId);
@@ -58,7 +59,15 @@ public class AirlineManagerFlightDeleteService extends AbstractGuiService<Airlin
 
 	@Override
 	public void validate(final Flight flight) {
-		;
+		int flightId = flight.getId();
+		Collection<Leg> legs = this.repository.findLegsByFlightId(flightId);
+
+		if (!legs.isEmpty())
+			for (Leg leg : legs)
+				if (!leg.isDraftMode()) {
+					super.state(false, "*", "airline-manager.flight.delete.error.published-leg");
+					return;
+				}
 	}
 
 	@Override
