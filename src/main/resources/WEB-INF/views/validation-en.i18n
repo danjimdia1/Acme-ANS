@@ -62,3 +62,8 @@ customer.booking-record.delete.passenger.not-null = Must select one passenger to
 #Booking
 
 acme.validation.locatorCode.not-unique = This locator code already exist
+
+
+#Crew Member
+acme.validation.crewMember.identifier.invalid-identifier.message = This employeeCode code is already in use or invalid
+acme.validation.crewMember.identifier.invalid-number.message = This number is invalid

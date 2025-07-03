@@ -65,3 +65,8 @@ customer.booking-record.delete.passenger.not-null = Debe seleccionar un pasajero
 #Validaciones Booking
 
  acme.validation.locatorCode.not-unique = Este código localizador ya existe
+ 
+ 
+#Crew Member
+acme.validation.crewMember.identifier.invalid-identifier.message = Este codigo de empleado esta en uso o es invalido 
+acme.validation.crewMember.identifier.invalid-number.message = Este numero es invalido
