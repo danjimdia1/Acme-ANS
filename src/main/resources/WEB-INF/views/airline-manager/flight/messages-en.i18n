@@ -31,3 +31,5 @@ airline-manager.flight.publish.error.no-legs = Must be any leg
 airline-manager.flight.publish.error.no-legs-published = Must have all legs published
 
 airline-manager.flight.form.button.legs = Legs
+
+airline-manager.flight.delete.error.published-leg = The flight cannot be deleted because it has published legs

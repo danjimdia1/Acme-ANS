@@ -7,7 +7,6 @@
 	<acme:list-column code='airline-manager.flight.list.label.tag' path="tag" width="25%"/>
 	<acme:list-column code='airline-manager.flight.list.label.selfTransfer' path="selfTransfer" width="25%"/>
 	<acme:list-column code='airline-manager.flight.list.label.cost' path="cost" width="25%"/>
-	<acme:list-column code='airline-manager.flight.list.label.draftMode' path="draftMode" width="25%"/>
 </acme:list>
 
 <jstl:if test="${_command == 'list'}">

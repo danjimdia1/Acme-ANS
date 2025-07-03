@@ -31,3 +31,5 @@ airline-manager.flight.publish.error.no-legs = Debe haber algún tramo
 airline-manager.flight.publish.error.no-legs-published = Debe tener los legs publicado
 
 airline-manager.flight.form.button.legs = Tramos
+
+airline-manager.flight.delete.error.published-leg = El vuelo no se puede borrar puesto que tiene tramos publicados
