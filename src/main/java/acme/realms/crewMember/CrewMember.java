@@ -37,12 +37,12 @@ public class CrewMember extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$", message = "{acme.validation.crewMember.identifier.invalid-identifier.message}")
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$", message = "{acme.validation.crewMember.identifier.invalid-number.message}")
 	@Automapped
 	private String				phoneNumber;
 
