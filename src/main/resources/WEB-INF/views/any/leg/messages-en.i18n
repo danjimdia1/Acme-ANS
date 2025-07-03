@@ -16,6 +16,6 @@ any.leg.form.title = Leg
 
 any.leg.form.label.airlineIata = Airline IATA code
 any.leg.form.label.duration = Duration
-any.leg.form.label.departureAirportIata = Departure airport
-any.leg.form.label.arrivalAirportIata = Arrival airport
+any.leg.form.label.departureAirport = Departure airport
+any.leg.form.label.arrivalAirport = Arrival airport
 any.leg.form.label.aircraftRegNumber = Aircraft registration number
