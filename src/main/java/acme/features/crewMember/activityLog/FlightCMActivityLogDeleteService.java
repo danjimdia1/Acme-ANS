@@ -3,7 +3,6 @@ package acme.features.crewMember.activityLog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activityLog.ActivityLog;
@@ -18,15 +17,23 @@ public class FlightCMActivityLogDeleteService extends AbstractGuiService<CrewMem
 
 	@Override
 	public void authorise() {
-		int activityLogId = super.getRequest().getData("id", int.class);
-		int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		ActivityLog activityLog = this.repository.findActivityLogById(activityLogId);
+		String method = super.getRequest().getMethod();
+		boolean status;
 
-		boolean authorised1 = this.repository.thatActivityLogIsOf(activityLogId, crewMemberId);
-		boolean authorised2 = authorised1 && this.repository.existsCrewMember(crewMemberId);
-		boolean authorised = authorised2 && activityLog.isDraftMode() && activityLog != null;
+		if (method.equals("GET"))
+			status = false;
+		else {
+			int activityLogId = super.getRequest().getData("id", int.class);
+			ActivityLog activityLog = this.repository.findActivityLogById(activityLogId);
 
-		super.getResponse().setAuthorised(authorised);
+			int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			boolean authorised1 = this.repository.existsCrewMember(crewMemberId);
+			boolean authorised = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, crewMemberId);
+
+			status = authorised && activityLog != null && activityLog.isDraftMode();
+		}
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -38,27 +45,21 @@ public class FlightCMActivityLogDeleteService extends AbstractGuiService<CrewMem
 	}
 
 	@Override
-	public void bind(final ActivityLog al) {
-		super.bindObject(al, "registrationMoment", "typeIncident", "description", "severityLevel");
+	public void bind(final ActivityLog activityLog) {
+		super.bindObject(activityLog, "typeIncident", "description", "severityLevel");
 	}
 
 	@Override
-	public void validate(final ActivityLog al) {
-		;
+	public void validate(final ActivityLog activityLog) {
 	}
 
 	@Override
-	public void perform(final ActivityLog al) {
-		this.repository.delete(al);
+	public void perform(final ActivityLog activityLog) {
+		this.repository.delete(activityLog);
 	}
 
 	@Override
-	public void unbind(final ActivityLog al) {
-		Dataset dataset = super.unbindObject(al, "registrationMoment", "typeIncident", "description", "severityLevel", "draftMode");
-		dataset.put("readonly", false);
-		dataset.put("draftMode", al.isDraftMode());
-
-		super.getResponse().addData(dataset);
+	public void unbind(final ActivityLog activityLog) {
 	}
 
 }

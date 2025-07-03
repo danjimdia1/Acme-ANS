@@ -8,26 +8,26 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-flight-crew-member.activity-log.list.title = Listado de registros de actividad
+crew-member.activity-log.list.title = Listado de registros de actividad
 
-flight-crew-member.activity-log.list.label.registrationMoment = Momento de registro:
-flight-crew-member.activity-log.list.label.typeOfIncident = Tipo de incidente:
-flight-crew-member.activity-log.list.label.description = Descripción:
-flight-crew-member.activity-log.list.label.severityLevel = Nivel de gravedad:
-flight-crew-member.activity-log.list.label.assignment = Encargo:
+crew-member.activity-log.list.label.registrationMoment = Momento de registro:
+crew-member.activity-log.list.label.typeIncident = Tipo de incidente:
+crew-member.activity-log.list.label.description = Descripción:
+crew-member.activity-log.list.label.severityLevel = Nivel de gravedad:
+crew-member.activity-log.list.label.assignment = Encargo:
+crew-member.activity-log.form.label.draftMode = Modo borrador:
+crew-member.activity-log.form.title = Registro de actividad
 
-flight-crew-member.activity-log.list.button.create = Crear
-flight-crew-member.activity-log.form.title = Registro de actividad
+crew-member.activity-log.form.label.registrationMoment = Momento de registro:
+crew-member.activity-log.form.label.typeOfIncident = Tipo de incidente:
+crew-member.activity-log.form.label.description = Descripción:
+crew-member.activity-log.form.label.severityLevel = Nivel de gravedad:
+crew-member.activity-log.form.label.assignment = Encargo:
 
-flight-crew-member.activity-log.form.label.registrationMoment = Momento de registro:
-flight-crew-member.activity-log.form.label.typeOfIncident = Tipo de incidente:
-flight-crew-member.activity-log.form.label.description = Descripción:
-flight-crew-member.activity-log.form.label.severityLevel = Nivel de gravedad:
-flight-crew-member.activity-log.form.label.assignment = Encargo:
+crew-member.activity-log.form.placeholder.severityLevel = 0 - 10
 
-flight-crew-member.activity-log.form.placeholder.severityLevel = 0 - 10
-
-flight-crew-member.activity-log.form.button.update = Actualizar registro de actividad
-flight-crew-member.activity-log.form.button.create = Crear registro de actividad
-flight-crew-member.activity-log.form.button.publish = Publicar registro de actividad
-flight-crew-member.activity-log.form.button.delete = Borrar registro de actividad
+crew-member.activity-log.form.button.update = Actualizar registro de actividad
+crew-member.activity-log.form.button.create = Crear registro de actividad
+crew-member.activity-log.form.button.publish = Publicar registro de actividad
+crew-member.activity-log.form.button.delete = Borrar registro de actividad
+crew-member.activity-log.list.button.create = Crear

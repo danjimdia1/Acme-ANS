@@ -29,16 +29,28 @@ public interface FlightCMActivityLogRepository extends AbstractRepository {
 	@Query("SELECT case when count(al) > 0 then true else false end from ActivityLog al where al.id = :id and al.flightAssignment.leg.scheduledArrival < :currentMoment")
 	boolean associatedWithCompletedLeg(int id, Date currentMoment);
 
-	@Query("SELECT CASE WHEN COUNT(cm) > 0 THEN true ELSE false END FROM CrewMember cm WHERE cm.id = :id")
+	@Query("SELECT CASE when COUNT(cm) > 0 THEN true ELSE false END FROM CrewMember cm WHERE cm.id = :id")
 	boolean existsCrewMember(int id);
 
 	@Query("SELECT case when count(al) > 0 then true else false end from ActivityLog al where al.id = :id and al.flightAssignment.draftMode = false")
 	boolean isFlightAssignmentAlreadyPublishedByActivityLogId(int id);
+
+	@Query("SELECT case when count(fa) > 0 then true else false end from FlightAssignment fa where fa.id = :id and fa.leg.scheduledArrival < :currentMoment")
+	boolean flightAssignmentAssociatedWithCompletedLeg(int id, Date currentMoment);
+
+	@Query("SELECT case when COUNT(al) > 0 then true ELSE false END FROM ActivityLog al WHERE al.id = :id")
+	boolean existsActivityLog(int id);
+
+	@Query("select case when count(fa) > 0 then true else false end from FlightAssignment fa where fa.leg.scheduledArrival < :currentMoment and fa.id = :flightAssignmentId")
+	boolean isFlightAssignmentCompleted(Date currentMoment, int flightAssignmentId);
 
 	@Query("SELECT case when count(fa) > 0 then true else false end from FlightAssignment fa where fa.id = :id and fa.draftMode = false")
 	boolean isFlightAssignmentAlreadyPublishedById(int id);
 
 	@Query("SELECT count(al) > 0 from ActivityLog al where al.id = :activityLogId and al.flightAssignment.crewMember.id = :crewMemberId")
 	boolean thatActivityLogIsOf(int activityLogId, int crewMemberId);
+
+	@Query("SELECT case when COUNT(fa) > 0 THEN true ELSE false END FROM FlightAssignment fa WHERE fa.id = :id")
+	boolean existsFlightAssignment(int id);
 
 }

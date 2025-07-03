@@ -20,17 +20,21 @@ public class FlightCMActivityLogShowService extends AbstractGuiService<CrewMembe
 	@Override
 	public void authorise() {
 		int activityLogId = super.getRequest().getData("id", int.class);
-		int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-
+		boolean authorised = false;
+		boolean isHis = false;
 		ActivityLog activityLog = this.repository.findActivityLogById(activityLogId);
-		FlightAssignment flightAssignament = this.repository.findFlightAssignmentByActivityLogId(activityLogId);
+		boolean authorised3 = this.repository.existsActivityLog(activityLogId);
+		int crewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		FlightAssignment fa = this.repository.findFlightAssignmentByActivityLogId(activityLogId);
+		if (fa != null) {
+			boolean authorised2 = this.repository.existsFlightAssignment(fa.getId());
 
-		boolean authorised1 = this.repository.existsCrewMember(crewMemberId);
-		boolean authorised2 = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, crewMemberId);
-		boolean authorised3 = flightAssignament.getCrewMember().getId() == crewMemberId;
-		boolean authorised = authorised2 && authorised3 && activityLog != null;
+			boolean authorised1 = authorised3 && authorised2 && this.repository.existsCrewMember(crewMemberId);
+			authorised = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, crewMemberId);
+			isHis = fa.getCrewMember().getId() == crewMemberId;
+		}
 
-		super.getResponse().setAuthorised(authorised);
+		super.getResponse().setAuthorised(authorised && activityLog != null && isHis);
 	}
 
 	@Override
@@ -42,15 +46,15 @@ public class FlightCMActivityLogShowService extends AbstractGuiService<CrewMembe
 	}
 
 	@Override
-	public void unbind(final ActivityLog al) {
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentByActivityLogId(al.getId());
+	public void unbind(final ActivityLog activityLog) {
+		FlightAssignment flightAssignment = this.repository.findFlightAssignmentByActivityLogId(activityLog.getId());
 
-		Dataset dataset = super.unbindObject(al, "registrationMoment", "typeIncident", "description", "severityLevel", "draftMode");
-		dataset.put("id", al.getId());
+		Dataset dataset = super.unbindObject(activityLog, "registrationMoment", "typeIncident", "description", "severityLevel", "draftMode");
+		dataset.put("id", activityLog.getId());
 		dataset.put("masterId", flightAssignment.getId());
-		dataset.put("readonly", false);
-		dataset.put("draftMode", al.isDraftMode());
+		dataset.put("draftMode", activityLog.isDraftMode());
 		dataset.put("masterDraftMode", flightAssignment.isDraftMode());
+		dataset.put("readonly", false);
 
 		super.getResponse().addData(dataset);
 	}
